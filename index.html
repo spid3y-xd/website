@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zohair Ahmed | Graphic Designer, Photo Editor & Web Developer</title>
-    <meta name="description" content="Zohair Ahmed is a graphic designer, photo editor and WordPress developer creating premium visuals, professional imagery and modern digital experiences.">
+    <meta name="description" content="Zohair Ahmed is a graphic designer, photo editor and Web Developer creating premium visuals, professional imagery and modern digital experiences.">
     
     <!-- Open Graph / Social -->
     <meta property="og:type" content="website">
@@ -60,7 +60,6 @@
             /* Layout & Animation Variables */
             --nav-height: 80px;
             --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
-            --ease-in-out-sine: cubic-bezier(0.37, 0, 0.63, 1);
             --transition-smooth: all 0.4s var(--ease-out-expo);
         }
 
@@ -90,13 +89,17 @@
             padding: 0;
         }
 
+        html, body {
+            max-width: 100vw;
+            overflow-x: hidden;
+        }
+
         html {
             scroll-behavior: smooth;
             font-size: 16px;
             background-color: var(--bg-base);
             color: var(--text-main);
             font-family: var(--font-body);
-            overflow-x: hidden;
             text-rendering: optimizeLegibility;
             -webkit-font-smoothing: antialiased;
             transition: background-color 0.4s ease, color 0.4s ease;
@@ -135,8 +138,6 @@
         /* ==========================================================================
            2. ANIMATIONS & SPIDER-MAN EFFECTS
            ========================================================================== */
-        
-        /* Reveal on Scroll Keyframes */
         .reveal {
             opacity: 0;
             transform: translateY(40px);
@@ -148,7 +149,6 @@
             transform: translateY(0);
         }
 
-        /* Glitch Effect for Spider-Verse Aesthetic */
         @keyframes spiderGlitch {
             0% { transform: translate(0); }
             20% { transform: translate(-3px, 3px); filter: hue-rotate(90deg); }
@@ -162,7 +162,6 @@
             animation: spiderGlitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
         }
 
-        /* Ambient Web Canvas */
         .ambient-canvas {
             position: fixed;
             top: 0;
@@ -175,7 +174,6 @@
             transition: opacity 0.5s ease;
         }
 
-        /* Comic Book Halftone Overlay */
         .halftone-overlay {
             position: fixed;
             top: 0;
@@ -189,7 +187,6 @@
             opacity: 0.5;
         }
 
-        /* Spider-Sensing Pulse Effect */
         .spider-sense-ring {
             position: absolute;
             border: 2px solid var(--accent-red);
@@ -205,7 +202,6 @@
             100% { transform: scale(2.2); opacity: 0; }
         }
 
-        /* Custom Desktop Web-Sense Cursor */
         .custom-cursor {
             position: fixed;
             top: 0;
@@ -230,11 +226,11 @@
         }
 
         .custom-cursor.active {
-            width: 70px;
-            height: 70px;
+            width: 30px;
+            height: 30px;
             background-color: var(--accent-red);
             border-color: #FFFFFF;
-            box-shadow: 0 0 20px var(--accent-red-glow);
+            box-shadow: 0 0 10px var(--accent-red-glow);
         }
 
         .custom-cursor::before {
@@ -250,25 +246,11 @@
             display: none;
         }
 
-        /* Floating Spider Web Corner Decors */
-        .web-corner-decor {
-            position: absolute;
-            width: 120px;
-            height: 120px;
-            pointer-events: none;
-            opacity: 0.2;
-            z-index: 2;
-            transition: var(--transition-smooth);
-        }
-
-        .web-corner-decor.top-left { top: 0; left: 0; }
-        .web-corner-decor.top-right { top: 0; right: 0; transform: scaleX(-1); }
-
-        /* Rim Lights */
         .rim-light-red {
             position: absolute;
             width: 700px;
             height: 700px;
+            max-width: 100vw;
             background: radial-gradient(circle, var(--accent-red-glow) 0%, transparent 70%);
             border-radius: 50%;
             pointer-events: none;
@@ -281,6 +263,7 @@
             position: absolute;
             width: 700px;
             height: 700px;
+            max-width: 100vw;
             background: radial-gradient(circle, var(--accent-blue-glow) 0%, transparent 70%);
             border-radius: 50%;
             pointer-events: none;
@@ -295,25 +278,26 @@
         }
 
         /* ==========================================================================
-           3. NAVIGATION
+           3. NAVIGATION (STICKY WITH TOP SPACING & ICON TOGGLE)
            ========================================================================== */
         .nav-wrapper {
             position: fixed;
-            top: 0;
-            left: 0;
+            top: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
             width: 100%;
+            max-width: 1300px;
             height: var(--nav-height);
             z-index: 1000;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 0 2rem;
+            padding: 0 1rem;
             transition: var(--transition-smooth);
         }
 
         .nav-container {
             width: 100%;
-            max-width: 1300px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -331,8 +315,7 @@
         }
 
         .nav-brand {
-            font-family: var(--font-display);
-            font-size: 2.2rem;
+            font-size: 1.5rem;
             letter-spacing: 1px;
             position: relative;
             display: flex;
@@ -341,17 +324,6 @@
 
         .nav-brand span {
             color: var(--accent-red);
-        }
-
-        .nav-brand::after {
-            content: '';
-            position: absolute;
-            right: -12px;
-            bottom: 8px;
-            width: 5px;
-            height: 5px;
-            background-color: var(--accent-blue);
-            border-radius: 50%;
         }
 
         .nav-menu {
@@ -400,26 +372,29 @@
         .theme-toggle-btn {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            padding: 0.45rem 0.9rem;
-            border-radius: 20px;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
             border: 1px solid var(--border-glass);
             cursor: pointer;
-            font-size: 0.75rem;
-            font-weight: 800;
-            letter-spacing: 1px;
             color: var(--text-main);
             transition: var(--transition-smooth);
-            background: rgba(0,0,0,0.03);
+            background: var(--bg-surface);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
         }
 
-        [data-theme="dark"] .theme-toggle-btn {
-            background: rgba(255,255,255,0.05);
+        .theme-toggle-icon {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+            transition: transform 0.4s var(--ease-out-expo);
         }
 
         .theme-toggle-btn:hover {
             border-color: var(--accent-red);
-            box-shadow: 0 0 10px var(--accent-red-glow);
+            box-shadow: 0 0 15px var(--accent-red-glow);
+            transform: rotate(15deg) scale(1.05);
         }
 
         .btn-primary {
@@ -507,7 +482,7 @@
         }
 
         /* ==========================================================================
-           4. HERO SECTION (SPIDER-VERSE MULTI-LAYER COLLAGE WITH WEB MOTION)
+           4. HERO SECTION
            ========================================================================== */
         .hero {
             position: relative;
@@ -515,7 +490,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: calc(var(--nav-height) + 1rem) 2rem 5rem;
+            padding: calc(var(--nav-height) + 2rem) 2rem 5rem;
             overflow: hidden;
             background: radial-gradient(circle at 70% 30%, var(--bg-surface) 0%, var(--bg-base) 85%);
         }
@@ -625,7 +600,6 @@
             flex-wrap: wrap;
         }
 
-        /* Hero Right Column: Animated Spider-Verse Collage */
         .hero-visual-collage {
             position: relative;
             width: 100%;
@@ -659,23 +633,22 @@
             transition: all 0.6s var(--ease-out-expo);
         }
 
-        /* Card 1: Main Portrait Frame */
         .collage-card.card-main {
-            width: 320px;
-            height: 430px;
+            width: 360px;
+            height: 480px;
             z-index: 3;
-            transform: rotate(-3deg);
+            transform: rotate(-2deg);
             border: 2px solid var(--border-glass);
             animation: floatHero 6s infinite ease-in-out;
         }
 
         @keyframes floatHero {
-            0%, 100% { transform: rotate(-3deg) translateY(0); }
-            50% { transform: rotate(-1deg) translateY(-12px); }
+            0%, 100% { transform: rotate(-2deg) translateY(0); }
+            50% { transform: rotate(0deg) translateY(-12px); }
         }
 
         .collage-card.card-main:hover {
-            transform: rotate(0deg) scale(1.04);
+            transform: rotate(0deg) scale(1.03);
             border-color: var(--accent-red);
             box-shadow: 0 30px 60px var(--accent-red-glow);
         }
@@ -687,55 +660,9 @@
             filter: contrast(105%) saturate(105%);
         }
 
-        /* Card 2: Floating Web Dev Screenshot */
-        .collage-card.card-dev {
-            width: 250px;
-            height: 165px;
-            top: 15px;
-            right: -10px;
-            z-index: 4;
-            transform: rotate(6deg);
-            padding: 0.5rem;
-            background: var(--bg-surface);
-            border-left: 3px solid var(--accent-blue);
-            animation: floatDev 7s infinite ease-in-out 1s;
-        }
-
-        @keyframes floatDev {
-            0%, 100% { transform: rotate(6deg) translateY(0); }
-            50% { transform: rotate(4deg) translateY(-15px); }
-        }
-
-        .collage-card.card-dev:hover {
-            transform: rotate(1deg) translateY(-40px) scale(1.06);
-            border-color: var(--accent-blue);
-            box-shadow: 0 15px 35px var(--accent-blue-glow);
-        }
-
-        .card-dev-header {
-            display: flex;
-            gap: 4px;
-            margin-bottom: 6px;
-        }
-
-        .card-dev-dot {
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: var(--text-dim);
-        }
-
-        .collage-card.card-dev img {
-            width: 100%;
-            height: calc(100% - 12px);
-            object-fit: cover;
-            border-radius: 4px;
-        }
-
-        /* Card 3: Floating Spider Sense Metric Badge */
         .collage-card.card-badge {
-            bottom: 25px;
-            left: -10px;
+            bottom: 20px;
+            left: 10px;
             z-index: 5;
             padding: 1rem 1.5rem;
             display: flex;
@@ -777,13 +704,13 @@
             color: var(--text-dim);
         }
 
-        /* Diagonal Web Accent Strands with Animation */
         .hero-web-strand {
             position: absolute;
             background: linear-gradient(90deg, transparent, var(--accent-red), transparent);
             height: 1px;
             opacity: 0.35;
             pointer-events: none;
+            max-width: 100vw;
         }
 
         .strand-1 { top: 25%; left: -10%; width: 50%; transform: rotate(-15deg); animation: webPulse 4s infinite ease-in-out; }
@@ -794,7 +721,6 @@
             50% { opacity: 0.6; }
         }
 
-        /* Animated Web-Sling Scroll Line */
         .scroll-connector {
             position: absolute;
             bottom: 25px;
@@ -826,8 +752,10 @@
            ========================================================================== */
         section {
             position: relative;
-            padding: 7.5rem 2rem;
+            padding: 5.5rem 2rem;
             z-index: 2;
+            width: 100%;
+            overflow-x: hidden;
         }
 
         .section-container {
@@ -860,7 +788,7 @@
         }
 
         /* ==========================================================================
-           6. REDESIGNED ABOUT SECTION (COMIC BENTO GRID & INTERACTIVE PILLARS)
+           6. ABOUT SECTION
            ========================================================================== */
         .about-bento-grid {
             display: grid;
@@ -1054,20 +982,20 @@
         }
 
         /* ==========================================================================
-           7. SELECTED WORK (COMIC-PANEL EDITORIAL PORTFOLIO)
+           7. SELECTED WORK
            ========================================================================== */
         .portfolio-filter {
             display: flex;
-            gap: 1rem;
-            margin-bottom: 3rem;
+            gap: 1.25rem;
+            margin-bottom: 3.5rem;
             flex-wrap: wrap;
         }
 
         .filter-btn {
-            padding: 0.5rem 1.25rem;
+            padding: 0.6rem 1.5rem;
             font-size: 0.75rem;
             font-weight: 800;
-            letter-spacing: 1.5px;
+            letter-spacing: 2px;
             text-transform: uppercase;
             border: 1px solid var(--border-glass);
             border-radius: 30px;
@@ -1081,130 +1009,126 @@
             color: #FFFFFF;
             background: var(--accent-red);
             border-color: var(--accent-red);
-            box-shadow: 0 4px 15px var(--accent-red-glow);
+            box-shadow: 0 6px 20px var(--accent-red-glow);
+            transform: translateY(-2px);
         }
 
-        .portfolio-comic-grid {
-            display: grid;
-            grid-template-columns: repeat(12, 1fr);
-            gap: 2rem;
-        }
-
-        .project-panel {
-            position: relative;
-            background: var(--bg-surface);
-            border: 1px solid var(--border-glass);
-            border-radius: 8px;
-            overflow: hidden;
-            transition: var(--transition-smooth);
-            cursor: pointer;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-        }
-
-        .project-panel.col-8 { grid-column: span 8; }
-        .project-panel.col-4 { grid-column: span 4; }
-        .project-panel.col-6 { grid-column: span 6; }
-
-        .project-panel-inner {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            min-height: 380px;
+        .portfolio-showcase-list {
             display: flex;
             flex-direction: column;
-            justify-content: flex-end;
-            padding: 2rem;
+            gap: 4rem;
+        }
+
+        .showcase-item {
+            position: relative;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            align-items: center;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-glass);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.03);
+            transition: var(--transition-smooth);
+        }
+
+        .showcase-item:nth-child(even) {
+            grid-template-columns: 0.8fr 1.2fr;
+        }
+
+        .showcase-item:nth-child(even) .showcase-media {
+            order: 2;
+        }
+
+        .showcase-item:hover {
+            border-color: var(--accent-red);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.08), 0 0 30px var(--accent-red-glow);
+            transform: translateY(-4px);
+        }
+
+        .showcase-media {
+            position: relative;
+            width: 100%;
+            height: 440px;
             overflow: hidden;
         }
 
-        .project-img {
-            position: absolute;
-            inset: 0;
+        .showcase-img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.7s var(--ease-out-expo), filter 0.5s ease;
-            filter: brightness(0.95) contrast(102%);
+            transition: transform 0.8s var(--ease-out-expo), filter 0.5s ease;
+            filter: brightness(0.95) contrast(105%);
         }
 
-        .project-panel:hover .project-img {
-            transform: scale(1.08);
+        .showcase-item:hover .showcase-img {
+            transform: scale(1.06);
             filter: brightness(1) contrast(110%);
         }
 
-        .project-panel-overlay {
+        .showcase-badge {
             position: absolute;
-            inset: 0;
-            background: linear-gradient(0deg, rgba(8,17,31,0.92) 0%, rgba(8,17,31,0.2) 65%, transparent 100%);
-            z-index: 1;
-            transition: opacity 0.4s ease;
-        }
-
-        .project-panel-content {
-            position: relative;
-            z-index: 2;
-            transform: translateY(10px);
-            transition: transform 0.4s var(--ease-out-expo);
-            color: #FFFFFF;
-        }
-
-        .project-panel:hover .project-panel-content {
-            transform: translateY(0);
-        }
-
-        .project-number {
-            font-family: var(--font-display);
-            font-size: 1.5rem;
-            color: var(--accent-red);
-            letter-spacing: 1px;
-            margin-bottom: 0.25rem;
-        }
-
-        .project-category {
+            top: 20px;
+            left: 20px;
+            padding: 0.4rem 1rem;
+            background: rgba(8, 17, 31, 0.85);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 4px;
             font-size: 0.7rem;
             font-weight: 800;
             letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #64B5FF;
-            margin-bottom: 0.5rem;
-            display: block;
-        }
-
-        .project-title {
-            font-family: var(--font-serif);
-            font-size: 1.6rem;
-            line-height: 1.2;
-            margin-bottom: 0.5rem;
             color: #FFFFFF;
+            text-transform: uppercase;
         }
 
-        .project-desc {
-            font-size: 0.85rem;
-            color: #CBD5E1;
-            opacity: 0;
-            max-height: 0;
-            transition: opacity 0.4s ease, max-height 0.4s ease;
+        .showcase-info {
+            padding: 3.5rem 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
-        .project-panel:hover .project-desc {
-            opacity: 1;
-            max-height: 100px;
-            margin-top: 0.5rem;
+        .showcase-num {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            line-height: 1;
+            color: var(--accent-red);
+            margin-bottom: 0.5rem;
         }
 
-        .project-panel::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border: 2px solid transparent;
-            border-radius: 8px;
-            pointer-events: none;
-            transition: border-color 0.4s ease;
-            z-index: 3;
+        .showcase-title {
+            font-family: var(--font-serif);
+            font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: var(--text-main);
         }
 
-        .project-panel:hover::after {
-            border-color: var(--accent-red);
+        .showcase-desc {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .showcase-tags {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .tag-pill {
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 0.35rem 0.85rem;
+            background: var(--bg-base);
+            border: 1px solid var(--border-glass);
+            border-radius: 4px;
+            color: var(--text-dim);
         }
 
         /* ==========================================================================
@@ -1214,6 +1138,7 @@
             background: var(--bg-surface);
             border-top: 1px solid var(--border-glass);
             border-bottom: 1px solid var(--border-glass);
+            overflow: hidden;
         }
 
         .ba-container {
@@ -1239,7 +1164,7 @@
 
         .ba-image-before {
             z-index: 1;
-            filter: grayscale(80%) contrast(90%);
+            filter: grayscale(0%) contrast(100%);
         }
 
         .ba-image-after-container {
@@ -1347,103 +1272,7 @@
         }
 
         /* ==========================================================================
-           9. PRODUCT EDITING SECTION
-           ========================================================================== */
-        .product-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3.5rem;
-            align-items: center;
-        }
-
-        .product-comparison-box {
-            position: relative;
-            background: var(--bg-surface);
-            border: 1px solid var(--border-glass);
-            border-radius: 12px;
-            padding: 1.75rem;
-            display: flex;
-            gap: 1.5rem;
-            align-items: center;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.03);
-        }
-
-        .product-card {
-            flex: 1;
-            position: relative;
-            border-radius: 8px;
-            overflow: hidden;
-            background: var(--bg-base);
-            border: 1px solid var(--border-glass);
-        }
-
-        .product-card img {
-            width: 100%;
-            aspect-ratio: 1;
-            object-fit: cover;
-        }
-
-        .product-card-label {
-            position: absolute;
-            bottom: 8px;
-            left: 8px;
-            font-size: 0.65rem;
-            font-weight: 800;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            padding: 0.2rem 0.5rem;
-            background: rgba(8, 17, 31, 0.85);
-            color: #FFF;
-            border-radius: 3px;
-        }
-
-        .product-arrow {
-            color: var(--accent-red);
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-
-        .product-features-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 1.25rem;
-        }
-
-        .product-feature-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-        }
-
-        .product-feature-icon {
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            background: rgba(200, 16, 46, 0.1);
-            color: var(--accent-red);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.75rem;
-            font-weight: bold;
-            flex-shrink: 0;
-            margin-top: 2px;
-        }
-
-        .product-feature-title {
-            font-size: 0.95rem;
-            font-weight: 700;
-            margin-bottom: 0.25rem;
-        }
-
-        .product-feature-desc {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-        }
-
-        /* ==========================================================================
-           10. WEB DEVELOPMENT SECTION
+           9. WEB DEVELOPMENT SECTION
            ========================================================================== */
         .webdev-container {
             position: relative;
@@ -1542,77 +1371,128 @@
         }
 
         /* ==========================================================================
-           11. SERVICES SECTION
+           10. CAPABILITIES & SERVICES
            ========================================================================== */
-        .services-list {
+        .services-grid-redesign {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .service-card-new {
+            position: relative;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-glass);
+            border-radius: 16px;
+            padding: 3rem 2.5rem;
             display: flex;
             flex-direction: column;
-            border-top: 1px solid var(--border-glass);
-        }
-
-        .service-item {
-            display: grid;
-            grid-template-columns: 80px 1.5fr 2fr 40px;
-            align-items: center;
-            padding: 2.5rem 1rem;
-            border-bottom: 1px solid var(--border-glass);
-            position: relative;
+            justify-content: space-between;
+            min-height: 320px;
+            overflow: hidden;
             transition: var(--transition-smooth);
-            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
         }
 
-        .service-item::before {
+        .service-card-new::before {
             content: '';
             position: absolute;
-            left: 0;
             top: 0;
-            bottom: 0;
-            width: 0;
-            background-color: var(--accent-red);
-            transition: width 0.3s var(--ease-out-expo);
+            left: 0;
+            width: 4px;
+            height: 0;
+            background: var(--accent-red);
+            transition: height 0.4s var(--ease-out-expo);
         }
 
-        .service-item:hover::before {
-            width: 5px;
+        .service-card-new:hover {
+            border-color: var(--accent-red);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 45px rgba(0,0,0,0.06), 0 0 25px var(--accent-red-glow);
         }
 
-        .service-item:hover {
-            background: rgba(0,0,0,0.015);
-            padding-left: 1.75rem;
+        .service-card-new:hover::before {
+            height: 100%;
         }
 
-        .service-num {
+        .service-card-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+        }
+
+        .service-card-num {
             font-family: var(--font-display);
-            font-size: 1.6rem;
+            font-size: 2.5rem;
             color: var(--accent-red);
+            line-height: 1;
         }
 
-        .service-title {
+        .service-card-icon-wrapper {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background: rgba(200, 16, 46, 0.08);
+            color: var(--accent-red);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            transition: var(--transition-smooth);
+        }
+
+        .service-card-new:hover .service-card-icon-wrapper {
+            background: var(--accent-red);
+            color: #FFFFFF;
+            transform: rotate(-8deg) scale(1.1);
+        }
+
+        .service-card-title {
             font-family: var(--font-display);
-            font-size: 2.2rem;
+            font-size: 2.4rem;
             letter-spacing: 1px;
+            line-height: 1.05;
             text-transform: uppercase;
+            margin-bottom: 0.75rem;
         }
 
-        .service-sub {
-            font-size: 0.9rem;
-            color: var(--text-dim);
-            font-weight: 500;
-        }
-
-        .service-arrow {
-            font-size: 1.25rem;
+        .service-card-desc {
+            font-size: 0.95rem;
             color: var(--text-muted);
-            transition: transform 0.3s ease, color 0.3s ease;
+            line-height: 1.6;
+            margin-bottom: 2rem;
         }
 
-        .service-item:hover .service-arrow {
-            transform: translateX(8px);
+        .service-card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-glass);
+            font-size: 0.8rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--text-dim);
+            transition: color 0.3s ease;
+        }
+
+        .service-card-new:hover .service-card-footer {
             color: var(--accent-red);
+        }
+
+        .service-card-arrow {
+            font-size: 1.25rem;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card-new:hover .service-card-arrow {
+            transform: translateX(8px);
         }
 
         /* ==========================================================================
-           12. PHILOSOPHY INTERSTITIAL
+           11. PHILOSOPHY INTERSTITIAL
            ========================================================================== */
         .philosophy-banner {
             position: relative;
@@ -1639,7 +1519,7 @@
         }
 
         /* ==========================================================================
-           13. CONTACT SECTION & FOOTER
+           12. CONTACT SECTION & FOOTER
            ========================================================================== */
         .contact-grid {
             display: grid;
@@ -1696,6 +1576,7 @@
             border-radius: 12px;
             border: 1px solid var(--border-glass);
             box-shadow: 0 20px 40px rgba(0,0,0,0.03);
+            width: 100%;
         }
 
         .form-group {
@@ -1734,11 +1615,13 @@
         }
 
         .site-footer {
-            padding: 3rem 2rem;
+            padding: 3rem 1.5rem;
             border-top: 1px solid var(--border-glass);
             position: relative;
             z-index: 2;
             background: var(--bg-base);
+            width: 100%;
+            overflow-x: hidden;
         }
 
         .footer-container {
@@ -1749,6 +1632,7 @@
             justify-content: space-between;
             flex-wrap: wrap;
             gap: 1.5rem;
+            width: 100%;
         }
 
         .footer-copy {
@@ -1759,39 +1643,59 @@
 
         .footer-nav {
             display: flex;
-            gap: 2rem;
+            gap: 1.5rem;
             list-style: none;
             font-size: 0.75rem;
             font-weight: 800;
             letter-spacing: 1.5px;
             text-transform: uppercase;
             color: var(--text-muted);
+            flex-wrap: wrap;
         }
 
         /* ==========================================================================
-           14. RESPONSIVE BREAKPOINTS
+           13. RESPONSIVE BREAKPOINTS & MOBILE OVERFLOW / ALIGNMENT FIXES
            ========================================================================== */
         @media (max-width: 1024px) {
-            .hero-layout-redesign { grid-template-columns: 1fr; gap: 4rem; }
-            .hero-visual-collage { height: 420px; }
+            .hero-layout-redesign { grid-template-columns: 1fr; gap: 3rem; }
+            .hero-visual-collage { height: 440px; }
             .bento-intro { grid-column: span 12; }
             .bento-portrait { grid-column: span 12; height: 320px; }
             .bento-skills { grid-template-columns: 1fr; }
             .bento-metrics { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
             .metric-unit { border-right: none; }
-            .project-panel.col-8, .project-panel.col-4 { grid-column: span 12; }
-            .product-grid { grid-template-columns: 1fr; }
-            .contact-grid { grid-template-columns: 1fr; }
-            .service-item { grid-template-columns: 50px 1fr 40px; }
-            .service-sub { display: none; }
+            .showcase-item, .showcase-item:nth-child(even) { grid-template-columns: 1fr; }
+            .showcase-item:nth-child(even) .showcase-media { order: 1; }
+            .services-grid-redesign { grid-template-columns: 1fr; }
+            .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
         }
 
         @media (max-width: 768px) {
+            section {
+                padding: 3.5rem 1rem;
+            }
+
+            .section-header {
+                margin-bottom: 2rem;
+            }
+
+            .nav-wrapper {
+                top: 0.75rem;
+                left: 50%;
+                transform: translateX(-50%);
+                width: calc(100% - 2rem);
+                padding: 0;
+            }
+
+            .nav-container {
+                padding: 0.6rem 1.25rem;
+            }
+
             .nav-menu {
                 position: fixed;
                 top: 0;
                 right: -100%;
-                width: 80%;
+                width: 85%;
                 height: 100vh;
                 background: var(--bg-surface);
                 flex-direction: column;
@@ -1804,12 +1708,145 @@
 
             .nav-menu.active { right: 0; }
             .mobile-hamburger { display: flex; }
-            .project-panel.col-6 { grid-column: span 12; }
-            .ba-container { height: 380px; }
+
+            /* Fix Mobile Typography in About Section */
+            .bento-card {
+                padding: 1.5rem;
+            }
+
+            .bento-intro .about-lead {
+                font-size: 1.1rem;
+                line-height: 1.5;
+                margin-bottom: 0.75rem;
+            }
+
+            .bento-intro p {
+                font-size: 0.88rem;
+                line-height: 1.6;
+            }
+
+            .skill-bento-card {
+                padding: 1.25rem;
+            }
+
+            .skill-bento-title {
+                font-size: 1.4rem;
+            }
+
+            .metric-num {
+                font-size: 2.2rem;
+            }
+
+            .metric-label {
+                font-size: 0.7rem;
+                letter-spacing: 1px;
+            }
+
+            .bento-metrics {
+                padding: 1.25rem;
+                gap: 1.25rem;
+            }
+
+            /* Fix Selected Projects Mobile Gaps */
+            .portfolio-filter {
+                gap: 0.5rem;
+                margin-bottom: 2rem;
+            }
+
+            .filter-btn {
+                padding: 0.45rem 1rem;
+                font-size: 0.7rem;
+            }
+
+            .portfolio-showcase-list {
+                gap: 2rem;
+            }
+
+            .showcase-info {
+                padding: 1.5rem 1.25rem;
+            }
+
+            .showcase-title {
+                font-size: 1.5rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .showcase-desc {
+                font-size: 0.88rem;
+                margin-bottom: 1.25rem;
+            }
+
+            .showcase-tags {
+                margin-bottom: 1.25rem;
+            }
+
+            .showcase-media {
+                height: 260px;
+            }
+
+            /* Fix Before/After image sizing and vertical spacing on mobile */
+            .transformation-section {
+                padding-top: 3.5rem;
+                padding-bottom: 3.5rem;
+            }
+
+            .ba-container { 
+                height: 300px; 
+                width: 100%;
+            }
+
+            .ba-image-after-container .ba-image {
+                width: calc(100vw - 2rem);
+                max-width: 1000px;
+            }
+
+            .ba-tags {
+                margin-top: 1.5rem;
+                gap: 1rem;
+            }
+
+            /* Fix Philosophy Section Banner Excessive Spaces */
+            .philosophy-banner {
+                padding: 3.5rem 1rem;
+            }
+
+            .philosophy-quote {
+                font-size: clamp(1.8rem, 7vw, 3rem);
+                line-height: 1.15;
+            }
+
+            /* Services Mobile Tightening */
+            .service-card-new {
+                padding: 1.5rem;
+                min-height: auto;
+            }
+
+            .service-card-title {
+                font-size: 1.8rem;
+            }
+
+            .service-card-top {
+                margin-bottom: 1rem;
+            }
+
+            .service-card-desc {
+                margin-bottom: 1.25rem;
+                font-size: 0.88rem;
+            }
+
             .mobile-mockup { display: none; }
             .custom-cursor { display: none !important; }
-            .bento-metrics { grid-template-columns: 1fr; text-align: center; }
             .hero-visual-collage { scale: 0.85; }
+
+            .contact-form {
+                padding: 1.25rem;
+            }
+
+            .footer-container {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
         }
     </style>
 </head>
@@ -1827,20 +1864,24 @@
     <!-- Floating Navigation Bar -->
     <header class="nav-wrapper" id="navWrapper">
         <div class="nav-container">
-            <a href="#" class="nav-brand spider-glitch">ZA<span>.</span></a>
+            <a href="#" class="nav-brand spider-glitch">ZOHAIRI</a>
             
             <ul class="nav-menu" id="navMenu">
-                <li><a href="#work" class="nav-link">Work</a></li>
+                <li><a href="#" class="nav-link">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#work" class="nav-link">Work</a></li>
                 <li><a href="#services" class="nav-link">Services</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
 
             <div class="nav-controls">
+                <!-- Icon-Only Light / Dark Toggle Button -->
                 <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Theme">
-                    <span id="themeToggleText">LIGHT</span>
+                    <svg class="theme-toggle-icon" id="themeToggleIcon" viewBox="0 0 24 24">
+                        <path d="M12.3 2a10 10 0 0 0-1.9 20 10 10 0 0 0 9.6-7 1 1 0 0 0-1.2-1.2 8 8 0 1 1-8.5-10.6 1 1 0 0 0-1-1.2z"/>
+                    </svg>
                 </button>
-                <a href="#contact" class="btn-primary" style="padding: 0.5rem 1.25rem; font-size: 0.75rem;">Start A Project</a>
+                <a href="#contact" class="btn-primary" style="padding: 0.5rem 1.25rem; font-size: 0.75rem;">Hire Me</a>
                 
                 <div class="mobile-hamburger" id="mobileHamburger" aria-label="Open Menu">
                     <span></span>
@@ -1851,7 +1892,7 @@
         </div>
     </header>
 
-    <!-- HERO SECTION WITH DYNAMIC SPIDER-VERSE ANIMATION -->
+    <!-- HERO SECTION -->
     <section class="hero" id="hero">
         <div class="rim-light-red" style="top: 5%; left: -10%;"></div>
         <div class="rim-light-blue" style="bottom: 5%; right: -10%;"></div>
@@ -1864,40 +1905,28 @@
             <div class="hero-left-col reveal">
                 <div class="hero-tag">ZOHAIR AHMED / CREATIVE PORTFOLIO</div>
                 <h1 class="hero-title-redesign">
-                    GREAT POWER.<br>
+                    GREAT POWER<br>
                     <span class="outline-text">GREAT</span> <span class="highlight-red spider-glitch">DESIGN.</span>
                 </h1>
                 <div class="hero-subtitle-line">Graphic Design · Photo Editing · Web Development</div>
                 <p class="hero-paragraph">
-                    Creating visual identities, polished imagery and modern digital experiences that make brands impossible to ignore.
+                    I create clean, high-impact visuals and professional websites that help businesses look better, communicate clearly, and stand out.
                 </p>
                 <div class="hero-cta-group">
                     <a href="#work" class="btn-primary">View My Work</a>
-                    <a href="#contact" class="btn-secondary">Start A Project</a>
+                    <a href="#contact" class="btn-secondary">Hire Me</a>
                 </div>
             </div>
 
             <div class="hero-visual-collage reveal">
                 <div class="collage-bg-web"></div>
 
-                <!-- Layer 1: Main Portrait Frame -->
+                <!-- Single Hero Portrait Frame -->
                 <div class="collage-card card-main">
-                    <!-- REPLACE WITH HERO PORTRAIT -->
-                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80" alt="Zohair Ahmed Hero">
+                    <img src="https://res.cloudinary.com/e5gbmcqo/image/upload/v1786602499/Zohair_Ahmed.jpg" alt="Zohair Ahmed Hero">
                 </div>
 
-                <!-- Layer 2: Web Dev Mini Preview -->
-                <div class="collage-card card-dev">
-                    <div class="card-dev-header">
-                        <div class="card-dev-dot"></div>
-                        <div class="card-dev-dot"></div>
-                        <div class="card-dev-dot"></div>
-                    </div>
-                    <!-- REPLACE WITH MINI WEB SCREENSHOT -->
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=500&q=80" alt="Web Project Preview">
-                </div>
-
-                <!-- Layer 3: Dynamic Stat Badge -->
+                <!-- Dynamic Stat Badge -->
                 <div class="collage-card card-badge">
                     <div class="badge-icon">⚡</div>
                     <div>
@@ -1913,11 +1942,11 @@
         </div>
     </section>
 
-    <!-- REDESIGNED ABOUT SECTION -->
+    <!-- ABOUT SECTION -->
     <section id="about">
         <div class="section-container">
             <div class="section-header reveal">
-                <span class="section-label">THE PERSON BEHIND THE WORK</span>
+                <span class="section-label">GET TO KNOW THE PERSON BEHIND THE WORK</span>
                 <h2 class="section-title">BEHIND THE MASK.</h2>
             </div>
 
@@ -1925,17 +1954,16 @@
                 <!-- Bento Card 1: Main Bio -->
                 <div class="bento-card bento-intro reveal">
                     <p class="about-lead">
-                        I am Zohair Ahmed, a multidisciplinary creative focused on graphic design, professional photo editing, and high-performance WordPress development.
+                        I’m Zohair Ahmed, a Graphic Designer and Web Developer focused on creating polished visuals, compelling photo edits, and modern websites. <br> From product images and photo manipulation to complete websites, I combine creativity with attention to detail to turn ideas into professional digital experiences.
                     </p>
                     <p>
-                        Like a carefully woven web, impactful design balances structural integrity with cinematic precision. Over 4+ years of freelance experience, I have helped brands, agencies, and e-commerce stores develop compelling visual presences.
+                        Like a carefully woven web, impactful design balances structural integrity with cinematic precision. Over 5+ years of freelance experience, I have helped brands, agencies, and e-commerce stores develop compelling visual presences.
                     </p>
                 </div>
 
                 <!-- Bento Card 2: Portrait Frame -->
                 <div class="bento-card bento-portrait reveal">
-                    <!-- REPLACE WITH PORTRAIT IMAGE -->
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80" alt="Zohair Ahmed Profile">
+                    <img src="https://res.cloudinary.com/e5gbmcqo/image/upload/v1786603619/Zohairi.jpg" alt="Zohair Ahmed Profile">
                     <div class="bento-portrait-overlay"></div>
                 </div>
 
@@ -1949,7 +1977,7 @@
                             </div>
                             <div class="skill-bento-title">GRAPHIC DESIGN</div>
                         </div>
-                        <div class="skill-bento-list">Branding · Marketing · Visual Systems</div>
+                        <div class="skill-bento-list">Photoshop • Branding • Visual Design</div>
                     </div>
 
                     <div class="skill-bento-card">
@@ -1960,7 +1988,7 @@
                             </div>
                             <div class="skill-bento-title">PHOTO EDITING</div>
                         </div>
-                        <div class="skill-bento-list">Retouching · Manipulation · Product Edit</div>
+                        <div class="skill-bento-list">Retouching • Manipulation • Product Editing</div>
                     </div>
 
                     <div class="skill-bento-card">
@@ -1971,14 +1999,14 @@
                             </div>
                             <div class="skill-bento-title">WEB DEVELOPMENT</div>
                         </div>
-                        <div class="skill-bento-list">WordPress · Elementor · WooCommerce</div>
+                        <div class="skill-bento-list">Websites • E-Commerce Stores • Landing Pages</div>
                     </div>
                 </div>
 
                 <!-- Bento Card 4: Metrics Strip -->
                 <div class="bento-metrics reveal">
                     <div class="metric-unit">
-                        <div class="metric-num">04+</div>
+                        <div class="metric-num">05+</div>
                         <div class="metric-label">Years Experience</div>
                     </div>
                     <div class="metric-unit">
@@ -1991,7 +2019,7 @@
                     </div>
                     <div class="metric-unit">
                         <div class="metric-num">24h</div>
-                        <div class="metric-label">Rapid Response</div>
+                        <div class="metric-label">Quick Response</div>
                     </div>
                 </div>
             </div>
@@ -2002,76 +2030,92 @@
     <section id="work">
         <div class="section-container">
             <div class="section-header reveal">
-                <span class="section-label">WEB OF WORK</span>
+                <span class="section-label">A SELECTION OF MY BEST WORK</span>
                 <h2 class="section-title">SELECTED PROJECTS.</h2>
             </div>
 
             <div class="portfolio-filter reveal">
                 <button class="filter-btn active" data-filter="all">ALL</button>
-                <button class="filter-btn" data-filter="photo">PHOTO</button>
-                <button class="filter-btn" data-filter="product">PRODUCT</button>
-                <button class="filter-btn" data-filter="design">DESIGN</button>
-                <button class="filter-btn" data-filter="web">WEB</button>
+                <button class="filter-btn" data-filter="photo">PHOTO Editing</button>
+                <button class="filter-btn" data-filter="product">PRODUCT Editing</button>
+                <button class="filter-btn" data-filter="design">Graphic DESIGN</button>
+                <button class="filter-btn" data-filter="web">WEB Development</button>
             </div>
 
-            <div class="portfolio-comic-grid">
-                <!-- Project 01 (Large Panel) -->
-                <div class="project-panel col-8 reveal" data-category="photo">
-                    <div class="project-panel-inner">
-                        <!-- REPLACE WITH ACTUAL PROJECT IMAGE -->
-                        <img src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=1200&q=80" alt="Editorial Portrait Manipulation" class="project-img">
-                        <div class="project-panel-overlay"></div>
-                        <div class="project-panel-content">
-                            <div class="project-number">01</div>
-                            <span class="project-category">PHOTO MANIPULATION</span>
-                            <h3 class="project-title">Editorial Portrait Manipulation</h3>
-                            <p class="project-desc">Advanced color grading, lighting reconstruction, and surreal composite work for editorial publishing.</p>
+            <div class="portfolio-showcase-list">
+                <!-- Showcase Item 1 -->
+                <div class="showcase-item reveal" data-category="photo">
+                    <div class="showcase-media">
+                        <img src="https://res.cloudinary.com/e5gbmcqo/image/upload/v1786606799/Photo-Manipulation.jpg?auto=format&fit=crop&w=1200&q=80" alt="Editorial Portrait Manipulation" class="showcase-img">
+                        <div class="showcase-badge">PROFESSIONAL PHOTO EDITING</div>
+                    </div>
+                    <div class="showcase-info">
+                        <div class="showcase-num">01</div>
+                        <h3 class="showcase-title">Photo Editing</h3>
+                        <p class="showcase-desc">Creative photo manipulation, professional retouching, color grading, and detailed image enhancement crafted to turn ordinary photographs into striking visuals.</p>
+                        <div class="showcase-tags">
+                            <span class="tag-pill">Photo Manipulation</span>
+                            <span class="tag-pill">Color Grading</span>
+                            <span class="tag-pill">Photo Retouching</span>
                         </div>
+                        <a href="https://www.behance.net/gallery/238339565/Stage-Theater-Editorial-Retouching-Case-Study" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="align-self: flex-start; padding: 0.6rem 1.25rem; font-size: 0.75rem;">View Related Project →</a>
                     </div>
                 </div>
 
-                <!-- Project 02 (Small Panel) -->
-                <div class="project-panel col-4 reveal" data-category="product">
-                    <div class="project-panel-inner">
-                        <!-- REPLACE WITH ACTUAL PROJECT IMAGE -->
-                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80" alt="E-commerce Product Imagery" class="project-img">
-                        <div class="project-panel-overlay"></div>
-                        <div class="project-panel-content">
-                            <div class="project-number">02</div>
-                            <span class="project-category">PRODUCT EDITING</span>
-                            <h3 class="project-title">Luxury Watch Visualization</h3>
-                            <p class="project-desc">High-end product cleanup, reflection adjustment, and shadow creation.</p>
+                <!-- Showcase Item 2 -->
+                <div class="showcase-item reveal" data-category="product">
+                    <div class="showcase-media">
+                        <img src="https://res.cloudinary.com/e5gbmcqo/image/upload/v1786606919/Product.jpg?auto=format&fit=crop&w=1200&q=80" alt="E-commerce Product Imagery" class="showcase-img">
+                        <div class="showcase-badge">PRODUCT EDITING</div>
+                    </div>
+                    <div class="showcase-info">
+                        <div class="showcase-num">02</div>
+                        <h3 class="showcase-title">PRODUCT PHOTO EDITING</h3>
+                        <p class="showcase-desc">Clean, polished product images created for e-commerce, advertising, and marketing, with professional retouching, background removal, and visual enhancement.</p>
+                        <div class="showcase-tags">
+                            <span class="tag-pill">Product Retouching</span>
+                            <span class="tag-pill">E-Commerce</span>
+                            <span class="tag-pill">Background Change/Remove</span>
                         </div>
+                        <a href="https://www.behance.net/gallery/236152501/Product-Lifestyle-Photography-Retouching" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="align-self: flex-start; padding: 0.6rem 1.25rem; font-size: 0.75rem;">View Related Project →</a>
                     </div>
                 </div>
 
-                <!-- Project 03 (Medium Panel) -->
-                <div class="project-panel col-6 reveal" data-category="design">
-                    <div class="project-panel-inner">
-                        <!-- REPLACE WITH ACTUAL PROJECT IMAGE -->
-                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80" alt="Brand Identity Campaign" class="project-img">
-                        <div class="project-panel-overlay"></div>
-                        <div class="project-panel-content">
-                            <div class="project-number">03</div>
-                            <span class="project-category">GRAPHIC DESIGN</span>
-                            <h3 class="project-title">Neo-Tokyo Brand Campaign</h3>
-                            <p class="project-desc">Complete visual design language and marketing asset suite for a modern agency.</p>
+                <!-- Showcase Item 3 -->
+                <div class="showcase-item reveal" data-category="design">
+                    <div class="showcase-media">
+                        <img src="https://res.cloudinary.com/e5gbmcqo/image/upload/v1786607123/Graphic.jpg?auto=format&fit=crop&w=1200&q=80" alt="Brand Identity Campaign" class="showcase-img">
+                        <div class="showcase-badge">GRAPHIC DESIGN</div>
+                    </div>
+                    <div class="showcase-info">
+                        <div class="showcase-num">03</div>
+                        <h3 class="showcase-title">Graphic Design</h3>
+                        <p class="showcase-desc">Purposeful visual designs that help brands communicate clearly, from social media graphics and marketing materials to posters, flyers, and branded content.</p>
+                        <div class="showcase-tags">
+                            <span class="tag-pill">Graphic Design</span>
+                            <span class="tag-pill">Branding</span>
+                            <span class="tag-pill">Marketing Visuals</span>
                         </div>
+                        <a href="https://www.behance.net/gallery/241180207/NGO-Campaign-Design-Ramadan-Pack-2025" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="align-self: flex-start; padding: 0.6rem 1.25rem; font-size: 0.75rem;">View Related Project →</a>
                     </div>
                 </div>
 
-                <!-- Project 04 (Medium Panel) -->
-                <div class="project-panel col-6 reveal" data-category="web">
-                    <div class="project-panel-inner">
-                        <!-- REPLACE WITH ACTUAL PROJECT IMAGE -->
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Custom WordPress Store" class="project-img">
-                        <div class="project-panel-overlay"></div>
-                        <div class="project-panel-content">
-                            <div class="project-number">04</div>
-                            <span class="project-category">WEB DEVELOPMENT</span>
-                            <h3 class="project-title">Custom WooCommerce Architecture</h3>
-                            <p class="project-desc">Bespoke WooCommerce setup with Elementor Pro custom layouts and high page speed rating.</p>
+                <!-- Showcase Item 4 -->
+                <div class="showcase-item reveal" data-category="web">
+                    <div class="showcase-media">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80" alt="Custom WordPress Store" class="showcase-img">
+                        <div class="showcase-badge">WEB DEVELOPMENT</div>
+                    </div>
+                    <div class="showcase-info">
+                        <div class="showcase-num">04</div>
+                        <h3 class="showcase-title">Custom Website Development</h3>
+                        <p class="showcase-desc">Modern, responsive websites designed to give businesses a professional digital presence with clean layouts, strong visuals, and intuitive user experiences.</p>
+                        <div class="showcase-tags">
+                            <span class="tag-pill">Responsive Design</span>
+                            <span class="tag-pill">E-Commerce Store</span>
+                            <span class="tag-pill">Landing Page</span>
                         </div>
+                        <a href="https://www.behance.net/gallery/231244663/E-commerce-Website-for-Cosmetics-Beauty-Products?platform=direct" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="align-self: flex-start; padding: 0.6rem 1.25rem; font-size: 0.75rem;">View Related Project →</a>
                     </div>
                 </div>
             </div>
@@ -2082,20 +2126,18 @@
     <section class="transformation-section">
         <div class="section-container">
             <div class="section-header reveal" style="text-align: center;">
-                <span class="section-label">PHOTO EDITING TRANSFORMATION</span>
-                <h2 class="section-title">FROM RAW TO HERO.</h2>
+                <span class="section-label">DETAILS MATTER</span>
+                <h2 class="section-title">FROM RAW TO REFINED.</h2>
             </div>
 
             <div class="ba-container reveal" id="baContainer">
                 <div class="ba-badge before">BEFORE</div>
                 <div class="ba-badge after">AFTER</div>
                 
-                <!-- REPLACE WITH ACTUAL BEFORE IMAGE -->
-                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1200&q=80" alt="Before Edit" class="ba-image ba-image-before">
+                <img src="https://res.cloudinary.com/e5gbmcqo/image/upload/v1786638952/After.jpg?auto=format&fit=crop&w=1200&q=80" alt="Before Edit" class="ba-image ba-image-before">
                 
                 <div class="ba-image-after-container" id="baAfterContainer">
-                    <!-- REPLACE WITH ACTUAL AFTER IMAGE -->
-                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1200&q=80&sat=50" alt="After Edit" class="ba-image">
+                    <img src="https://res.cloudinary.com/e5gbmcqo/image/upload/v1786638940/Before.jpg?auto=format&fit=crop&w=1200&q=80&sat=50" alt="After Edit" class="ba-image">
                 </div>
 
                 <div class="ba-handle" id="baHandle">
@@ -2113,64 +2155,13 @@
         </div>
     </section>
 
-    <!-- PRODUCT EDITING SECTION -->
-    <section>
-        <div class="section-container">
-            <div class="product-grid">
-                <div class="reveal">
-                    <div class="section-header">
-                        <span class="section-label">PRODUCT VISUALS</span>
-                        <h2 class="section-title">YOUR PRODUCT.<br>ITS BEST VERSION.</h2>
-                    </div>
-                    <ul class="product-features-list">
-                        <li class="product-feature-item">
-                            <div class="product-feature-icon">✓</div>
-                            <div>
-                                <div class="product-feature-title">Background Removal & Cleanup</div>
-                                <div class="product-feature-desc">Isolating products with razor-sharp masks and removing dust or blemishes.</div>
-                            </div>
-                        </li>
-                        <li class="product-feature-item">
-                            <div class="product-feature-icon">✓</div>
-                            <div>
-                                <div class="product-feature-title">Color Matching & Correction</div>
-                                <div class="product-feature-desc">Ensuring accurate e-commerce swatch matching and vivid hue control.</div>
-                            </div>
-                        </li>
-                        <li class="product-feature-item">
-                            <div class="product-feature-icon">✓</div>
-                            <div>
-                                <div class="product-feature-title">Realistic Shadows & Reflections</div>
-                                <div class="product-feature-desc">Generating realistic drop shadows, soft ground contact shadows, and glass reflection effects.</div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="product-comparison-box reveal">
-                    <div class="product-card">
-                        <!-- REPLACE WITH RAW PRODUCT IMAGE -->
-                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=500&q=80" alt="Raw Product">
-                        <div class="product-card-label">RAW</div>
-                    </div>
-                    <div class="product-arrow">→</div>
-                    <div class="product-card" style="border-color: var(--accent-red);">
-                        <!-- REPLACE WITH EDITED PRODUCT IMAGE -->
-                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=500&q=80" alt="Edited Product" style="filter: contrast(115%) saturate(120%);">
-                        <div class="product-card-label" style="background: var(--accent-red); color:#FFF;">ENHANCED</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- WEB DEVELOPMENT SECTION -->
     <section class="webdev-container" id="webdev">
         <div class="section-container">
             <div class="section-header reveal" style="text-align: center;">
                 <span class="section-label">WEB DEVELOPMENT</span>
-                <h2 class="section-title">I BUILD DIGITAL WEBS.</h2>
-                <p style="color: var(--text-dim); margin-top: 0.5rem; font-weight: 600;">WordPress · Elementor · WooCommerce · Responsive Engineering</p>
+                <h2 class="section-title">I BUILD DIGITAL EXPERIENCES.</h2>
+                <p style="color: var(--text-dim); margin-top: 0.5rem; font-weight: 400;">Responsive Design · Landing Pages · E-Commerce Stores</p>
             </div>
 
             <div class="browser-mockup reveal">
@@ -2178,15 +2169,13 @@
                     <div class="browser-dot red"></div>
                     <div class="browser-dot yellow"></div>
                     <div class="browser-dot green"></div>
-                    <div class="browser-address">https://zohairahmed.design/live-demo</div>
+                    <div class="browser-address">https://zohairi.vercel.app</div>
                 </div>
                 <div class="browser-body">
-                    <!-- REPLACE WITH WEB MOCKUP SCREENSHOT -->
-                    <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1200&q=80" alt="Website Screenshot">
+                    <img src="https://res.cloudinary.com/e5gbmcqo/image/upload/v1786641407/website.jpg?auto=format&fit=crop&w=1200&q=80" alt="Website Screenshot">
                     
                     <div class="mobile-mockup">
-                        <!-- REPLACE WITH MOBILE WEB MOCKUP SCREENSHOT -->
-                        <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=400&q=80" alt="Mobile Site View">
+                        <img src="https://res.cloudinary.com/e5gbmcqo/image/upload/v1786641613/mobile.jpg?auto=format&fit=crop&w=400&q=80" alt="Mobile Site View">
                     </div>
                 </div>
             </div>
@@ -2197,43 +2186,81 @@
     <section class="philosophy-banner">
         <div class="rim-light-red" style="top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0.2;"></div>
         <div class="philosophy-quote reveal">
-            WITH GREAT POWER<br>
-            COMES <span class="red spider-glitch">GREAT DESIGN.</span>
+            GOOD DESIGN GETS ATTENTION<br>
+            GREAT DESIGN <span class="red spider-glitch">GETS REMEMBERED.</span>
         </div>
     </section>
 
-    <!-- SERVICES SECTION -->
+    <!-- CAPABILITIES & SERVICES -->
     <section id="services">
         <div class="section-container">
             <div class="section-header reveal">
-                <span class="section-label">CAPABILITIES</span>
+                <span class="section-label">WHAT I DO</span>
                 <h2 class="section-title">SERVICES.</h2>
             </div>
+            
+            <div class="services-grid-redesign">
+                <!-- Service Card 1 -->
+                <div class="service-card-new reveal">
+                    <div>
+                        <div class="service-card-top">
+                            <div class="service-card-num">01</div>
+                            <div class="service-card-icon-wrapper">📸</div>
+                        </div>
+                        <h3 class="service-card-title">PHOTO EDITING</h3>
+                        <p class="service-card-desc">Professional retouching, photo manipulation, color correction, background removal, and image enhancement.</p>
+                    </div>
+                    <div class="service-card-footer">
+                        <span>Retouching · Manipulation · Color Grading</span>
+                        <span class="service-card-arrow">→</span>
+                    </div>
+                </div>
+                <!-- Service Card 2 -->
+                <div class="service-card-new reveal">
+                    <div>
+                        <div class="service-card-top">
+                            <div class="service-card-num">02</div>
+                            <div class="service-card-icon-wrapper">🎨</div>
+                        </div>
+                        <h3 class="service-card-title">GRAPHIC DESIGN</h3>
+                        <p class="service-card-desc">Brand visuals, social media graphics, posters, flyers, marketing materials, and custom visual designs.</p>
+                    </div>
+                    <div class="service-card-footer">
+                        <span>Branding · Marketing · Digital Presence</span>
+                        <span class="service-card-arrow">→</span>
+                    </div>
+                </div>
 
-            <div class="services-list">
-                <div class="service-item reveal">
-                    <div class="service-num">01</div>
-                    <div class="service-title">GRAPHIC DESIGN</div>
-                    <div class="service-sub">Branding · Marketing · Digital Systems</div>
-                    <div class="service-arrow">→</div>
+                <!-- Service Card 3 -->
+                <div class="service-card-new reveal">
+                    <div>
+                        <div class="service-card-top">
+                            <div class="service-card-num">03</div>
+                            <div class="service-card-icon-wrapper">💻</div>
+                        </div>
+                        <h3 class="service-card-title">WEB DEVELOPMENT</h3>
+                        <p class="service-card-desc">Tailor-made websites using Elementor, fast page-load engineering, mobile responsiveness, and custom functionality integrations.</p>
+                    </div>
+                    <div class="service-card-footer">
+                        <span>Landing Pages · E-Commerce Stores · Responsive Design</span>
+                        <span class="service-card-arrow">→</span>
+                    </div>
                 </div>
-                <div class="service-item reveal">
-                    <div class="service-num">02</div>
-                    <div class="service-title">PHOTO EDITING</div>
-                    <div class="service-sub">Retouching · Manipulation · Product Imaging</div>
-                    <div class="service-arrow">→</div>
-                </div>
-                <div class="service-item reveal">
-                    <div class="service-num">03</div>
-                    <div class="service-title">WEB DEVELOPMENT</div>
-                    <div class="service-sub">WordPress · Elementor · WooCommerce</div>
-                    <div class="service-arrow">→</div>
-                </div>
-                <div class="service-item reveal">
-                    <div class="service-num">04</div>
-                    <div class="service-title">E-COMMERCE VISUALS</div>
-                    <div class="service-sub">Product Images · Store Banners · Assets</div>
-                    <div class="service-arrow">→</div>
+
+                <!-- Service Card 4 -->
+                <div class="service-card-new reveal">
+                    <div>
+                        <div class="service-card-top">
+                            <div class="service-card-num">04</div>
+                            <div class="service-card-icon-wrapper">🛍️</div>
+                        </div>
+                        <h3 class="service-card-title">E-COMMERCE VISUALS</h3>
+                        <p class="service-card-desc">Product image editing, background removal, product enhancement, mockups, and visuals designed for online stores.</p>
+                    </div>
+                    <div class="service-card-footer">
+                        <span>E-Commerce · Store Banners · Product Editing</span>
+                        <span class="service-card-arrow">→</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -2246,39 +2273,40 @@
                 <div class="contact-info reveal">
                     <div>
                         <div class="section-header">
-                            <span class="section-label">START A PROJECT</span>
-                            <h2 class="section-title">LET'S MAKE YOUR BRAND UNFORGETTABLE.</h2>
+                            <span class="section-label">HAVE A PROJECT IN MIND?</span>
+                            <h2 class="section-title">LET'S MAKE YOUR BRAND STAND OUT.</h2>
                         </div>
                         <p class="contact-text-para">
-                            Graphic design, photo editing or a complete custom WordPress website. Tell me what you are building.
+                            Whether you need polished visuals, professional photo editing, or a modern website, let’s create something that looks as good as your business deserves.
                         </p>
                     </div>
 
                     <div>
                         <div style="font-size: 0.8rem; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--text-dim); margin-bottom: 0.5rem;">DIRECT EMAIL</div>
-                        <a href="mailto:contact@zohairahmed.com" style="font-size: 1.25rem; font-weight: 800; color: var(--accent-red);">contact@zohairahmed.com</a>
+                        <a href="mailto:zohairahmed06@gmail.com" style="font-size: 1.25rem; font-weight: 800; color: var(--accent-red);">zohairahmed06@gmail.com</a>
 
                         <div class="social-links">
-                            <a href="#" class="social-pill">LinkedIn</a>
-                            <a href="#" class="social-pill">Fiverr</a>
-                            <a href="#" class="social-pill">Upwork</a>
-                            <a href="#" class="social-pill">Behance</a>
+                            <a href="http://wa.me/923095913254" class="social-pill">WhatsApp</a>
+                            <a href="https://www.linkedin.com/in/zohair-ahmed06/" class="social-pill">LinkedIn</a>
+                            <a href="https://www.fiverr.com/s/38zrr7x" class="social-pill">Fiverr</a>
+                            <a href="https://upwork.com/freelancers/techtuner" class="social-pill">Upwork</a>
+                            <a href="https://www.behance.net/zohairahmed" class="social-pill">Behance</a>
                         </div>
                     </div>
                 </div>
 
-                <form class="contact-form reveal" id="contactForm" onsubmit="event.preventDefault(); alert('Message sent successfully!');">
+                <form class="contact-form reveal" id="contactForm">
                     <div class="form-group">
                         <label class="form-label" for="name">Your Name</label>
-                        <input type="text" id="name" class="form-input" placeholder="e.g. Peter Parker" required>
+                        <input type="text" id="name" name="name" class="form-input" placeholder="e.g. Peter Parker" required>
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="email">Email Address</label>
-                        <input type="email" id="email" class="form-input" placeholder="name@domain.com" required>
+                        <input type="email" id="email" name="email" class="form-input" placeholder="name@domain.com" required>
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="service">Project Type</label>
-                        <select id="service" class="form-select">
+                        <select id="service" name="service" class="form-select">
                             <option>Graphic Design</option>
                             <option>Photo Editing / Retouching</option>
                             <option>WordPress / Web Development</option>
@@ -2287,8 +2315,9 @@
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="message">Project Details</label>
-                        <textarea id="message" class="form-textarea" placeholder="Tell me about your goals, timeline, and budget..." required></textarea>
+                        <textarea id="message" name="message" class="form-textarea" placeholder="Tell me about your goals, timeline, and budget..." required></textarea>
                     </div>
+                    <input type="hidden" name="_subject" value="New Project Inquiry from Portfolio Website!">
                     <button type="submit" class="btn-primary" style="width: 100%; border: none;">Send Message →</button>
                 </form>
             </div>
@@ -2298,9 +2327,10 @@
     <!-- FOOTER -->
     <footer class="site-footer">
         <div class="footer-container">
-            <div class="nav-brand">ZA<span>.</span></div>
+            <div class="nav-brand">ZOHAIRI</div>
             <div class="footer-copy">© 2026 Zohair Ahmed. All rights reserved.</div>
             <ul class="footer-nav">
+                <li><a href="#">Home</a></li>
                 <li><a href="#work">Work</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
@@ -2309,23 +2339,36 @@
         </div>
     </footer>
 
+    <!-- SVG Icon Templates for Theme Switcher -->
+    <svg style="display: none;">
+        <g id="sun-icon">
+            <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41s-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41s-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/>
+        </g>
+        <g id="moon-icon">
+            <path d="M12.3 2a10 10 0 0 0-1.9 20 10 10 0 0 0 9.6-7 1 1 0 0 0-1.2-1.2 8 8 0 1 1-8.5-10.6 1 1 0 0 0-1-1.2z"/>
+        </g>
+    </svg>
+
     <!-- JavaScript Logic -->
     <script>
         /* ==========================================================================
-           1. DARK / LIGHT THEME TOGGLE
+           1. ICON-BASED DARK / LIGHT THEME TOGGLE (DARK MODE DEFAULT)
            ========================================================================== */
         const themeToggleBtn = document.getElementById('themeToggleBtn');
-        const themeToggleText = document.getElementById('themeToggleText');
+        const themeToggleIcon = document.getElementById('themeToggleIcon');
         const htmlElement = document.documentElement;
+
+        const sunSVG = '<path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41s-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41s-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/>';
+        const moonSVG = '<path d="M12.3 2a10 10 0 0 0-1.9 20 10 10 0 0 0 9.6-7 1 1 0 0 0-1.2-1.2 8 8 0 1 1-8.5-10.6 1 1 0 0 0-1-1.2z"/>';
 
         const savedTheme = localStorage.getItem('theme');
 
         if (savedTheme) {
             htmlElement.setAttribute('data-theme', savedTheme);
-            updateThemeUI(savedTheme);
+            updateThemeIcon(savedTheme);
         } else {
-            htmlElement.setAttribute('data-theme', 'light');
-            updateThemeUI('light');
+            htmlElement.setAttribute('data-theme', 'dark');
+            updateThemeIcon('dark');
         }
 
         themeToggleBtn.addEventListener('click', () => {
@@ -2334,11 +2377,11 @@
             
             htmlElement.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
-            updateThemeUI(newTheme);
+            updateThemeIcon(newTheme);
         });
 
-        function updateThemeUI(theme) {
-            themeToggleText.textContent = theme === 'dark' ? 'DARK' : 'LIGHT';
+        function updateThemeIcon(theme) {
+            themeToggleIcon.innerHTML = theme === 'dark' ? moonSVG : sunSVG;
         }
 
         /* ==========================================================================
@@ -2440,7 +2483,6 @@
             const strokeStyle = isDark ? 'rgba(255, 255, 255, 0.05)' : 'rgba(8, 17, 31, 0.05)';
             const activeStroke = isDark ? 'rgba(226, 29, 47, 0.25)' : 'rgba(200, 16, 46, 0.22)';
 
-            // Connect nodes
             for (let i = 0; i < nodes.length; i++) {
                 for (let j = i + 1; j < nodes.length; j++) {
                     const dx = nodes[i].x - nodes[j].x;
@@ -2457,7 +2499,6 @@
                     }
                 }
 
-                // Interactive Web Attachment to Cursor
                 if (mouse.x !== null && mouse.y !== null) {
                     const mdx = nodes[i].x - mouse.x;
                     const mdy = nodes[i].y - mouse.y;
@@ -2536,10 +2577,10 @@
                 customCursor.style.top = `${e.clientY}px`;
             });
 
-            document.querySelectorAll('.project-panel, .btn-primary, .btn-secondary, .bento-card, .skill-bento-card').forEach(item => {
+            document.querySelectorAll('.showcase-item, .btn-primary, .btn-secondary, .bento-card, .skill-bento-card, .service-card-new').forEach(item => {
                 item.addEventListener('mouseenter', () => {
                     customCursor.classList.add('active');
-                    customCursor.textContent = 'VIEW';
+                    customCursor.textContent = '●';
                 });
                 item.addEventListener('mouseleave', () => {
                     customCursor.classList.remove('active');
@@ -2552,7 +2593,7 @@
            8. PORTFOLIO FILTERING LOGIC
            ========================================================================== */
         const filterBtns = document.querySelectorAll('.filter-btn');
-        const projectPanels = document.querySelectorAll('.project-panel');
+        const showcaseItems = document.querySelectorAll('.showcase-item');
 
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
@@ -2561,14 +2602,52 @@
 
                 const filter = btn.getAttribute('data-filter');
 
-                projectPanels.forEach(panel => {
-                    if (filter === 'all' || panel.getAttribute('data-category') === filter) {
-                        panel.style.display = 'block';
+                showcaseItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = 'grid';
                     } else {
-                        panel.style.display = 'none';
+                        item.style.display = 'none';
                     }
                 });
             });
+        });
+
+        /* ==========================================================================
+           9. ASYNCHRONOUS FORM SUBMISSION VIA FORMSPREE
+           ========================================================================== */
+        const contactForm = document.getElementById('contactForm');
+
+        contactForm.addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+
+            const formData = new FormData(contactForm);
+
+            try {
+                const response = await fetch('https://formspree.io/f/mrpzlzvd', {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    alert('Thank you! Your message has been sent successfully.');
+                    contactForm.reset();
+                } else {
+                    alert('Oops! There was a problem submitting your form.');
+                }
+            } catch (error) {
+                alert('Error connecting to the server. Please try emailing directly.');
+            } finally {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }
         });
     </script>
 </body>
