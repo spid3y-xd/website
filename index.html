@@ -6,11 +6,14 @@
     <title>Zohair Ahmed | Graphic Designer, Photo Editor & Web Developer</title>
     <meta name="description" content="Zohair Ahmed is a graphic designer, photo editor and Web Developer creating premium visuals, professional imagery and modern digital experiences.">
     
+    <!-- Custom Spider-Man Themed SVG Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%2305070B'/%3E%3Ccircle cx='50' cy='50' r='42' stroke='%23E21D2F' stroke-width='3' fill='%2308111F'/%3E%3Cpath d='M50 8 V92 M8 50 H92 M21 21 L79 79 M21 79 L79 21' stroke='%23E21D2F' stroke-width='1.5' stroke-opacity='0.4'/%3E%3Ccircle cx='50' cy='50' r='20' stroke='%230D5CFF' stroke-width='1.5' stroke-opacity='0.5' fill='none'/%3E%3Ctext x='50' y='60' font-family='Arial Black, sans-serif' font-size='32' font-weight='900' fill='%23F5F5F5' text-anchor='middle' letter-spacing='-1'%3EZA%3C/text%3E%3Ccircle cx='76' cy='32' r='4' fill='%23E21D2F'/%3E%3C/svg%3E">
+
     <!-- Open Graph / Social -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Zohair Ahmed | Graphic Designer, Photo Editor & Web Developer">
     <meta property="og:description" content="Creating visual identities, polished imagery and digital experiences that make brands impossible to ignore.">
-    <meta property="og:theme-color" content="#F4F6F9">
+    <meta property="og:theme-color" content="#05070B">
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
@@ -27,7 +30,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style>
         /* ==========================================================================
@@ -54,7 +57,6 @@
             
             /* Typography */
             --font-display: 'Bebas Neue', sans-serif;
-            --font-serif: 'Playfair Display', Georgia, serif;
             --font-body: 'Inter', system-ui, -apple-system, sans-serif;
             
             /* Layout & Animation Variables */
@@ -80,6 +82,53 @@
             
             --web-line: rgba(255, 255, 255, 0.05);
             --web-line-active: rgba(226, 29, 47, 0.5);
+        }
+
+        /* ==========================================================================
+           DYNAMIC SPIDER-VERSE GRADIENT SCROLLBAR
+           ========================================================================== */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-base);
+            border-left: 1px solid var(--border-glass);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #94a3b8 0%, #cbd5e1 100%);
+            border-radius: 9999px;
+            border: 2px solid var(--bg-base);
+            transition: var(--transition-smooth);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, var(--accent-red) 0%, #a00c1b 100%);
+            box-shadow: 0 0 10px var(--accent-red-glow);
+        }
+
+        [data-theme="dark"] ::-webkit-scrollbar-track {
+            background: #05070B;
+            border-left: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.7);
+        }
+
+        [data-theme="dark"] ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #E21D2F 0%, #1e293b 50%, #0D5CFF 100%);
+            border-radius: 9999px;
+            border: 2px solid #05070B;
+            box-shadow: 0 0 10px rgba(226, 29, 47, 0.35);
+        }
+
+        [data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, #ff3344 0%, #E21D2F 50%, #2563eb 100%);
+            box-shadow: 0 0 16px rgba(226, 29, 47, 0.8), 0 0 8px rgba(13, 92, 255, 0.6);
+        }
+
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: #E21D2F var(--bg-base);
         }
 
         /* Reset & Global Elements */
@@ -170,8 +219,28 @@
             height: 100vh;
             pointer-events: none;
             z-index: 0;
-            opacity: 0.7;
+            opacity: 1;
             transition: opacity 0.5s ease;
+        }
+
+        .click-particles-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 99999;
+        }
+
+        .magnetic-web-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 9998;
         }
 
         .halftone-overlay {
@@ -185,21 +254,6 @@
             background-image: radial-gradient(var(--border-glass) 1.5px, transparent 1.5px);
             background-size: 24px 24px;
             opacity: 0.5;
-        }
-
-        .spider-sense-ring {
-            position: absolute;
-            border: 2px solid var(--accent-red);
-            border-radius: 50%;
-            animation: spiderPulse 3s infinite ease-out;
-            pointer-events: none;
-            opacity: 0;
-        }
-
-        @keyframes spiderPulse {
-            0% { transform: scale(0.3); opacity: 0.8; }
-            50% { opacity: 0.4; }
-            100% { transform: scale(2.2); opacity: 0; }
         }
 
         .custom-cursor {
@@ -278,7 +332,7 @@
         }
 
         /* ==========================================================================
-           3. NAVIGATION (STICKY WITH TOP SPACING & ICON TOGGLE)
+           3. NAVIGATION
            ========================================================================== */
         .nav-wrapper {
             position: fixed;
@@ -315,8 +369,9 @@
         }
 
         .nav-brand {
-            font-size: 1.5rem;
-            letter-spacing: 1px;
+            font-family: var(--font-display);
+            font-size: 1.7rem;
+            letter-spacing: 1.5px;
             position: relative;
             display: flex;
             align-items: center;
@@ -379,9 +434,10 @@
             border: 1px solid var(--border-glass);
             cursor: pointer;
             color: var(--text-main);
-            transition: var(--transition-smooth);
+            transition: transform 0.15s ease-out, border-color 0.3s ease, box-shadow 0.3s ease;
             background: var(--bg-surface);
             box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            will-change: transform;
         }
 
         .theme-toggle-icon {
@@ -394,7 +450,6 @@
         .theme-toggle-btn:hover {
             border-color: var(--accent-red);
             box-shadow: 0 0 15px var(--accent-red-glow);
-            transform: rotate(15deg) scale(1.05);
         }
 
         .btn-primary {
@@ -411,10 +466,11 @@
             border-radius: 4px;
             position: relative;
             overflow: hidden;
-            transition: var(--transition-smooth);
+            transition: transform 0.15s ease-out, box-shadow 0.3s ease;
             box-shadow: 0 6px 20px var(--accent-red-glow);
             clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%);
             cursor: pointer;
+            will-change: transform;
         }
 
         .btn-primary::before {
@@ -434,7 +490,6 @@
         }
 
         .btn-primary:hover {
-            transform: translateY(-3px) scale(1.02);
             box-shadow: 0 12px 30px var(--accent-red-glow);
         }
 
@@ -452,16 +507,16 @@
             border: 1px solid var(--border-glass);
             border-radius: 4px;
             position: relative;
-            transition: var(--transition-smooth);
+            transition: transform 0.15s ease-out, border-color 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
             box-shadow: 0 4px 15px rgba(0,0,0,0.03);
             clip-path: polygon(8px 0, 100% 0, 100% 100%, 0 100%, 0 8px);
+            will-change: transform;
         }
 
         .btn-secondary:hover {
             border-color: var(--accent-blue);
             color: var(--accent-blue);
-            transform: translateY(-3px);
             box-shadow: 0 8px 20px var(--accent-blue-glow);
         }
 
@@ -571,11 +626,12 @@
             display: flex;
             align-items: center;
             gap: 1rem;
-            font-family: var(--font-serif);
-            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            font-size: clamp(1rem, 1.6vw, 1.25rem);
+            font-weight: 600;
+            letter-spacing: 0.5px;
             color: var(--text-muted);
             margin-bottom: 1.5rem;
-            font-style: italic;
+            text-transform: uppercase;
         }
 
         .hero-subtitle-line::before {
@@ -788,76 +844,202 @@
         }
 
         /* ==========================================================================
-           6. ABOUT SECTION
+           6. REDESIGNED ABOUT SECTION
            ========================================================================== */
+        .about-redesign-hero {
+            display: grid;
+            grid-template-columns: 420px 1fr;
+            gap: 3.5rem;
+            align-items: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .about-showcase-visual {
+            position: relative;
+            width: 100%;
+        }
+
+        .showcase-frame {
+            position: relative;
+            border-radius: 20px;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-glass);
+            padding: 0.85rem;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.08);
+            transition: var(--transition-smooth);
+            overflow: hidden;
+        }
+
+        .showcase-frame:hover {
+            border-color: var(--accent-red);
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.15), 0 0 35px var(--accent-red-glow);
+            transform: translateY(-4px);
+        }
+
+        .showcase-glow-back {
+            position: absolute;
+            inset: -20px;
+            background: radial-gradient(circle, var(--accent-red-glow) 0%, var(--accent-blue-glow) 60%, transparent 80%);
+            filter: blur(40px);
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.7;
+        }
+
+        .showcase-img-inner {
+            position: relative;
+            width: 100%;
+            height: 480px;
+            border-radius: 14px;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .showcase-img-inner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: contrast(108%) saturate(102%);
+            transition: transform 0.7s var(--ease-out-expo);
+        }
+
+        .showcase-frame:hover .showcase-img-inner img {
+            transform: scale(1.05);
+        }
+
+        .showcase-img-inner::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 60%, rgba(5, 7, 11, 0.85) 100%);
+            pointer-events: none;
+        }
+
+        .showcase-floating-chip {
+            position: absolute;
+            z-index: 3;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.6rem 1.1rem;
+            border-radius: 100px;
+            background: var(--bg-glass);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border-glass);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .showcase-floating-chip.top-chip {
+            top: 1.5rem;
+            right: -1rem;
+            color: var(--accent-red);
+            border-color: rgba(226, 29, 47, 0.3);
+        }
+
+        .showcase-floating-chip.bottom-chip {
+            bottom: 1.5rem;
+            left: 1.5rem;
+            color: var(--text-main);
+        }
+
+        .chip-status-dot {
+            width: 8px;
+            height: 8px;
+            background: #27C93F;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #27C93F;
+            animation: pulseGlowDot 2s infinite ease-in-out;
+        }
+
+        @keyframes pulseGlowDot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(0.85); }
+        }
+
+        .about-story-col {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .about-eyebrow-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent-red);
+        }
+
+        .about-quote-lead {
+            font-size: clamp(1.25rem, 1.8vw, 1.6rem);
+            line-height: 1.45;
+            color: var(--text-main);
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            border-left: 3px solid var(--accent-red);
+            padding-left: 1.25rem;
+        }
+
+        .about-body-text {
+            font-size: 1rem;
+            color: var(--text-muted);
+            line-height: 1.75;
+        }
+
+        .about-highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .about-highlight-card {
+            padding: 1rem 1.25rem;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-glass);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: var(--transition-smooth);
+        }
+
+        .about-highlight-card:hover {
+            border-color: var(--accent-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px var(--accent-blue-glow);
+        }
+
+        .about-highlight-icon {
+            font-size: 1.3rem;
+        }
+
+        .about-highlight-title {
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--text-dim);
+        }
+
+        .about-highlight-val {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
         .about-bento-grid {
             display: grid;
             grid-template-columns: repeat(12, 1fr);
             gap: 2rem;
-        }
-
-        .bento-card {
-            background: var(--bg-surface);
-            border: 1px solid var(--border-glass);
-            border-radius: 12px;
-            padding: 2.5rem;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
-            transition: var(--transition-smooth);
-        }
-
-        .bento-card:hover {
-            border-color: var(--accent-red);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.05), 0 0 20px var(--accent-red-glow);
-        }
-
-        .bento-intro {
-            grid-column: span 8;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .bento-intro .about-lead {
-            font-size: 1.35rem;
-            font-weight: 600;
-            color: var(--text-main);
-            line-height: 1.5;
-            margin-bottom: 1rem;
-        }
-
-        .bento-intro p {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            line-height: 1.7;
-        }
-
-        .bento-portrait {
-            grid-column: span 4;
-            padding: 0;
-            min-height: 380px;
-            position: relative;
-        }
-
-        .bento-portrait img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: contrast(108%) saturate(100%);
-            transition: var(--transition-smooth);
-        }
-
-        .bento-portrait:hover img {
-            transform: scale(1.06);
-            filter: contrast(115%) saturate(110%);
-        }
-
-        .bento-portrait-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, transparent 50%, var(--text-main) 120%);
-            opacity: 0.4;
         }
 
         .bento-skills {
@@ -982,23 +1164,25 @@
         }
 
         /* ==========================================================================
-           7. SELECTED WORK
+           7. REDESIGNED SELECTED WORK (CONSISTENT TYPOGRAPHY & MODERN CLEAN GRID)
            ========================================================================== */
         .portfolio-filter {
             display: flex;
-            gap: 1.25rem;
+            gap: 0.75rem;
             margin-bottom: 3.5rem;
             flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
         }
 
         .filter-btn {
-            padding: 0.6rem 1.5rem;
+            padding: 0.65rem 1.6rem;
             font-size: 0.75rem;
             font-weight: 800;
-            letter-spacing: 2px;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
             border: 1px solid var(--border-glass);
-            border-radius: 30px;
+            border-radius: 6px;
             cursor: pointer;
             color: var(--text-muted);
             background: var(--bg-surface);
@@ -1009,126 +1193,187 @@
             color: #FFFFFF;
             background: var(--accent-red);
             border-color: var(--accent-red);
-            box-shadow: 0 6px 20px var(--accent-red-glow);
+            box-shadow: 0 0 20px var(--accent-red-glow);
             transform: translateY(-2px);
         }
 
-        .portfolio-showcase-list {
-            display: flex;
-            flex-direction: column;
-            gap: 4rem;
+        .portfolio-showcase-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
         }
 
-        .showcase-item {
+        .project-card-v2 {
             position: relative;
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            align-items: center;
             background: var(--bg-surface);
             border: 1px solid var(--border-glass);
             border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.03);
-            transition: var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+            transition: all 0.4s var(--ease-out-expo);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
         }
 
-        .showcase-item:nth-child(even) {
-            grid-template-columns: 0.8fr 1.2fr;
-        }
-
-        .showcase-item:nth-child(even) .showcase-media {
-            order: 2;
-        }
-
-        .showcase-item:hover {
+        .project-card-v2:hover {
             border-color: var(--accent-red);
-            box-shadow: 0 25px 60px rgba(0,0,0,0.08), 0 0 30px var(--accent-red-glow);
-            transform: translateY(-4px);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08), 0 0 25px var(--accent-red-glow);
         }
 
-        .showcase-media {
+        .project-card-v2 .card-image-wrapper {
             position: relative;
             width: 100%;
-            height: 440px;
+            height: 320px;
             overflow: hidden;
+            background: #05070B;
         }
 
-        .showcase-img {
+        .project-card-v2 .project-img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.8s var(--ease-out-expo), filter 0.5s ease;
-            filter: brightness(0.95) contrast(105%);
+            transition: transform 0.7s var(--ease-out-expo), filter 0.5s ease;
+            filter: contrast(104%) saturate(102%);
         }
 
-        .showcase-item:hover .showcase-img {
-            transform: scale(1.06);
-            filter: brightness(1) contrast(110%);
+        .project-card-v2:hover .project-img {
+            transform: scale(1.05);
+            filter: contrast(108%) saturate(106%);
         }
 
-        .showcase-badge {
+        .project-card-v2 .card-overlay-gradient {
             position: absolute;
-            top: 20px;
-            left: 20px;
-            padding: 0.4rem 1rem;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(5, 7, 11, 0.05) 0%, rgba(5, 7, 11, 0.7) 100%);
+            opacity: 0.5;
+            transition: opacity 0.4s ease;
+        }
+
+        .project-card-v2:hover .card-overlay-gradient {
+            opacity: 0.2;
+        }
+
+        .project-floating-badge {
+            position: absolute;
+            top: 1.25rem;
+            left: 1.25rem;
+            z-index: 3;
+            padding: 0.35rem 0.9rem;
             background: rgba(8, 17, 31, 0.85);
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(255,255,255,0.15);
-            border-radius: 4px;
-            font-size: 0.7rem;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 100px;
+            font-size: 0.68rem;
             font-weight: 800;
-            letter-spacing: 2px;
+            letter-spacing: 1.5px;
             color: #FFFFFF;
             text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
         }
 
-        .showcase-info {
-            padding: 3.5rem 3rem;
+        .project-floating-badge .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent-red);
+            box-shadow: 0 0 8px var(--accent-red);
+        }
+
+        .project-card-v2 .card-content {
+            padding: 2rem;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: space-between;
+            flex-grow: 1;
+            background: var(--bg-surface);
+            position: relative;
+            z-index: 2;
         }
 
-        .showcase-num {
-            font-family: var(--font-display);
-            font-size: 3rem;
-            line-height: 1;
-            color: var(--accent-red);
+        .project-category-track {
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent-blue);
             margin-bottom: 0.5rem;
         }
 
-        .showcase-title {
-            font-family: var(--font-serif);
-            font-size: clamp(1.8rem, 2.5vw, 2.4rem);
-            line-height: 1.2;
-            margin-bottom: 1rem;
+        .project-headline {
+            font-size: 1.35rem;
+            font-weight: 700;
+            line-height: 1.3;
             color: var(--text-main);
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.01em;
+            transition: color 0.3s ease;
         }
 
-        .showcase-desc {
-            font-size: 0.95rem;
+        .project-card-v2:hover .project-headline {
+            color: var(--accent-red);
+        }
+
+        .project-summary {
+            font-size: 0.92rem;
             color: var(--text-muted);
-            line-height: 1.7;
-            margin-bottom: 2rem;
+            line-height: 1.6;
+            margin-bottom: 1.75rem;
         }
 
-        .showcase-tags {
+        .project-card-footer {
             display: flex;
-            gap: 0.75rem;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding-top: 1.25rem;
+            border-top: 1px solid var(--border-glass);
             flex-wrap: wrap;
-            margin-bottom: 2rem;
         }
 
-        .tag-pill {
-            font-size: 0.7rem;
-            font-weight: 800;
-            letter-spacing: 1px;
+        .project-tags-list {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .project-tag-item {
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
             text-transform: uppercase;
-            padding: 0.35rem 0.85rem;
+            padding: 0.3rem 0.75rem;
             background: var(--bg-base);
             border: 1px solid var(--border-glass);
-            border-radius: 4px;
+            border-radius: 6px;
             color: var(--text-dim);
+        }
+
+        .view-project-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--text-main);
+            transition: all 0.3s ease;
+        }
+
+        .view-project-cta span {
+            transition: transform 0.3s ease;
+        }
+
+        .project-card-v2:hover .view-project-cta {
+            color: var(--accent-red);
+        }
+
+        .project-card-v2:hover .view-project-cta span {
+            transform: translateX(4px);
         }
 
         /* ==========================================================================
@@ -1654,18 +1899,26 @@
         }
 
         /* ==========================================================================
-           13. RESPONSIVE BREAKPOINTS & MOBILE OVERFLOW / ALIGNMENT FIXES
+           13. RESPONSIVE BREAKPOINTS
            ========================================================================== */
         @media (max-width: 1024px) {
             .hero-layout-redesign { grid-template-columns: 1fr; gap: 3rem; }
             .hero-visual-collage { height: 440px; }
-            .bento-intro { grid-column: span 12; }
-            .bento-portrait { grid-column: span 12; height: 320px; }
+            .about-redesign-hero { grid-template-columns: 1fr; gap: 2.5rem; }
+            .about-showcase-visual { max-width: 440px; margin: 0 auto; }
+            .showcase-img-inner { height: 400px; }
+            .showcase-floating-chip.top-chip { right: 1rem; }
             .bento-skills { grid-template-columns: 1fr; }
             .bento-metrics { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
             .metric-unit { border-right: none; }
-            .showcase-item, .showcase-item:nth-child(even) { grid-template-columns: 1fr; }
-            .showcase-item:nth-child(even) .showcase-media { order: 1; }
+            
+            .portfolio-showcase-grid {
+                grid-template-columns: 1fr;
+            }
+            .project-card-v2 .card-image-wrapper {
+                height: 300px;
+            }
+
             .services-grid-redesign { grid-template-columns: 1fr; }
             .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
         }
@@ -1709,20 +1962,12 @@
             .nav-menu.active { right: 0; }
             .mobile-hamburger { display: flex; }
 
-            /* Fix Mobile Typography in About Section */
-            .bento-card {
-                padding: 1.5rem;
+            .about-highlights-grid {
+                grid-template-columns: 1fr;
             }
 
-            .bento-intro .about-lead {
-                font-size: 1.1rem;
-                line-height: 1.5;
-                margin-bottom: 0.75rem;
-            }
-
-            .bento-intro p {
-                font-size: 0.88rem;
-                line-height: 1.6;
+            .showcase-img-inner {
+                height: 340px;
             }
 
             .skill-bento-card {
@@ -1747,7 +1992,6 @@
                 gap: 1.25rem;
             }
 
-            /* Fix Selected Projects Mobile Gaps */
             .portfolio-filter {
                 gap: 0.5rem;
                 margin-bottom: 2rem;
@@ -1758,33 +2002,28 @@
                 font-size: 0.7rem;
             }
 
-            .portfolio-showcase-list {
-                gap: 2rem;
+            .portfolio-showcase-grid {
+                gap: 1.5rem;
             }
 
-            .showcase-info {
+            .project-card-v2 .card-content {
                 padding: 1.5rem 1.25rem;
             }
 
-            .showcase-title {
-                font-size: 1.5rem;
+            .project-headline {
+                font-size: 1.25rem;
                 margin-bottom: 0.5rem;
             }
 
-            .showcase-desc {
+            .project-summary {
                 font-size: 0.88rem;
                 margin-bottom: 1.25rem;
             }
 
-            .showcase-tags {
-                margin-bottom: 1.25rem;
+            .project-card-v2 .card-image-wrapper {
+                height: 240px;
             }
 
-            .showcase-media {
-                height: 260px;
-            }
-
-            /* Fix Before/After image sizing and vertical spacing on mobile */
             .transformation-section {
                 padding-top: 3.5rem;
                 padding-bottom: 3.5rem;
@@ -1805,7 +2044,6 @@
                 gap: 1rem;
             }
 
-            /* Fix Philosophy Section Banner Excessive Spaces */
             .philosophy-banner {
                 padding: 3.5rem 1rem;
             }
@@ -1815,7 +2053,6 @@
                 line-height: 1.15;
             }
 
-            /* Services Mobile Tightening */
             .service-card-new {
                 padding: 1.5rem;
                 min-height: auto;
@@ -1858,6 +2095,12 @@
     <!-- Background Canvas for Interactive Web Simulation -->
     <canvas id="ambientWebCanvas" class="ambient-canvas"></canvas>
 
+    <!-- Canvas for Refined Mouse Click Particle Burst Effect -->
+    <canvas id="clickParticlesCanvas" class="click-particles-canvas"></canvas>
+
+    <!-- Interactive Canvas for Shooting Magnetic Web Strands -->
+    <canvas id="magneticWebCanvas" class="magnetic-web-canvas"></canvas>
+
     <!-- Custom Desktop Cursor with Web Indicator -->
     <div class="custom-cursor" id="customCursor"></div>
 
@@ -1875,13 +2118,12 @@
             </ul>
 
             <div class="nav-controls">
-                <!-- Icon-Only Light / Dark Toggle Button -->
-                <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Theme">
+                <button class="theme-toggle-btn magnetic-target" id="themeToggleBtn" aria-label="Toggle Theme">
                     <svg class="theme-toggle-icon" id="themeToggleIcon" viewBox="0 0 24 24">
                         <path d="M12.3 2a10 10 0 0 0-1.9 20 10 10 0 0 0 9.6-7 1 1 0 0 0-1.2-1.2 8 8 0 1 1-8.5-10.6 1 1 0 0 0-1-1.2z"/>
                     </svg>
                 </button>
-                <a href="#contact" class="btn-primary" style="padding: 0.5rem 1.25rem; font-size: 0.75rem;">Hire Me</a>
+                <a href="#contact" class="btn-primary magnetic-target" style="padding: 0.5rem 1.25rem; font-size: 0.75rem;">Hire Me</a>
                 
                 <div class="mobile-hamburger" id="mobileHamburger" aria-label="Open Menu">
                     <span></span>
@@ -1897,7 +2139,6 @@
         <div class="rim-light-red" style="top: 5%; left: -10%;"></div>
         <div class="rim-light-blue" style="bottom: 5%; right: -10%;"></div>
 
-        <!-- Diagonal Structural Web Strands -->
         <div class="hero-web-strand strand-1"></div>
         <div class="hero-web-strand strand-2"></div>
 
@@ -1905,28 +2146,26 @@
             <div class="hero-left-col reveal">
                 <div class="hero-tag">ZOHAIR AHMED / CREATIVE PORTFOLIO</div>
                 <h1 class="hero-title-redesign">
-                    GREAT POWER<br>
-                    <span class="outline-text">GREAT</span> <span class="highlight-red spider-glitch">DESIGN.</span>
+                    Design.<br>
+                    <span class="outline-text">EDIT.</span> <span class="highlight-red spider-glitch">BUILD.</span>
                 </h1>
                 <div class="hero-subtitle-line">Graphic Design · Photo Editing · Web Development</div>
                 <p class="hero-paragraph">
-                    I create clean, high-impact visuals and professional websites that help businesses look better, communicate clearly, and stand out.
+                    I help businesses and individuals create professional visuals, polished product images, engaging designs, and modern websites.
                 </p>
                 <div class="hero-cta-group">
-                    <a href="#work" class="btn-primary">View My Work</a>
-                    <a href="#contact" class="btn-secondary">Hire Me</a>
+                    <a href="#work" class="btn-primary magnetic-target">View My Work</a>
+                    <a href="#contact" class="btn-secondary magnetic-target">Hire Me</a>
                 </div>
             </div>
 
             <div class="hero-visual-collage reveal">
                 <div class="collage-bg-web"></div>
 
-                <!-- Single Hero Portrait Frame -->
                 <div class="collage-card card-main">
                     <img src="https://res.cloudinary.com/e5gbmcqo/image/upload/v1786602499/Zohair_Ahmed.jpg" alt="Zohair Ahmed Hero">
                 </div>
 
-                <!-- Dynamic Stat Badge -->
                 <div class="collage-card card-badge">
                     <div class="badge-icon">⚡</div>
                     <div>
@@ -1946,28 +2185,66 @@
     <section id="about">
         <div class="section-container">
             <div class="section-header reveal">
-                <span class="section-label">GET TO KNOW THE PERSON BEHIND THE WORK</span>
-                <h2 class="section-title">BEHIND THE MASK.</h2>
+                <span class="section-label">About Me</span>
+                <h2 class="section-title">GET TO KNOW THE PERSON BEHIND THE WORK</h2>
+            </div>
+
+            <div class="about-redesign-hero reveal">
+                <div class="about-showcase-visual">
+                    <div class="showcase-glow-back"></div>
+                    <div class="showcase-frame">
+                        <div class="showcase-floating-chip top-chip">
+                            <span>⚡</span> Freelancer
+                        </div>
+
+                        <div class="showcase-img-inner">
+                            <img src="https://res.cloudinary.com/e5gbmcqo/image/upload/v1786603619/Zohairi.jpg" alt="Zohair Ahmed Profile">
+                        </div>
+
+                        <div class="showcase-floating-chip bottom-chip">
+                            <div class="chip-status-dot"></div>
+                            <span>Available For Projects</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-story-col">
+                    <div class="about-eyebrow-tag">
+                        <span>🕸</span> Visual Alchemist &amp; Web Architect
+                    </div>
+
+                    <p class="about-quote-lead">
+                        "Turning ideas into professional work that makes an impact."
+                    </p>
+
+                    <p class="about-body-text">
+                        I’m <strong>Zohair Ahmed</strong>, a Graphic Designer, Photo Editor, and Web Developer. I work with businesses, brands, and individuals to improve how they present themselves visually.
+                    </p>
+
+                    <p class="about-body-text">
+                        My work combines creative design with practical solutions, from professional photo retouching and product image editing to marketing graphics and responsive websites.
+                    </p>
+
+                    <div class="about-highlights-grid">
+                        <div class="about-highlight-card">
+                            <div class="about-highlight-icon">🎯</div>
+                            <div>
+                                <div class="about-highlight-title">Focus Area</div>
+                                <div class="about-highlight-val">High-Impact Visuals</div>
+                            </div>
+                        </div>
+                        <div class="about-highlight-card">
+                            <div class="about-highlight-icon">🚀</div>
+                            <div>
+                                <div class="about-highlight-title">Turnaround</div>
+                                <div class="about-highlight-val">Fast &amp; Reliable</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="about-bento-grid">
-                <!-- Bento Card 1: Main Bio -->
-                <div class="bento-card bento-intro reveal">
-                    <p class="about-lead">
-                        I’m Zohair Ahmed, a Graphic Designer and Web Developer focused on creating polished visuals, compelling photo edits, and modern websites. <br> From product images and photo manipulation to complete websites, I combine creativity with attention to detail to turn ideas into professional digital experiences.
-                    </p>
-                    <p>
-                        Like a carefully woven web, impactful design balances structural integrity with cinematic precision. Over 5+ years of freelance experience, I have helped brands, agencies, and e-commerce stores develop compelling visual presences.
-                    </p>
-                </div>
-
-                <!-- Bento Card 2: Portrait Frame -->
-                <div class="bento-card bento-portrait reveal">
-                    <img src="https://res.cloudinary.com/e5gbmcqo/image/upload/v1786603619/Zohairi.jpg" alt="Zohair Ahmed Profile">
-                    <div class="bento-portrait-overlay"></div>
-                </div>
-
-                <!-- Bento Card 3: Pillars / Capabilities -->
                 <div class="bento-skills reveal">
                     <div class="skill-bento-card">
                         <div>
@@ -1977,7 +2254,7 @@
                             </div>
                             <div class="skill-bento-title">GRAPHIC DESIGN</div>
                         </div>
-                        <div class="skill-bento-list">Photoshop • Branding • Visual Design</div>
+                        <div class="skill-bento-list">Social Media Graphics • Flyers • Posters • Marketing Materials</div>
                     </div>
 
                     <div class="skill-bento-card">
@@ -1988,7 +2265,7 @@
                             </div>
                             <div class="skill-bento-title">PHOTO EDITING</div>
                         </div>
-                        <div class="skill-bento-list">Retouching • Manipulation • Product Editing</div>
+                        <div class="skill-bento-list">Retouching • Enhancement • Manipulation • Product Editing</div>
                     </div>
 
                     <div class="skill-bento-card">
@@ -1999,11 +2276,10 @@
                             </div>
                             <div class="skill-bento-title">WEB DEVELOPMENT</div>
                         </div>
-                        <div class="skill-bento-list">Websites • E-Commerce Stores • Landing Pages</div>
+                        <div class="skill-bento-list">Business Websites • E-Commerce Stores • Landing Pages</div>
                     </div>
                 </div>
 
-                <!-- Bento Card 4: Metrics Strip -->
                 <div class="bento-metrics reveal">
                     <div class="metric-unit">
                         <div class="metric-num">05+</div>
@@ -2026,96 +2302,129 @@
         </div>
     </section>
 
-    <!-- SELECTED WORK SECTION -->
+    <!-- SELECTED WORK SECTION (CONSISTENT TYPOGRAPHY & CLEAN GRID) -->
     <section id="work">
         <div class="section-container">
-            <div class="section-header reveal">
-                <span class="section-label">A SELECTION OF MY BEST WORK</span>
-                <h2 class="section-title">SELECTED PROJECTS.</h2>
+            <div class="section-header reveal" style="text-align: center;">
+                <span class="section-label">SELECTED WORK</span>
+                <h2 class="section-title">MY WORK. YOUR VISION.</h2>
             </div>
 
             <div class="portfolio-filter reveal">
-                <button class="filter-btn active" data-filter="all">ALL</button>
-                <button class="filter-btn" data-filter="photo">PHOTO Editing</button>
-                <button class="filter-btn" data-filter="product">PRODUCT Editing</button>
-                <button class="filter-btn" data-filter="design">Graphic DESIGN</button>
-                <button class="filter-btn" data-filter="web">WEB Development</button>
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="photo">Photo Manipulation</button>
+                <button class="filter-btn" data-filter="product">Product Retouching</button>
+                <button class="filter-btn" data-filter="design">Brand &amp; Graphic</button>
+                <button class="filter-btn" data-filter="web">Web Architecture</button>
             </div>
 
-            <div class="portfolio-showcase-list">
-                <!-- Showcase Item 1 -->
-                <div class="showcase-item reveal" data-category="photo">
-                    <div class="showcase-media">
-                        <img src="https://res.cloudinary.com/e5gbmcqo/image/upload/v1786606799/Photo-Manipulation.jpg?auto=format&fit=crop&w=1200&q=80" alt="Editorial Portrait Manipulation" class="showcase-img">
-                        <div class="showcase-badge">PROFESSIONAL PHOTO EDITING</div>
-                    </div>
-                    <div class="showcase-info">
-                        <div class="showcase-num">01</div>
-                        <h3 class="showcase-title">Photo Editing</h3>
-                        <p class="showcase-desc">Creative photo manipulation, professional retouching, color grading, and detailed image enhancement crafted to turn ordinary photographs into striking visuals.</p>
-                        <div class="showcase-tags">
-                            <span class="tag-pill">Photo Manipulation</span>
-                            <span class="tag-pill">Color Grading</span>
-                            <span class="tag-pill">Photo Retouching</span>
+            <div class="portfolio-showcase-grid">
+                <!-- Project 1: Photo Editing -->
+                <div class="project-card-v2 reveal" data-category="photo">
+                    <div class="card-image-wrapper">
+                        <img src="https://res.cloudinary.com/e5gbmcqo/image/upload/v1786606799/Photo-Manipulation.jpg?auto=format&fit=crop&w=1200&q=80" alt="Editorial Portrait Retouching" class="project-img">
+                        <div class="card-overlay-gradient"></div>
+                        <div class="project-floating-badge">
+                            <span class="dot"></span> Photo Manipulation
                         </div>
-                        <a href="https://www.behance.net/gallery/238339565/Stage-Theater-Editorial-Retouching-Case-Study" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="align-self: flex-start; padding: 0.6rem 1.25rem; font-size: 0.75rem;">View Related Project →</a>
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <div class="project-category-track">Photoshop / Compositing</div>
+                            <h3 class="project-headline">PROFESSIONAL PHOTO EDITING</h3>
+                            <p class="project-summary">High-end creative photo manipulation featuring advanced frequency separation, cinematic lighting depth, and seamless multi-asset background composition.</p>
+                        </div>
+                        <div class="project-card-footer">
+                            <div class="project-tags-list">
+                                <span class="project-tag-item">Retouching</span>
+                                <span class="project-tag-item">Color Grading</span>
+                                <span class="project-tag-item">Composite</span>
+                            </div>
+                            <a href="https://www.behance.net/gallery/238339565/Stage-Theater-Editorial-Retouching-Case-Study" target="_blank" rel="noopener noreferrer" class="view-project-cta magnetic-target">
+                                View Project <span>→</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Showcase Item 2 -->
-                <div class="showcase-item reveal" data-category="product">
-                    <div class="showcase-media">
-                        <img src="https://res.cloudinary.com/e5gbmcqo/image/upload/v1786606919/Product.jpg?auto=format&fit=crop&w=1200&q=80" alt="E-commerce Product Imagery" class="showcase-img">
-                        <div class="showcase-badge">PRODUCT EDITING</div>
-                    </div>
-                    <div class="showcase-info">
-                        <div class="showcase-num">02</div>
-                        <h3 class="showcase-title">PRODUCT PHOTO EDITING</h3>
-                        <p class="showcase-desc">Clean, polished product images created for e-commerce, advertising, and marketing, with professional retouching, background removal, and visual enhancement.</p>
-                        <div class="showcase-tags">
-                            <span class="tag-pill">Product Retouching</span>
-                            <span class="tag-pill">E-Commerce</span>
-                            <span class="tag-pill">Background Change/Remove</span>
+                <!-- Project 2: Product Editing -->
+                <div class="project-card-v2 reveal" data-category="product">
+                    <div class="card-image-wrapper">
+                        <img src="https://res.cloudinary.com/e5gbmcqo/image/upload/v1786606919/Product.jpg?auto=format&fit=crop&w=1200&q=80" alt="E-Commerce Product Visuals" class="project-img">
+                        <div class="card-overlay-gradient"></div>
+                        <div class="project-floating-badge">
+                            <span class="dot"></span> PRODUCT PHOTO EDITING
                         </div>
-                        <a href="https://www.behance.net/gallery/236152501/Product-Lifestyle-Photography-Retouching" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="align-self: flex-start; padding: 0.6rem 1.25rem; font-size: 0.75rem;">View Related Project →</a>
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <div class="project-category-track">E-Commerce</div>
+                            <h3 class="project-headline">PRODUCT IMAGES THAT SELL</h3>
+                            <p class="project-summary">Clean and professional product image editing for e-commerce stores, marketplaces, catalogs, and online advertising.</p>
+                        </div>
+                        <div class="project-card-footer">
+                            <div class="project-tags-list">
+                                <span class="project-tag-item">Commercial</span>
+                                <span class="project-tag-item">Store Visuals</span>
+                            </div>
+                            <a href="https://www.behance.net/gallery/236152501/Product-Lifestyle-Photography-Retouching" target="_blank" rel="noopener noreferrer" class="view-project-cta magnetic-target">
+                                View Project <span>→</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Showcase Item 3 -->
-                <div class="showcase-item reveal" data-category="design">
-                    <div class="showcase-media">
-                        <img src="https://res.cloudinary.com/e5gbmcqo/image/upload/v1786607123/Graphic.jpg?auto=format&fit=crop&w=1200&q=80" alt="Brand Identity Campaign" class="showcase-img">
-                        <div class="showcase-badge">GRAPHIC DESIGN</div>
-                    </div>
-                    <div class="showcase-info">
-                        <div class="showcase-num">03</div>
-                        <h3 class="showcase-title">Graphic Design</h3>
-                        <p class="showcase-desc">Purposeful visual designs that help brands communicate clearly, from social media graphics and marketing materials to posters, flyers, and branded content.</p>
-                        <div class="showcase-tags">
-                            <span class="tag-pill">Graphic Design</span>
-                            <span class="tag-pill">Branding</span>
-                            <span class="tag-pill">Marketing Visuals</span>
+                <!-- Project 3: Graphic Design -->
+                <div class="project-card-v2 reveal" data-category="design">
+                    <div class="card-image-wrapper">
+                        <img src="https://res.cloudinary.com/e5gbmcqo/image/upload/v1786607123/Graphic.jpg?auto=format&fit=crop&w=1200&q=80" alt="Brand Identity & Marketing" class="project-img">
+                        <div class="card-overlay-gradient"></div>
+                        <div class="project-floating-badge">
+                            <span class="dot"></span> Graphic Design
                         </div>
-                        <a href="https://www.behance.net/gallery/241180207/NGO-Campaign-Design-Ramadan-Pack-2025" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="align-self: flex-start; padding: 0.6rem 1.25rem; font-size: 0.75rem;">View Related Project →</a>
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <div class="project-category-track">Branding &amp; Campaign</div>
+                            <h3 class="project-headline">CREATIVE BRAND &amp; MARKETING DESIGN</h3>
+                            <p class="project-summary">Eye-catching graphics created for brands, businesses, and social media, designed to communicate clearly and look professional.</p>
+                        </div>
+                        <div class="project-card-footer">
+                            <div class="project-tags-list">
+                                <span class="project-tag-item">Visual Identity</span>
+                                <span class="project-tag-item">Advertising</span>
+                            </div>
+                            <a href="https://www.behance.net/gallery/241180207/NGO-Campaign-Design-Ramadan-Pack-2025" target="_blank" rel="noopener noreferrer" class="view-project-cta magnetic-target">
+                                View Project <span>→</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Showcase Item 4 -->
-                <div class="showcase-item reveal" data-category="web">
-                    <div class="showcase-media">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80" alt="Custom WordPress Store" class="showcase-img">
-                        <div class="showcase-badge">WEB DEVELOPMENT</div>
-                    </div>
-                    <div class="showcase-info">
-                        <div class="showcase-num">04</div>
-                        <h3 class="showcase-title">Custom Website Development</h3>
-                        <p class="showcase-desc">Modern, responsive websites designed to give businesses a professional digital presence with clean layouts, strong visuals, and intuitive user experiences.</p>
-                        <div class="showcase-tags">
-                            <span class="tag-pill">Responsive Design</span>
-                            <span class="tag-pill">E-Commerce Store</span>
-                            <span class="tag-pill">Landing Page</span>
+                <!-- Project 4: Web Development -->
+                <div class="project-card-v2 reveal" data-category="web">
+                    <div class="card-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80" alt="Custom Website Architecture" class="project-img">
+                        <div class="card-overlay-gradient"></div>
+                        <div class="project-floating-badge">
+                            <span class="dot"></span> Web Development
                         </div>
-                        <a href="https://www.behance.net/gallery/231244663/E-commerce-Website-for-Cosmetics-Beauty-Products?platform=direct" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="align-self: flex-start; padding: 0.6rem 1.25rem; font-size: 0.75rem;">View Related Project →</a>
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <div class="project-category-track">Custom WordPress / Frontend</div>
+                            <h3 class="project-headline">E-Commerce Website &amp; Digital Store</h3>
+                            <p class="project-summary">Responsive WordPress websites built with clean layouts, strong visuals, easy navigation, and a professional user experience.</p>
+                        </div>
+                        <div class="project-card-footer">
+                            <div class="project-tags-list">
+                                <span class="project-tag-item">WordPress</span>
+                                <span class="project-tag-item">WooCommerce</span>
+                            </div>
+                            <a href="https://www.behance.net/gallery/231244663/E-commerce-Website-for-Cosmetics-Beauty-Products?platform=direct" target="_blank" rel="noopener noreferrer" class="view-project-cta magnetic-target">
+                                View Project <span>→</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -2147,7 +2456,7 @@
             </div>
 
             <div class="ba-tags reveal">
-                <div class="ba-tag-item">RETOUCHING</div>
+                <div class="ba-tag-item">Photo RETOUCHING</div>
                 <div class="ba-tag-item">MANIPULATION</div>
                 <div class="ba-tag-item">COLOR GRADING</div>
                 <div class="ba-tag-item">DETAIL ENHANCEMENT</div>
@@ -2160,7 +2469,7 @@
         <div class="section-container">
             <div class="section-header reveal" style="text-align: center;">
                 <span class="section-label">WEB DEVELOPMENT</span>
-                <h2 class="section-title">I BUILD DIGITAL EXPERIENCES.</h2>
+                <h2 class="section-title">I BUILD WEBSITES THAT WORK.</h2>
                 <p style="color: var(--text-dim); margin-top: 0.5rem; font-weight: 400;">Responsive Design · Landing Pages · E-Commerce Stores</p>
             </div>
 
@@ -2200,7 +2509,6 @@
             </div>
             
             <div class="services-grid-redesign">
-                <!-- Service Card 1 -->
                 <div class="service-card-new reveal">
                     <div>
                         <div class="service-card-top">
@@ -2215,7 +2523,7 @@
                         <span class="service-card-arrow">→</span>
                     </div>
                 </div>
-                <!-- Service Card 2 -->
+
                 <div class="service-card-new reveal">
                     <div>
                         <div class="service-card-top">
@@ -2231,7 +2539,6 @@
                     </div>
                 </div>
 
-                <!-- Service Card 3 -->
                 <div class="service-card-new reveal">
                     <div>
                         <div class="service-card-top">
@@ -2239,7 +2546,7 @@
                             <div class="service-card-icon-wrapper">💻</div>
                         </div>
                         <h3 class="service-card-title">WEB DEVELOPMENT</h3>
-                        <p class="service-card-desc">Tailor-made websites using Elementor, fast page-load engineering, mobile responsiveness, and custom functionality integrations.</p>
+                        <p class="service-card-desc">Modern and responsive websites for businesses, portfolios, landing pages, and online stores.</p>
                     </div>
                     <div class="service-card-footer">
                         <span>Landing Pages · E-Commerce Stores · Responsive Design</span>
@@ -2247,7 +2554,6 @@
                     </div>
                 </div>
 
-                <!-- Service Card 4 -->
                 <div class="service-card-new reveal">
                     <div>
                         <div class="service-card-top">
@@ -2274,10 +2580,10 @@
                     <div>
                         <div class="section-header">
                             <span class="section-label">HAVE A PROJECT IN MIND?</span>
-                            <h2 class="section-title">LET'S MAKE YOUR BRAND STAND OUT.</h2>
+                            <h2 class="section-title">LET'S CREATE SOMETHING GREAT.</h2>
                         </div>
                         <p class="contact-text-para">
-                            Whether you need polished visuals, professional photo editing, or a modern website, let’s create something that looks as good as your business deserves.
+                            Whether you need professional photo editing, product images, graphic design, or a website, send me the details and let's get started.
                         </p>
                     </div>
 
@@ -2318,7 +2624,7 @@
                         <textarea id="message" name="message" class="form-textarea" placeholder="Tell me about your goals, timeline, and budget..." required></textarea>
                     </div>
                     <input type="hidden" name="_subject" value="New Project Inquiry from Portfolio Website!">
-                    <button type="submit" class="btn-primary" style="width: 100%; border: none;">Send Message →</button>
+                    <button type="submit" class="btn-primary magnetic-target" style="width: 100%; border: none;">Send Message →</button>
                 </form>
             </div>
         </div>
@@ -2327,8 +2633,8 @@
     <!-- FOOTER -->
     <footer class="site-footer">
         <div class="footer-container">
-            <div class="nav-brand">ZOHAIRI</div>
-            <div class="footer-copy">© 2026 Zohair Ahmed. All rights reserved.</div>
+            <div class="nav-brand">ZOHAIR Ahmed</div>
+            <div class="footer-copy">GRAPHIC DESIGN · PHOTO EDITING · WEB DEVELOPMENT</div>
             <ul class="footer-nav">
                 <li><a href="#">Home</a></li>
                 <li><a href="#work">Work</a></li>
@@ -2339,20 +2645,10 @@
         </div>
     </footer>
 
-    <!-- SVG Icon Templates for Theme Switcher -->
-    <svg style="display: none;">
-        <g id="sun-icon">
-            <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41s-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41s-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/>
-        </g>
-        <g id="moon-icon">
-            <path d="M12.3 2a10 10 0 0 0-1.9 20 10 10 0 0 0 9.6-7 1 1 0 0 0-1.2-1.2 8 8 0 1 1-8.5-10.6 1 1 0 0 0-1-1.2z"/>
-        </g>
-    </svg>
-
     <!-- JavaScript Logic -->
     <script>
         /* ==========================================================================
-           1. ICON-BASED DARK / LIGHT THEME TOGGLE (DARK MODE DEFAULT)
+           1. THEME SWITCHER LOGIC
            ========================================================================== */
         const themeToggleBtn = document.getElementById('themeToggleBtn');
         const themeToggleIcon = document.getElementById('themeToggleIcon');
@@ -2385,7 +2681,7 @@
         }
 
         /* ==========================================================================
-           2. INTERSECTION OBSERVER FOR SCROLL REVEAL ANIMATIONS
+           2. INTERSECTION OBSERVER
            ========================================================================== */
         const revealElements = document.querySelectorAll('.reveal');
 
@@ -2400,24 +2696,82 @@
         revealElements.forEach(el => revealObserver.observe(el));
 
         /* ==========================================================================
-           3. DYNAMIC SPIDER-SENSE CLICK RIPPLE EFFECT
+           3. CALIBRATED MOUSE CLICK PARTICLE SYSTEM (REDUCED & SUBTLE)
            ========================================================================== */
-        window.addEventListener('click', (e) => {
-            const ring = document.createElement('div');
-            ring.className = 'spider-sense-ring';
-            ring.style.left = `${e.clientX - 25}px`;
-            ring.style.top = `${e.clientY - 25}px`;
-            ring.style.width = '50px';
-            ring.style.height = '50px';
-            document.body.appendChild(ring);
+        const clickCanvas = document.getElementById('clickParticlesCanvas');
+        const cCtx = clickCanvas.getContext('2d');
 
-            setTimeout(() => {
-                ring.remove();
-            }, 3000);
+        function resizeClickCanvas() {
+            clickCanvas.width = window.innerWidth;
+            clickCanvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeClickCanvas);
+        resizeClickCanvas();
+
+        let clickParticles = [];
+        const themeColors = ['#E21D2F', '#0D5CFF', '#FFFFFF', '#FF3344'];
+
+        class SpiderParticle {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+                const angle = Math.random() * Math.PI * 2;
+                const speed = Math.random() * 3.5 + 1.2; // Softer initial speed
+                this.vx = Math.cos(angle) * speed;
+                this.vy = Math.sin(angle) * speed;
+                this.size = Math.random() * 2 + 1; // Smaller particle size
+                this.color = themeColors[Math.floor(Math.random() * themeColors.length)];
+                this.alpha = 1;
+                this.decay = Math.random() * 0.04 + 0.03; // Faster fade
+            }
+
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+                this.vx *= 0.92;
+                this.vy *= 0.92;
+                this.alpha -= this.decay;
+            }
+
+            draw(ctx) {
+                ctx.save();
+                ctx.globalAlpha = Math.max(0, this.alpha);
+                ctx.fillStyle = this.color;
+                ctx.shadowColor = this.color;
+                ctx.shadowBlur = 4;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.restore();
+            }
+        }
+
+        window.addEventListener('click', (e) => {
+            const particleCount = 14; // Subtle particle count
+            for (let i = 0; i < particleCount; i++) {
+                clickParticles.push(new SpiderParticle(e.clientX, e.clientY));
+            }
         });
 
+        function animateClickParticles() {
+            cCtx.clearRect(0, 0, clickCanvas.width, clickCanvas.height);
+
+            for (let i = clickParticles.length - 1; i >= 0; i--) {
+                const p = clickParticles[i];
+                p.update();
+                p.draw(cCtx);
+
+                if (p.alpha <= 0) {
+                    clickParticles.splice(i, 1);
+                }
+            }
+
+            requestAnimationFrame(animateClickParticles);
+        }
+        animateClickParticles();
+
         /* ==========================================================================
-           4. NAVIGATION SCROLL EFFECT & MOBILE MENU
+           4. NAVIGATION & MOBILE MENU
            ========================================================================== */
         const navWrapper = document.getElementById('navWrapper');
         const mobileHamburger = document.getElementById('mobileHamburger');
@@ -2442,18 +2796,23 @@
         });
 
         /* ==========================================================================
-           5. AMBIENT INTERACTIVE SPIDER-WEB CANVAS SIMULATION
+           5. AMBIENT CANVAS WEB EFFECT
            ========================================================================== */
         const canvas = document.getElementById('ambientWebCanvas');
         const ctx = canvas.getContext('2d');
 
         let width, height;
         let nodes = [];
-        let mouse = { x: null, y: null, radius: 180 };
+        let mouse = { x: null, y: null, radius: 200 };
 
         window.addEventListener('mousemove', (e) => {
             mouse.x = e.clientX;
             mouse.y = e.clientY;
+        });
+
+        window.addEventListener('mouseleave', () => {
+            mouse.x = null;
+            mouse.y = null;
         });
 
         function resizeCanvas() {
@@ -2464,7 +2823,7 @@
 
         function initNodes() {
             nodes = [];
-            const nodeCount = Math.floor(width * height / 22000);
+            const nodeCount = Math.floor(width * height / 19000);
             for (let i = 0; i < nodeCount; i++) {
                 nodes.push({
                     x: Math.random() * width,
@@ -2480,8 +2839,9 @@
             ctx.clearRect(0, 0, width, height);
 
             const isDark = htmlElement.getAttribute('data-theme') === 'dark';
-            const strokeStyle = isDark ? 'rgba(255, 255, 255, 0.05)' : 'rgba(8, 17, 31, 0.05)';
-            const activeStroke = isDark ? 'rgba(226, 29, 47, 0.25)' : 'rgba(200, 16, 46, 0.22)';
+            const baseWebStroke = isDark ? 'rgba(255, 255, 255, 0.12)' : 'rgba(8, 17, 31, 0.05)';
+            const nearWebStroke = isDark ? 'rgba(226, 29, 47, 0.4)' : 'rgba(200, 16, 46, 0.22)';
+            const nodeFill = isDark ? 'rgba(255, 45, 65, 0.5)' : null;
 
             for (let i = 0; i < nodes.length; i++) {
                 for (let j = i + 1; j < nodes.length; j++) {
@@ -2493,8 +2853,8 @@
                         ctx.beginPath();
                         ctx.moveTo(nodes[i].x, nodes[i].y);
                         ctx.lineTo(nodes[j].x, nodes[j].y);
-                        ctx.strokeStyle = dist < 80 ? activeStroke : strokeStyle;
-                        ctx.lineWidth = 0.8;
+                        ctx.strokeStyle = dist < 75 ? nearWebStroke : baseWebStroke;
+                        ctx.lineWidth = isDark ? (dist < 75 ? 1.1 : 0.8) : 0.8;
                         ctx.stroke();
                     }
                 }
@@ -2505,13 +2865,21 @@
                     const mdist = Math.sqrt(mdx * mdx + mdy * mdy);
 
                     if (mdist < mouse.radius) {
+                        const alpha = (1 - mdist / mouse.radius);
                         ctx.beginPath();
                         ctx.moveTo(nodes[i].x, nodes[i].y);
                         ctx.lineTo(mouse.x, mouse.y);
-                        ctx.strokeStyle = activeStroke;
-                        ctx.lineWidth = 1;
+                        ctx.strokeStyle = isDark ? `rgba(255, 45, 65, ${alpha * 0.85})` : `rgba(200, 16, 46, ${alpha * 0.4})`;
+                        ctx.lineWidth = isDark ? (alpha * 1.8 + 0.6) : 0.9;
                         ctx.stroke();
                     }
+                }
+
+                if (isDark && nodeFill) {
+                    ctx.beginPath();
+                    ctx.arc(nodes[i].x, nodes[i].y, nodes[i].radius, 0, Math.PI * 2);
+                    ctx.fillStyle = nodeFill;
+                    ctx.fill();
                 }
             }
 
@@ -2531,7 +2899,76 @@
         drawCanvas();
 
         /* ==========================================================================
-           6. BEFORE / AFTER INTERACTIVE SLIDER
+           6. WEB-SHOOT MAGNETIC BUTTONS
+           ========================================================================== */
+        const magneticCanvas = document.getElementById('magneticWebCanvas');
+        const mCtx = magneticCanvas.getContext('2d');
+        let activeStrand = null;
+
+        function resizeMagneticCanvas() {
+            magneticCanvas.width = window.innerWidth;
+            magneticCanvas.height = window.innerHeight;
+        }
+
+        window.addEventListener('resize', resizeMagneticCanvas);
+        resizeMagneticCanvas();
+
+        const magneticButtons = document.querySelectorAll('.magnetic-target');
+
+        if (window.innerWidth > 768) {
+            magneticButtons.forEach((btn) => {
+                btn.addEventListener('mousemove', (e) => {
+                    const rect = btn.getBoundingClientRect();
+                    const btnCenterX = rect.left + rect.width / 2;
+                    const btnCenterY = rect.top + rect.height / 2;
+
+                    const deltaX = e.clientX - btnCenterX;
+                    const deltaY = e.clientY - btnCenterY;
+
+                    const pullStrength = 0.35;
+                    btn.style.transform = `translate(${deltaX * pullStrength}px, ${deltaY * pullStrength}px)`;
+
+                    activeStrand = {
+                        fromX: e.clientX,
+                        fromY: e.clientY,
+                        toX: btnCenterX + deltaX * pullStrength,
+                        toY: btnCenterY + deltaY * pullStrength
+                    };
+                });
+
+                btn.addEventListener('mouseleave', () => {
+                    btn.style.transform = 'translate(0px, 0px)';
+                    activeStrand = null;
+                });
+            });
+
+            function drawMagneticWeb() {
+                mCtx.clearRect(0, 0, magneticCanvas.width, magneticCanvas.height);
+
+                if (activeStrand) {
+                    const isDark = htmlElement.getAttribute('data-theme') === 'dark';
+                    const strandColor = isDark ? 'rgba(226, 29, 47, 0.85)' : 'rgba(200, 16, 46, 0.7)';
+                    
+                    mCtx.beginPath();
+                    mCtx.moveTo(activeStrand.fromX, activeStrand.fromY);
+                    mCtx.lineTo(activeStrand.toX, activeStrand.toY);
+                    mCtx.strokeStyle = strandColor;
+                    mCtx.lineWidth = 1.8;
+                    mCtx.stroke();
+
+                    mCtx.beginPath();
+                    mCtx.arc(activeStrand.fromX, activeStrand.fromY, 3, 0, Math.PI * 2);
+                    mCtx.fillStyle = isDark ? '#FFFFFF' : '#C8102E';
+                    mCtx.fill();
+                }
+
+                requestAnimationFrame(drawMagneticWeb);
+            }
+            drawMagneticWeb();
+        }
+
+        /* ==========================================================================
+           7. BEFORE / AFTER INTERACTIVE SLIDER
            ========================================================================== */
         const baContainer = document.getElementById('baContainer');
         const baAfterContainer = document.getElementById('baAfterContainer');
@@ -2567,7 +3004,7 @@
         });
 
         /* ==========================================================================
-           7. CUSTOM DESKTOP CURSOR
+           8. CUSTOM DESKTOP CURSOR
            ========================================================================== */
         const customCursor = document.getElementById('customCursor');
 
@@ -2577,7 +3014,7 @@
                 customCursor.style.top = `${e.clientY}px`;
             });
 
-            document.querySelectorAll('.showcase-item, .btn-primary, .btn-secondary, .bento-card, .skill-bento-card, .service-card-new').forEach(item => {
+            document.querySelectorAll('.project-card-v2, .btn-primary, .btn-secondary, .bento-card, .skill-bento-card, .service-card-new, .about-highlight-card, .filter-btn').forEach(item => {
                 item.addEventListener('mouseenter', () => {
                     customCursor.classList.add('active');
                     customCursor.textContent = '●';
@@ -2590,10 +3027,10 @@
         }
 
         /* ==========================================================================
-           8. PORTFOLIO FILTERING LOGIC
+           9. PORTFOLIO FILTERING LOGIC
            ========================================================================== */
         const filterBtns = document.querySelectorAll('.filter-btn');
-        const showcaseItems = document.querySelectorAll('.showcase-item');
+        const projectCards = document.querySelectorAll('.project-card-v2');
 
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
@@ -2602,9 +3039,9 @@
 
                 const filter = btn.getAttribute('data-filter');
 
-                showcaseItems.forEach(item => {
+                projectCards.forEach(item => {
                     if (filter === 'all' || item.getAttribute('data-category') === filter) {
-                        item.style.display = 'grid';
+                        item.style.display = 'flex';
                     } else {
                         item.style.display = 'none';
                     }
@@ -2613,7 +3050,7 @@
         });
 
         /* ==========================================================================
-           9. ASYNCHRONOUS FORM SUBMISSION VIA FORMSPREE
+           10. ASYNCHRONOUS FORM SUBMISSION VIA FORMSPREE
            ========================================================================== */
         const contactForm = document.getElementById('contactForm');
 
