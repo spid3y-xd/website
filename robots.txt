@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://zohairi.vercel.app/sitemap.xml
