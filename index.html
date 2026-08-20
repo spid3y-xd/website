@@ -5,15 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zohair Ahmed | Graphic Designer, Photo Editor & Web Developer</title>
     <meta name="description" content="Zohair Ahmed is a graphic designer, photo editor and Web Developer creating premium visuals, professional imagery and modern digital experiences.">
+    
+    <!-- Google Verification -->
     <meta name="google-site-verification" content="WNgKJoNqKYNQhetRAsjm9tQekrTa7ky55rI80ZOXQqE" />
+
+
+
+    <!-- Canonical & Search Indexing Directives -->
+    <link rel="canonical" href="https://zohairi.vercel.app/">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+
     <!-- Custom Spider-Man Themed SVG Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%2305070B'/%3E%3Ccircle cx='50' cy='50' r='42' stroke='%23E21D2F' stroke-width='3' fill='%2308111F'/%3E%3Cpath d='M50 8 V92 M8 50 H92 M21 21 L79 79 M21 79 L79 21' stroke='%23E21D2F' stroke-width='1.5' stroke-opacity='0.4'/%3E%3Ccircle cx='50' cy='50' r='20' stroke='%230D5CFF' stroke-width='1.5' stroke-opacity='0.5' fill='none'/%3E%3Ctext x='50' y='60' font-family='Arial Black, sans-serif' font-size='32' font-weight='900' fill='%23F5F5F5' text-anchor='middle' letter-spacing='-1'%3EZA%3C/text%3E%3Ccircle cx='76' cy='32' r='4' fill='%23E21D2F'/%3E%3C/svg%3E">
 
-    <!-- Open Graph / Social -->
+    <!-- Open Graph / Social Sharing -->
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://zohairi.vercel.app/">
     <meta property="og:title" content="Zohair Ahmed | Graphic Designer, Photo Editor & Web Developer">
     <meta property="og:description" content="Creating visual identities, polished imagery and digital experiences that make brands impossible to ignore.">
+    <meta property="og:image" content="https://res.cloudinary.com/e5gbmcqo/image/upload/v1786602499/Zohair_Ahmed.jpg">
     <meta property="og:theme-color" content="#05070B">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://zohairi.vercel.app/">
+    <meta name="twitter:title" content="Zohair Ahmed | Graphic Designer, Photo Editor & Web Developer">
+    <meta name="twitter:description" content="Creating visual identities, polished imagery and digital experiences that make brands impossible to ignore.">
+    <meta name="twitter:image" content="https://res.cloudinary.com/e5gbmcqo/image/upload/v1786602499/Zohair_Ahmed.jpg">
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
@@ -22,6 +40,8 @@
       "@type": "Person",
       "name": "Zohair Ahmed",
       "jobTitle": "Graphic Designer, Photo Editor & Web Developer",
+      "url": "https://zohairi.vercel.app/",
+      "image": "https://res.cloudinary.com/e5gbmcqo/image/upload/v1786602499/Zohair_Ahmed.jpg",
       "knowsAbout": ["Graphic Design", "Photo Editing", "Web Development", "WordPress", "Photoshop", "E-commerce"],
       "description": "Multidisciplinary creative focused on graphic design, professional photo editing and WordPress web development."
     }
@@ -37,7 +57,6 @@
            1. CSS VARIABLES & SYSTEM ARCHITECTURE
            ========================================================================== */
         :root {
-            /* Palette Defaults (Light Theme Default) */
             --bg-base: #F4F6F9;
             --bg-surface: #FFFFFF;
             --bg-glass: rgba(255, 255, 255, 0.88);
@@ -55,11 +74,9 @@
             --web-line: rgba(8, 17, 31, 0.06);
             --web-line-active: rgba(200, 16, 46, 0.35);
             
-            /* Typography */
             --font-display: 'Bebas Neue', sans-serif;
             --font-body: 'Inter', system-ui, -apple-system, sans-serif;
             
-            /* Layout & Animation Variables */
             --nav-height: 80px;
             --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
             --transition-smooth: all 0.4s var(--ease-out-expo);
@@ -1164,7 +1181,7 @@
         }
 
         /* ==========================================================================
-           7. REDESIGNED SELECTED WORK (CONSISTENT TYPOGRAPHY & MODERN CLEAN GRID)
+           7. REDESIGNED SELECTED WORK
            ========================================================================== */
         .portfolio-filter {
             display: flex;
@@ -2073,6 +2090,7 @@
 
             .mobile-mockup { display: none; }
             .custom-cursor { display: none !important; }
+            .ambient-canvas, .click-particles-canvas, .magnetic-web-canvas { display: none !important; }
             .hero-visual-collage { scale: 0.85; }
 
             .contact-form {
@@ -2163,7 +2181,7 @@
                 <div class="collage-bg-web"></div>
 
                 <div class="collage-card card-main">
-                    <img src="https://res.cloudinary.com/e5gbmcqo/image/upload/v1786602499/Zohair_Ahmed.jpg" alt="Zohair Ahmed Hero">
+                    <img src="https://res.cloudinary.com/e5gbmcqo/image/upload/v1786602499/Zohair_Ahmed.jpg" alt="Zohair Ahmed Hero" width="360" height="480" fetchpriority="high">
                 </div>
 
                 <div class="collage-card card-badge">
@@ -2198,7 +2216,7 @@
                         </div>
 
                         <div class="showcase-img-inner">
-                            <img src="https://res.cloudinary.com/e5gbmcqo/image/upload/v1786603619/Zohairi.jpg" alt="Zohair Ahmed Profile">
+                            <img src="https://res.cloudinary.com/e5gbmcqo/image/upload/v1786603619/Zohairi.jpg" alt="Zohair Ahmed Profile" loading="lazy">
                         </div>
 
                         <div class="showcase-floating-chip bottom-chip">
@@ -2302,7 +2320,7 @@
         </div>
     </section>
 
-    <!-- SELECTED WORK SECTION (CONSISTENT TYPOGRAPHY & CLEAN GRID) -->
+    <!-- SELECTED WORK SECTION -->
     <section id="work">
         <div class="section-container">
             <div class="section-header reveal" style="text-align: center;">
@@ -2322,7 +2340,7 @@
                 <!-- Project 1: Photo Editing -->
                 <div class="project-card-v2 reveal" data-category="photo">
                     <div class="card-image-wrapper">
-                        <img src="https://res.cloudinary.com/e5gbmcqo/image/upload/v1786606799/Photo-Manipulation.jpg?auto=format&fit=crop&w=1200&q=80" alt="Editorial Portrait Retouching" class="project-img">
+                        <img src="https://res.cloudinary.com/e5gbmcqo/image/upload/v1786606799/Photo-Manipulation.jpg?auto=format&fit=crop&w=1200&q=80" alt="Editorial Portrait Retouching" class="project-img" loading="lazy">
                         <div class="card-overlay-gradient"></div>
                         <div class="project-floating-badge">
                             <span class="dot"></span> Photo Manipulation
@@ -2350,7 +2368,7 @@
                 <!-- Project 2: Product Editing -->
                 <div class="project-card-v2 reveal" data-category="product">
                     <div class="card-image-wrapper">
-                        <img src="https://res.cloudinary.com/e5gbmcqo/image/upload/v1786606919/Product.jpg?auto=format&fit=crop&w=1200&q=80" alt="E-Commerce Product Visuals" class="project-img">
+                        <img src="https://res.cloudinary.com/e5gbmcqo/image/upload/v1786606919/Product.jpg?auto=format&fit=crop&w=1200&q=80" alt="E-Commerce Product Visuals" class="project-img" loading="lazy">
                         <div class="card-overlay-gradient"></div>
                         <div class="project-floating-badge">
                             <span class="dot"></span> PRODUCT PHOTO EDITING
@@ -2377,7 +2395,7 @@
                 <!-- Project 3: Graphic Design -->
                 <div class="project-card-v2 reveal" data-category="design">
                     <div class="card-image-wrapper">
-                        <img src="https://res.cloudinary.com/e5gbmcqo/image/upload/v1786607123/Graphic.jpg?auto=format&fit=crop&w=1200&q=80" alt="Brand Identity & Marketing" class="project-img">
+                        <img src="https://res.cloudinary.com/e5gbmcqo/image/upload/v1786607123/Graphic.jpg?auto=format&fit=crop&w=1200&q=80" alt="Brand Identity & Marketing" class="project-img" loading="lazy">
                         <div class="card-overlay-gradient"></div>
                         <div class="project-floating-badge">
                             <span class="dot"></span> Graphic Design
@@ -2404,7 +2422,7 @@
                 <!-- Project 4: Web Development -->
                 <div class="project-card-v2 reveal" data-category="web">
                     <div class="card-image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80" alt="Custom Website Architecture" class="project-img">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80" alt="Custom Website Architecture" class="project-img" loading="lazy">
                         <div class="card-overlay-gradient"></div>
                         <div class="project-floating-badge">
                             <span class="dot"></span> Web Development
@@ -2443,10 +2461,10 @@
                 <div class="ba-badge before">BEFORE</div>
                 <div class="ba-badge after">AFTER</div>
                 
-                <img src="https://res.cloudinary.com/e5gbmcqo/image/upload/v1786638952/After.jpg?auto=format&fit=crop&w=1200&q=80" alt="Before Edit" class="ba-image ba-image-before">
+                <img src="https://res.cloudinary.com/e5gbmcqo/image/upload/v1786638952/After.jpg?auto=format&fit=crop&w=1200&q=80" alt="Before Edit" class="ba-image ba-image-before" loading="lazy">
                 
                 <div class="ba-image-after-container" id="baAfterContainer">
-                    <img src="https://res.cloudinary.com/e5gbmcqo/image/upload/v1786638940/Before.jpg?auto=format&fit=crop&w=1200&q=80&sat=50" alt="After Edit" class="ba-image">
+                    <img src="https://res.cloudinary.com/e5gbmcqo/image/upload/v1786638940/Before.jpg?auto=format&fit=crop&w=1200&q=80&sat=50" alt="After Edit" class="ba-image" loading="lazy">
                 </div>
 
                 <div class="ba-handle" id="baHandle">
@@ -2481,10 +2499,10 @@
                     <div class="browser-address">https://zohairi.vercel.app</div>
                 </div>
                 <div class="browser-body">
-                    <img src="https://res.cloudinary.com/e5gbmcqo/image/upload/v1786641407/website.jpg?auto=format&fit=crop&w=1200&q=80" alt="Website Screenshot">
+                    <img src="https://res.cloudinary.com/e5gbmcqo/image/upload/v1786641407/website.jpg?auto=format&fit=crop&w=1200&q=80" alt="Website Screenshot" loading="lazy">
                     
                     <div class="mobile-mockup">
-                        <img src="https://res.cloudinary.com/e5gbmcqo/image/upload/v1786641613/mobile.jpg?auto=format&fit=crop&w=400&q=80" alt="Mobile Site View">
+                        <img src="https://res.cloudinary.com/e5gbmcqo/image/upload/v1786641613/mobile.jpg?auto=format&fit=crop&w=400&q=80" alt="Mobile Site View" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -2696,226 +2714,198 @@
         revealElements.forEach(el => revealObserver.observe(el));
 
         /* ==========================================================================
-           3. CALIBRATED MOUSE CLICK PARTICLE SYSTEM (REDUCED & SUBTLE)
+           3. DESKTOP-ONLY CANVAS VISUAL EFFECTS (CPU OPTIMIZED)
            ========================================================================== */
-        const clickCanvas = document.getElementById('clickParticlesCanvas');
-        const cCtx = clickCanvas.getContext('2d');
+        const isDesktop = window.matchMedia('(min-width: 769px)').matches;
 
-        function resizeClickCanvas() {
-            clickCanvas.width = window.innerWidth;
-            clickCanvas.height = window.innerHeight;
-        }
-        window.addEventListener('resize', resizeClickCanvas);
-        resizeClickCanvas();
+        if (isDesktop) {
+            // Ambient Web Canvas
+            const canvas = document.getElementById('ambientWebCanvas');
+            const ctx = canvas.getContext('2d');
+            let width, height;
+            let nodes = [];
+            let mouse = { x: null, y: null, radius: 200 };
 
-        let clickParticles = [];
-        const themeColors = ['#E21D2F', '#0D5CFF', '#FFFFFF', '#FF3344'];
-
-        class SpiderParticle {
-            constructor(x, y) {
-                this.x = x;
-                this.y = y;
-                const angle = Math.random() * Math.PI * 2;
-                const speed = Math.random() * 3.5 + 1.2; // Softer initial speed
-                this.vx = Math.cos(angle) * speed;
-                this.vy = Math.sin(angle) * speed;
-                this.size = Math.random() * 2 + 1; // Smaller particle size
-                this.color = themeColors[Math.floor(Math.random() * themeColors.length)];
-                this.alpha = 1;
-                this.decay = Math.random() * 0.04 + 0.03; // Faster fade
-            }
-
-            update() {
-                this.x += this.vx;
-                this.y += this.vy;
-                this.vx *= 0.92;
-                this.vy *= 0.92;
-                this.alpha -= this.decay;
-            }
-
-            draw(ctx) {
-                ctx.save();
-                ctx.globalAlpha = Math.max(0, this.alpha);
-                ctx.fillStyle = this.color;
-                ctx.shadowColor = this.color;
-                ctx.shadowBlur = 4;
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fill();
-                ctx.restore();
-            }
-        }
-
-        window.addEventListener('click', (e) => {
-            const particleCount = 14; // Subtle particle count
-            for (let i = 0; i < particleCount; i++) {
-                clickParticles.push(new SpiderParticle(e.clientX, e.clientY));
-            }
-        });
-
-        function animateClickParticles() {
-            cCtx.clearRect(0, 0, clickCanvas.width, clickCanvas.height);
-
-            for (let i = clickParticles.length - 1; i >= 0; i--) {
-                const p = clickParticles[i];
-                p.update();
-                p.draw(cCtx);
-
-                if (p.alpha <= 0) {
-                    clickParticles.splice(i, 1);
-                }
-            }
-
-            requestAnimationFrame(animateClickParticles);
-        }
-        animateClickParticles();
-
-        /* ==========================================================================
-           4. NAVIGATION & MOBILE MENU
-           ========================================================================== */
-        const navWrapper = document.getElementById('navWrapper');
-        const mobileHamburger = document.getElementById('mobileHamburger');
-        const navMenu = document.getElementById('navMenu');
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navWrapper.classList.add('scrolled');
-            } else {
-                navWrapper.classList.remove('scrolled');
-            }
-        });
-
-        mobileHamburger.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-        });
-
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
+            window.addEventListener('mousemove', (e) => {
+                mouse.x = e.clientX;
+                mouse.y = e.clientY;
             });
-        });
 
-        /* ==========================================================================
-           5. AMBIENT CANVAS WEB EFFECT
-           ========================================================================== */
-        const canvas = document.getElementById('ambientWebCanvas');
-        const ctx = canvas.getContext('2d');
+            window.addEventListener('mouseleave', () => {
+                mouse.x = null;
+                mouse.y = null;
+            });
 
-        let width, height;
-        let nodes = [];
-        let mouse = { x: null, y: null, radius: 200 };
-
-        window.addEventListener('mousemove', (e) => {
-            mouse.x = e.clientX;
-            mouse.y = e.clientY;
-        });
-
-        window.addEventListener('mouseleave', () => {
-            mouse.x = null;
-            mouse.y = null;
-        });
-
-        function resizeCanvas() {
-            width = canvas.width = window.innerWidth;
-            height = canvas.height = window.innerHeight;
-            initNodes();
-        }
-
-        function initNodes() {
-            nodes = [];
-            const nodeCount = Math.floor(width * height / 19000);
-            for (let i = 0; i < nodeCount; i++) {
-                nodes.push({
-                    x: Math.random() * width,
-                    y: Math.random() * height,
-                    vx: (Math.random() - 0.5) * 0.6,
-                    vy: (Math.random() - 0.5) * 0.6,
-                    radius: Math.random() * 1.5 + 1
-                });
+            function resizeCanvas() {
+                width = canvas.width = window.innerWidth;
+                height = canvas.height = window.innerHeight;
+                initNodes();
             }
-        }
 
-        function drawCanvas() {
-            ctx.clearRect(0, 0, width, height);
+            function initNodes() {
+                nodes = [];
+                const nodeCount = Math.floor(width * height / 19000);
+                for (let i = 0; i < nodeCount; i++) {
+                    nodes.push({
+                        x: Math.random() * width,
+                        y: Math.random() * height,
+                        vx: (Math.random() - 0.5) * 0.6,
+                        vy: (Math.random() - 0.5) * 0.6,
+                        radius: Math.random() * 1.5 + 1
+                    });
+                }
+            }
 
-            const isDark = htmlElement.getAttribute('data-theme') === 'dark';
-            const baseWebStroke = isDark ? 'rgba(255, 255, 255, 0.12)' : 'rgba(8, 17, 31, 0.05)';
-            const nearWebStroke = isDark ? 'rgba(226, 29, 47, 0.4)' : 'rgba(200, 16, 46, 0.22)';
-            const nodeFill = isDark ? 'rgba(255, 45, 65, 0.5)' : null;
+            function drawCanvas() {
+                ctx.clearRect(0, 0, width, height);
 
-            for (let i = 0; i < nodes.length; i++) {
-                for (let j = i + 1; j < nodes.length; j++) {
-                    const dx = nodes[i].x - nodes[j].x;
-                    const dy = nodes[i].y - nodes[j].y;
-                    const dist = Math.sqrt(dx * dx + dy * dy);
+                const isDark = htmlElement.getAttribute('data-theme') === 'dark';
+                const baseWebStroke = isDark ? 'rgba(255, 255, 255, 0.12)' : 'rgba(8, 17, 31, 0.05)';
+                const nearWebStroke = isDark ? 'rgba(226, 29, 47, 0.4)' : 'rgba(200, 16, 46, 0.22)';
+                const nodeFill = isDark ? 'rgba(255, 45, 65, 0.5)' : null;
 
-                    if (dist < 150) {
+                for (let i = 0; i < nodes.length; i++) {
+                    for (let j = i + 1; j < nodes.length; j++) {
+                        const dx = nodes[i].x - nodes[j].x;
+                        const dy = nodes[i].y - nodes[j].y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+
+                        if (dist < 150) {
+                            ctx.beginPath();
+                            ctx.moveTo(nodes[i].x, nodes[i].y);
+                            ctx.lineTo(nodes[j].x, nodes[j].y);
+                            ctx.strokeStyle = dist < 75 ? nearWebStroke : baseWebStroke;
+                            ctx.lineWidth = isDark ? (dist < 75 ? 1.1 : 0.8) : 0.8;
+                            ctx.stroke();
+                        }
+                    }
+
+                    if (mouse.x !== null && mouse.y !== null) {
+                        const mdx = nodes[i].x - mouse.x;
+                        const mdy = nodes[i].y - mouse.y;
+                        const mdist = Math.sqrt(mdx * mdx + mdy * mdy);
+
+                        if (mdist < mouse.radius) {
+                            const alpha = (1 - mdist / mouse.radius);
+                            ctx.beginPath();
+                            ctx.moveTo(nodes[i].x, nodes[i].y);
+                            ctx.lineTo(mouse.x, mouse.y);
+                            ctx.strokeStyle = isDark ? `rgba(255, 45, 65, ${alpha * 0.85})` : `rgba(200, 16, 46, ${alpha * 0.4})`;
+                            ctx.lineWidth = isDark ? (alpha * 1.8 + 0.6) : 0.9;
+                            ctx.stroke();
+                        }
+                    }
+
+                    if (isDark && nodeFill) {
                         ctx.beginPath();
-                        ctx.moveTo(nodes[i].x, nodes[i].y);
-                        ctx.lineTo(nodes[j].x, nodes[j].y);
-                        ctx.strokeStyle = dist < 75 ? nearWebStroke : baseWebStroke;
-                        ctx.lineWidth = isDark ? (dist < 75 ? 1.1 : 0.8) : 0.8;
-                        ctx.stroke();
+                        ctx.arc(nodes[i].x, nodes[i].y, nodes[i].radius, 0, Math.PI * 2);
+                        ctx.fillStyle = nodeFill;
+                        ctx.fill();
                     }
                 }
 
-                if (mouse.x !== null && mouse.y !== null) {
-                    const mdx = nodes[i].x - mouse.x;
-                    const mdy = nodes[i].y - mouse.y;
-                    const mdist = Math.sqrt(mdx * mdx + mdy * mdy);
+                for (let node of nodes) {
+                    node.x += node.vx;
+                    node.y += node.vy;
 
-                    if (mdist < mouse.radius) {
-                        const alpha = (1 - mdist / mouse.radius);
-                        ctx.beginPath();
-                        ctx.moveTo(nodes[i].x, nodes[i].y);
-                        ctx.lineTo(mouse.x, mouse.y);
-                        ctx.strokeStyle = isDark ? `rgba(255, 45, 65, ${alpha * 0.85})` : `rgba(200, 16, 46, ${alpha * 0.4})`;
-                        ctx.lineWidth = isDark ? (alpha * 1.8 + 0.6) : 0.9;
-                        ctx.stroke();
-                    }
+                    if (node.x < 0 || node.x > width) node.vx *= -1;
+                    if (node.y < 0 || node.y > height) node.vy *= -1;
                 }
 
-                if (isDark && nodeFill) {
+                requestAnimationFrame(drawCanvas);
+            }
+
+            window.addEventListener('resize', resizeCanvas);
+            resizeCanvas();
+            drawCanvas();
+
+            // Click Particles Canvas
+            const clickCanvas = document.getElementById('clickParticlesCanvas');
+            const cCtx = clickCanvas.getContext('2d');
+
+            function resizeClickCanvas() {
+                clickCanvas.width = window.innerWidth;
+                clickCanvas.height = window.innerHeight;
+            }
+            window.addEventListener('resize', resizeClickCanvas);
+            resizeClickCanvas();
+
+            let clickParticles = [];
+            const themeColors = ['#E21D2F', '#0D5CFF', '#FFFFFF', '#FF3344'];
+
+            class SpiderParticle {
+                constructor(x, y) {
+                    this.x = x;
+                    this.y = y;
+                    const angle = Math.random() * Math.PI * 2;
+                    const speed = Math.random() * 3.5 + 1.2;
+                    this.vx = Math.cos(angle) * speed;
+                    this.vy = Math.sin(angle) * speed;
+                    this.size = Math.random() * 2 + 1;
+                    this.color = themeColors[Math.floor(Math.random() * themeColors.length)];
+                    this.alpha = 1;
+                    this.decay = Math.random() * 0.04 + 0.03;
+                }
+
+                update() {
+                    this.x += this.vx;
+                    this.y += this.vy;
+                    this.vx *= 0.92;
+                    this.vy *= 0.92;
+                    this.alpha -= this.decay;
+                }
+
+                draw(ctx) {
+                    ctx.save();
+                    ctx.globalAlpha = Math.max(0, this.alpha);
+                    ctx.fillStyle = this.color;
+                    ctx.shadowColor = this.color;
+                    ctx.shadowBlur = 4;
                     ctx.beginPath();
-                    ctx.arc(nodes[i].x, nodes[i].y, nodes[i].radius, 0, Math.PI * 2);
-                    ctx.fillStyle = nodeFill;
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
                     ctx.fill();
+                    ctx.restore();
                 }
             }
 
-            for (let node of nodes) {
-                node.x += node.vx;
-                node.y += node.vy;
+            window.addEventListener('click', (e) => {
+                const particleCount = 14;
+                for (let i = 0; i < particleCount; i++) {
+                    clickParticles.push(new SpiderParticle(e.clientX, e.clientY));
+                }
+            });
 
-                if (node.x < 0 || node.x > width) node.vx *= -1;
-                if (node.y < 0 || node.y > height) node.vy *= -1;
+            function animateClickParticles() {
+                cCtx.clearRect(0, 0, clickCanvas.width, clickCanvas.height);
+
+                for (let i = clickParticles.length - 1; i >= 0; i--) {
+                    const p = clickParticles[i];
+                    p.update();
+                    p.draw(cCtx);
+
+                    if (p.alpha <= 0) {
+                        clickParticles.splice(i, 1);
+                    }
+                }
+
+                requestAnimationFrame(animateClickParticles);
             }
+            animateClickParticles();
 
-            requestAnimationFrame(drawCanvas);
-        }
+            // Magnetic Web Canvas
+            const magneticCanvas = document.getElementById('magneticWebCanvas');
+            const mCtx = magneticCanvas.getContext('2d');
+            let activeStrand = null;
 
-        window.addEventListener('resize', resizeCanvas);
-        resizeCanvas();
-        drawCanvas();
+            function resizeMagneticCanvas() {
+                magneticCanvas.width = window.innerWidth;
+                magneticCanvas.height = window.innerHeight;
+            }
+            window.addEventListener('resize', resizeMagneticCanvas);
+            resizeMagneticCanvas();
 
-        /* ==========================================================================
-           6. WEB-SHOOT MAGNETIC BUTTONS
-           ========================================================================== */
-        const magneticCanvas = document.getElementById('magneticWebCanvas');
-        const mCtx = magneticCanvas.getContext('2d');
-        let activeStrand = null;
+            const magneticButtons = document.querySelectorAll('.magnetic-target');
 
-        function resizeMagneticCanvas() {
-            magneticCanvas.width = window.innerWidth;
-            magneticCanvas.height = window.innerHeight;
-        }
-
-        window.addEventListener('resize', resizeMagneticCanvas);
-        resizeMagneticCanvas();
-
-        const magneticButtons = document.querySelectorAll('.magnetic-target');
-
-        if (window.innerWidth > 768) {
             magneticButtons.forEach((btn) => {
                 btn.addEventListener('mousemove', (e) => {
                     const rect = btn.getBoundingClientRect();
@@ -2965,10 +2955,53 @@
                 requestAnimationFrame(drawMagneticWeb);
             }
             drawMagneticWeb();
+
+            // Custom Desktop Cursor
+            const customCursor = document.getElementById('customCursor');
+            window.addEventListener('mousemove', (e) => {
+                customCursor.style.left = `${e.clientX}px`;
+                customCursor.style.top = `${e.clientY}px`;
+            });
+
+            document.querySelectorAll('.project-card-v2, .btn-primary, .btn-secondary, .bento-card, .skill-bento-card, .service-card-new, .about-highlight-card, .filter-btn').forEach(item => {
+                item.addEventListener('mouseenter', () => {
+                    customCursor.classList.add('active');
+                    customCursor.textContent = '●';
+                });
+                item.addEventListener('mouseleave', () => {
+                    customCursor.classList.remove('active');
+                    customCursor.textContent = '';
+                });
+            });
         }
 
         /* ==========================================================================
-           7. BEFORE / AFTER INTERACTIVE SLIDER
+           4. NAVIGATION & MOBILE MENU
+           ========================================================================== */
+        const navWrapper = document.getElementById('navWrapper');
+        const mobileHamburger = document.getElementById('mobileHamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navWrapper.classList.add('scrolled');
+            } else {
+                navWrapper.classList.remove('scrolled');
+            }
+        });
+
+        mobileHamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        /* ==========================================================================
+           5. BEFORE / AFTER INTERACTIVE SLIDER
            ========================================================================== */
         const baContainer = document.getElementById('baContainer');
         const baAfterContainer = document.getElementById('baAfterContainer');
@@ -3004,30 +3037,7 @@
         });
 
         /* ==========================================================================
-           8. CUSTOM DESKTOP CURSOR
-           ========================================================================== */
-        const customCursor = document.getElementById('customCursor');
-
-        if (window.innerWidth > 768) {
-            window.addEventListener('mousemove', (e) => {
-                customCursor.style.left = `${e.clientX}px`;
-                customCursor.style.top = `${e.clientY}px`;
-            });
-
-            document.querySelectorAll('.project-card-v2, .btn-primary, .btn-secondary, .bento-card, .skill-bento-card, .service-card-new, .about-highlight-card, .filter-btn').forEach(item => {
-                item.addEventListener('mouseenter', () => {
-                    customCursor.classList.add('active');
-                    customCursor.textContent = '●';
-                });
-                item.addEventListener('mouseleave', () => {
-                    customCursor.classList.remove('active');
-                    customCursor.textContent = '';
-                });
-            });
-        }
-
-        /* ==========================================================================
-           9. PORTFOLIO FILTERING LOGIC
+           6. PORTFOLIO FILTERING LOGIC
            ========================================================================== */
         const filterBtns = document.querySelectorAll('.filter-btn');
         const projectCards = document.querySelectorAll('.project-card-v2');
@@ -3050,7 +3060,7 @@
         });
 
         /* ==========================================================================
-           10. ASYNCHRONOUS FORM SUBMISSION VIA FORMSPREE
+           7. ASYNCHRONOUS FORM SUBMISSION VIA FORMSPREE
            ========================================================================== */
         const contactForm = document.getElementById('contactForm');
 
