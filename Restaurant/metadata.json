@@ -1,8 +1,0 @@
-{
-  "name": "Urban Fork",
-  "description": "A luxury, contemporary fine-dining restaurant blending architectural elegance, moody ambient lighting, and seasonal gastronomy.",
-  "requestFramePermissions": [],
-  "majorCapabilities": [
-    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
-  ]
-}
