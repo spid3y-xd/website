@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reservations — Urban Fork | Fine Dining Bookings</title>
+  <meta name="description" content="Reserve your dining experience at Urban Fork. Choose from the Main Dining Room, the intimate Chef's Counter, or the Obsidian Private Salon.">
+  <meta property="og:title" content="Urban Fork — Table Reservations">
+  <meta property="og:description" content="Reserve your dining experience at Urban Fork.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="alternate icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="favicon.svg">
+
+  <!-- Critical Asset Preloader -->
+  <link rel="preload" as="image" href="images/interior-chef-table.jpg">
+
+  <link rel="stylesheet" href="css/style.css">
+  <script type="module" src="js/script.js"></script>
+</head>
+<body>
+
+  <!-- Page Loader -->
+  <div class="page-loader" aria-hidden="true">
+    <div class="loader-logo">URBAN FORK</div>
+    <div class="loader-bar"></div>
+  </div>
+
+  <!-- Navigation -->
+  <header>
+    <nav class="navbar" id="main-navbar">
+      <div class="nav-container">
+        <a href="index.html" class="nav-logo" aria-label="Urban Fork Homepage">
+          <span class="nav-logo-text">Urban <span>Fork</span></span>
+          <span class="nav-logo-sub">Haute Gastronomie</span>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="menu.html" class="nav-link">Menu</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+          <li><a href="reservations.html" class="nav-link active">Reservations</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button type="button" class="theme-toggle-btn" aria-label="Toggle Color Theme"></button>
+          <a href="reservations.html" class="btn btn-gold nav-btn-desktop">Reserve Table</a>
+          <button type="button" class="mobile-nav-toggle" aria-label="Open Navigation Menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Drawer & Backdrop -->
+  <div class="mobile-nav-backdrop"></div>
+  <aside class="mobile-nav-drawer" aria-label="Mobile Navigation">
+    <div>
+      <div style="margin-bottom: 2.5rem;">
+        <span class="nav-logo-text" style="font-size: 2.2rem;">Urban <span style="color: var(--accent-gold); font-style: italic;">Fork</span></span>
+        <span class="nav-logo-sub" style="display: block; margin-top: 4px;">Michelin-Adjacent Dining</span>
+      </div>
+      <ul class="mobile-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="menu.html" class="nav-link">Menu</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+        <li><a href="reservations.html" class="nav-link active">Reservations</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <a href="reservations.html" class="btn btn-gold" style="width: 100%;">Reserve A Table</a>
+    </div>
+  </aside>
+
+  <main>
+    <!-- Page Header Banner -->
+    <header class="page-header">
+      <div class="page-header-bg">
+        <img src="images/interior-bar-area.jpg" alt="Dining room reservations ambiance" data-parallax="0.2">
+      </div>
+      <div class="page-header-content">
+        <span class="eyebrow reveal">Join Our Table</span>
+        <h1 class="heading-display heading-display-lg reveal reveal-delay-1" style="margin: 0.8rem 0 1rem;">
+          Reserve An Experience
+        </h1>
+        <p class="text-secondary reveal reveal-delay-2" style="font-size: 1.1rem; line-height: 1.7;">
+          Reservations open thirty days in advance. Please allocate two to three hours for our seasonal tasting progressions.
+        </p>
+      </div>
+    </header>
+
+    <!-- Reservation Form & Side Info Section -->
+    <section class="section-spacing" style="background: var(--bg-primary);">
+      <div class="container">
+        
+        <div class="form-grid-layout">
+          
+          <!-- Booking Form Card -->
+          <div class="form-panel reveal">
+            
+            <!-- Standard Form -->
+            <form id="reservation-form" novalidate>
+              <div style="margin-bottom: 2.5rem;">
+                <span class="eyebrow no-after" style="margin-bottom: 0.5rem;">Table Inquiries</span>
+                <h2 class="heading-display heading-display-md" style="margin-top: 0.5rem; margin-bottom: 0.5rem;">Guest Information</h2>
+                <p class="text-secondary" style="font-size: 0.9rem;">Please provide your reservation requirements. Instant confirmation provided upon submission.</p>
+              </div>
+
+              <!-- Name & Email Row -->
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="res_name">Lead Guest Full Name <span class="req">*</span></label>
+                  <input type="text" id="res_name" name="res_name" class="form-control" placeholder="Eleanor Vance" required autocomplete="name">
+                  <div class="form-feedback">Please enter your full name.</div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="res_email">Email Address <span class="req">*</span></label>
+                  <input type="email" id="res_email" name="res_email" class="form-control" placeholder="eleanor@domain.com" required autocomplete="email">
+                  <div class="form-feedback">Please provide a valid email address.</div>
+                </div>
+              </div>
+
+              <!-- Phone & Party Size Row -->
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="res_phone">Contact Telephone <span class="req">*</span></label>
+                  <input type="tel" id="res_phone" name="res_phone" class="form-control" placeholder="+1 (555) 000-0000" required autocomplete="tel">
+                  <div class="form-feedback">Please enter a valid contact telephone number.</div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="res_party">Party Size <span class="req">*</span></label>
+                  <select id="res_party" name="res_party" class="form-control" required>
+                    <option value="1 Guest">1 Guest (Single Seating)</option>
+                    <option value="2 Guests" selected>2 Guests (Table for Two)</option>
+                    <option value="3 Guests">3 Guests</option>
+                    <option value="4 Guests">4 Guests (Standard Table)</option>
+                    <option value="5 Guests">5 Guests</option>
+                    <option value="6 Guests">6 Guests (Large Table)</option>
+                    <option value="7+ Guests (Private Salon)">7+ Guests (Private Salon Required)</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Date & Time Row -->
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="res_date">Reservation Date <span class="req">*</span></label>
+                  <input type="date" id="res_date" name="res_date" class="form-control" required>
+                  <div class="form-feedback">Please select a valid reservation date.</div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="res_time">Seating Time <span class="req">*</span></label>
+                  <select id="res_time" name="res_time" class="form-control" required>
+                    <option value="5:00 PM">5:00 PM &mdash; Twilight Seating</option>
+                    <option value="5:30 PM">5:30 PM</option>
+                    <option value="6:00 PM">6:00 PM</option>
+                    <option value="6:30 PM">6:30 PM</option>
+                    <option value="7:00 PM" selected>7:00 PM &mdash; Prime Evening</option>
+                    <option value="7:30 PM">7:30 PM &mdash; Prime Evening</option>
+                    <option value="8:00 PM">8:00 PM</option>
+                    <option value="8:30 PM">8:30 PM</option>
+                    <option value="9:00 PM">9:00 PM &mdash; Late Night Service</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Seating Experience Area Selection -->
+              <div class="form-group" style="margin-top: 1rem;">
+                <label class="form-label">Seating Experience Preference <span class="req">*</span></label>
+                <div class="radio-chips">
+                  <div class="chip-option">
+                    <input type="radio" id="seat_main" name="res_seating" value="Main Dining Room" checked>
+                    <label for="seat_main" class="chip-label">Main Dining Room</label>
+                  </div>
+                  <div class="chip-option">
+                    <input type="radio" id="seat_counter" name="res_seating" value="The Chef's Counter">
+                    <label for="seat_counter" class="chip-label">Chef's Counter</label>
+                  </div>
+                  <div class="chip-option">
+                    <input type="radio" id="seat_terrace" name="res_seating" value="Greenhouse Terrace">
+                    <label for="seat_terrace" class="chip-label">Greenhouse Terrace</label>
+                  </div>
+                  <div class="chip-option">
+                    <input type="radio" id="seat_obsidian" name="res_seating" value="The Obsidian Salon">
+                    <label for="seat_obsidian" class="chip-label">Obsidian Room</label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Special Notes / Dietary Restrictions -->
+              <div class="form-group" style="margin-top: 1.5rem;">
+                <label class="form-label" for="res_notes">Dietary Restrictions & Special Occasions</label>
+                <textarea id="res_notes" name="res_notes" class="form-control" rows="3" placeholder="Please indicate any severe allergies (e.g. alliums, shellfish), anniversaries, or sommelier preferences..."></textarea>
+              </div>
+
+              <div style="margin-top: 2rem;">
+                <button type="submit" class="btn btn-gold" style="width: 100%; padding: 1.1rem;">
+                  Confirm Reservation Request
+                </button>
+                <p class="text-muted" style="font-size: 0.75rem; text-align: center; margin-top: 0.85rem;">
+                  By clicking confirm, you agree to our 24-hour cancellation protocol. No pre-payment required.
+                </p>
+              </div>
+            </form>
+
+            <!-- Success State Card (Shown upon successful submission) -->
+            <div id="reservation-success" class="form-success-state">
+              <div class="success-icon-wrap">✦</div>
+              <span class="eyebrow no-after" style="margin-bottom: 0.5rem;">Booking Confirmed</span>
+              <h2 class="heading-display heading-display-md" style="margin-top: 0.5rem; margin-bottom: 0.75rem;">
+                We Await Your Arrival
+              </h2>
+              <p class="text-secondary" style="font-size: 0.95rem; max-width: 480px; margin: 0 auto 1.5rem; line-height: 1.6;">
+                Your reservation has been recorded in our maître d' guestbook. A formal confirmation dossier and digital calendar invitation have been dispatched to your email address.
+              </p>
+
+              <div class="booking-code-box">
+                <span style="font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); display: block; margin-bottom: 4px;">Reservation Reference</span>
+                <div class="booking-code">UF-8492</div>
+              </div>
+
+              <div class="booking-summary-details" style="background: var(--bg-secondary); border: 1px solid var(--border-subtle); padding: 1.5rem; border-radius: 4px; max-width: 440px; margin: 0 auto 2rem; text-align: left; font-size: 0.9rem; line-height: 1.8; color: var(--text-secondary);">
+                <!-- Populated dynamically via vanilla JS -->
+              </div>
+
+              <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <button type="button" id="book-another-btn" class="btn btn-outline">Make Another Reservation</button>
+                <a href="menu.html" class="btn btn-gold">Review Tasting Menu</a>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Decorative Side Panel with Hours, Dress Code & Policies -->
+          <aside class="side-info-card reveal reveal-delay-2" aria-label="Reservation Guidelines">
+            <div style="border-radius: 4px; overflow: hidden; margin-bottom: 2rem; border: 1px solid var(--border-subtle);">
+              <img src="images/interior-chef-table.jpg" alt="Chef table dining room ambiance" style="width: 100%; aspect-ratio: 16 / 10; object-fit: cover;">
+            </div>
+
+            <div class="info-item">
+              <div class="info-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              </div>
+              <div class="info-text">
+                <h4>Seating Windows</h4>
+                <p>Dinner service: 5:00 PM &ndash; 11:30 PM<br>Last kitchen order at 9:45 PM</p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="info-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.38 3.46L16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"></path></svg>
+              </div>
+              <div class="info-text">
+                <h4>Dress Code</h4>
+                <p>Smart Elegant / Architectural Chic.<br>Athletic apparel and beachwear are respectfully declined.</p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="info-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+              </div>
+              <div class="info-text">
+                <h4>Cancellation Protocol</h4>
+                <p>Please provide at least 24 hours notice for cancellations or guest count adjustments.</p>
+              </div>
+            </div>
+
+            <div class="info-item" style="margin-bottom: 0;">
+              <div class="info-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              </div>
+              <div class="info-text">
+                <h4>Direct Concierge</h4>
+                <p>Telephone: (555) 839-2041<br>Email: concierge@urbanfork.com</p>
+              </div>
+            </div>
+          </aside>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Universal Luxury Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="nav-logo-text">Urban <span style="color: var(--accent-gold); font-style: italic;">Fork</span></div>
+          <p>
+            An architectural study in contemporary gastronomy. Guided by seasonal provenance, heritage techniques, and quiet luxury hospitality.
+          </p>
+          <div class="footer-socials">
+            <a href="#instagram" class="social-link" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path></svg></a>
+            <a href="#facebook" class="social-link" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Seasonal Menu</a></li>
+            <li><a href="about.html">About & Team</a></li>
+            <li><a href="gallery.html">Visual Gallery</a></li>
+            <li><a href="reservations.html">Book A Table</a></li>
+            <li><a href="contact.html">Contact & Directions</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Hours</h4>
+          <div class="footer-hours-list">
+            <p><strong>Dinner:</strong><br>Tue &ndash; Sun: 5:00 PM &ndash; 11:30 PM</p>
+            <p style="margin-top: 0.6rem;"><strong>Lounge:</strong><br>Tue &ndash; Sun: 4:30 PM &ndash; 1:00 AM</p>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Private Registry</h4>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">Receive seasonal menu releases and sommelier tasting invitations.</p>
+          <form class="newsletter-form">
+            <input type="email" class="newsletter-input" placeholder="Your email address" required>
+            <button type="submit" class="newsletter-btn">Join</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 Urban Fork Restaurant Group. All rights reserved.</div>
+        <div>448 Grandview Boulevard, Metropolis &middot; (555) 839-2041</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Discreet Gold-Accented 'Back to Top' Button -->
+  <button type="button" class="back-to-top" id="back-to-top" aria-label="Back to top" title="Back to top">
+    <svg class="back-to-top-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M12 19V5M5 12l7-7 7 7"/>
+    </svg>
+  </button>
+
+</body>
+</html>

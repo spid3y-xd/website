@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Urban Fork — Contemporary Fine Dining & Architectural Hospitality</title>
+  <meta name="description" content="A luxury, contemporary fine-dining restaurant blending architectural elegance, moody ambient lighting, and seasonal gastronomy.">
+  <meta property="og:title" content="Urban Fork — Contemporary Fine Dining">
+  <meta property="og:description" content="A luxury, contemporary fine-dining restaurant blending architectural elegance, moody ambient lighting, and seasonal gastronomy.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Google Fonts: Cormorant Garamond & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="alternate icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="favicon.svg">
+
+  <!-- Critical Asset Preloader -->
+  <link rel="preload" as="image" href="images/hero-dining-room.jpg">
+
+  <!-- Shared Production Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+  <script type="module" src="js/script.js"></script>
+</head>
+<body>
+
+  <!-- Initial Elegant Page Loader -->
+  <div class="page-loader" aria-hidden="true">
+    <div class="loader-logo">URBAN FORK</div>
+    <div class="loader-bar"></div>
+  </div>
+
+  <!-- Sticky Luxury Navigation -->
+  <header>
+    <nav class="navbar" id="main-navbar">
+      <div class="nav-container">
+        <a href="index.html" class="nav-logo" aria-label="Urban Fork Homepage">
+          <span class="nav-logo-text">Urban <span>Fork</span></span>
+          <span class="nav-logo-sub">Haute Gastronomie</span>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="menu.html" class="nav-link">Menu</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+          <li><a href="reservations.html" class="nav-link">Reservations</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button type="button" class="theme-toggle-btn" aria-label="Toggle Color Theme" title="Switch between dark and light theme"></button>
+          <a href="reservations.html" class="btn btn-gold nav-btn-desktop">Reserve Table</a>
+          <button type="button" class="mobile-nav-toggle" aria-label="Open Navigation Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Drawer & Backdrop -->
+  <div class="mobile-nav-backdrop"></div>
+  <aside class="mobile-nav-drawer" aria-label="Mobile Navigation">
+    <div>
+      <div style="margin-bottom: 2.5rem;">
+        <span class="nav-logo-text" style="font-size: 2.2rem;">Urban <span style="color: var(--accent-gold); font-style: italic;">Fork</span></span>
+        <span class="nav-logo-sub" style="display: block; margin-top: 4px;">Michelin-Adjacent Dining</span>
+      </div>
+      <ul class="mobile-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="menu.html" class="nav-link">Menu</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+        <li><a href="reservations.html" class="nav-link">Reservations</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div style="margin-bottom: 1.5rem; font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">
+        <p>448 Grandview Boulevard, Metropolis</p>
+        <p>Dinner: Tue–Sun | 5:00 PM – 11:30 PM</p>
+      </div>
+      <a href="reservations.html" class="btn btn-gold" style="width: 100%;">Reserve A Table</a>
+    </div>
+  </aside>
+
+  <main>
+    <!-- Full-Screen Hero Section -->
+    <section class="hero" id="hero-section">
+      <div class="hero-bg-wrapper">
+        <img src="images/hero-dining-room.jpg" alt="Moody, elegant Urban Fork dining room with warm pendant lighting" class="hero-bg" data-parallax="0.18">
+      </div>
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
+        <span class="eyebrow reveal reveal-delay-1">Architectural Elegance & Provenance</span>
+        <h1 class="hero-title reveal reveal-delay-2">
+          Where Fire, Stone & <em>Terroir</em> Converge.
+        </h1>
+        <p class="hero-desc reveal reveal-delay-3">
+          Urban Fork merges brutalist architectural quiet with intimate culinary warmth. An evolving seasonal tasting menu honoring heritage growers, coastal catches, and open-hearth craft.
+        </p>
+        <div class="hero-actions reveal reveal-delay-4">
+          <a href="reservations.html" class="btn btn-gold">Reserve Your Experience</a>
+          <a href="menu.html" class="btn btn-outline">Explore Autumn Menu</a>
+        </div>
+      </div>
+
+      <div class="hero-scroll-indicator" aria-hidden="true">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- Welcome / Architectural Philosophy Section -->
+    <section class="section-spacing" id="welcome-statement" style="background: var(--bg-primary);">
+      <div class="container">
+        <div class="editorial-grid">
+          <div class="editorial-img-stack reveal">
+            <img src="images/interior-chef-table.jpg" alt="Intimate Chef counter overlooking open hearth fire at Urban Fork" class="editorial-img-main">
+            <img src="images/gallery-flame-01.jpg" alt="Live open-hearth wood flame grill in exhibition kitchen" class="editorial-img-offset">
+          </div>
+
+          <div class="reveal reveal-delay-2">
+            <span class="eyebrow no-after">The Urban Fork Ethos</span>
+            <h2 class="heading-display heading-display-md" style="margin-top: 1rem; margin-bottom: 1.5rem;">
+              Quiet luxury sculpted in raw stone and live embers.
+            </h2>
+            <p class="text-secondary" style="margin-bottom: 1.25rem;">
+              Conceived as a sanctuary from metropolitan tempo, Urban Fork pairs monolithic basalt counters and brushed brass with understated acoustic warmth. We believe fine dining should be profound yet unpretentious, grounding each patron in a multisensory celebration of seasonality.
+            </p>
+            <div class="gold-quote">
+              “Gastronomy is an architectural dialogue between raw nature and human contemplation.”
+            </div>
+            <p class="text-muted" style="font-size: 0.9rem; margin-bottom: 2rem;">
+              Executive Chef Marcus Vance &middot; Master Sommelier Hélène Laurent
+            </p>
+            <a href="about.html" class="link-editorial">Discover Our Heritage & Philosophy &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Curated Signature Highlights -->
+    <section class="section-spacing" id="curated-highlights" style="background: var(--bg-secondary); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+      <div class="container">
+        <div style="text-align: center; max-width: 720px; margin: 0 auto 4rem;" class="reveal">
+          <span class="eyebrow">Signature Compositions</span>
+          <h2 class="heading-display heading-display-md" style="margin-top: 1rem; margin-bottom: 1rem;">
+            Culinary Highlights of the Autumn Equinox
+          </h2>
+          <p class="text-secondary">
+            Each plate is an architectural composition balancing tactile texture, smoke infusions, and pure botanical provenance.
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+          <!-- Highlight 1 -->
+          <article class="luxury-card reveal reveal-delay-1">
+            <div class="card-img-wrapper">
+              <img src="images/dish-wagyu.jpg" alt="A5 Miyazaki Wagyu with smoked marrow reduction and charred allium">
+              <div class="card-overlay"></div>
+            </div>
+            <div class="card-body">
+              <div class="card-header-row">
+                <h3 class="card-title">A5 Miyazaki Wagyu</h3>
+                <span class="card-price">$88</span>
+              </div>
+              <p class="card-desc">
+                Charred over binchotan embers, smoked marrow glaze, fermented wild black garlic, and foraged maitake mushrooms.
+              </p>
+              <div class="tag-list">
+                <span class="tag-badge">Chef's Signature</span>
+                <span class="tag-badge">Gluten-Free</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Highlight 2 -->
+          <article class="luxury-card reveal reveal-delay-2">
+            <div class="card-img-wrapper">
+              <img src="images/dish-seared-scallops.jpg" alt="Diver scallops with sunchoke velouté, black winter truffle, and chive oil">
+              <div class="card-overlay"></div>
+            </div>
+            <div class="card-body">
+              <div class="card-header-row">
+                <h3 class="card-title">Hokkaido Sea Scallop</h3>
+                <span class="card-price">$46</span>
+              </div>
+              <p class="card-desc">
+                Dayboat diver scallops, caramelized sunchoke velouté, shaved Périgord black truffle, and cold-pressed chive oil.
+              </p>
+              <div class="tag-list">
+                <span class="tag-badge">Coastal Provenance</span>
+                <span class="tag-badge">Chef's Pick</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Highlight 3 -->
+          <article class="luxury-card reveal reveal-delay-3">
+            <div class="card-img-wrapper">
+              <img src="images/dish-duck-breast.jpg" alt="Dry-aged Rohan duck breast with spiced plum glaze and caramelized chicory">
+              <div class="card-overlay"></div>
+            </div>
+            <div class="card-body">
+              <div class="card-header-row">
+                <h3 class="card-title">Dry-Aged Rohan Duck</h3>
+                <span class="card-price">$58</span>
+              </div>
+              <p class="card-desc">
+                Twenty-one day aged duck breast, spiced Damson plum reduction, caramelized Treviso chicory, and coriander seed jus.
+              </p>
+              <div class="tag-list">
+                <span class="tag-badge">Heirloom Breed</span>
+                <span class="tag-badge">Live Embers</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Highlight 4 -->
+          <article class="luxury-card reveal reveal-delay-4">
+            <div class="card-img-wrapper">
+              <img src="images/dish-chocolate-sphere.jpg" alt="Smoked dark chocolate sphere with single-origin cacao, hazelnut praline, and gold leaf">
+              <div class="card-overlay"></div>
+            </div>
+            <div class="card-body">
+              <div class="card-header-row">
+                <h3 class="card-title">Smoked Valrhona Noir</h3>
+                <span class="card-price">$26</span>
+              </div>
+              <p class="card-desc">
+                Single-origin 72% dark chocolate sphere, roasted Piedmont hazelnut praline, smoked fleur de sel, and gold leaf.
+              </p>
+              <div class="tag-list">
+                <span class="tag-badge">Artisanal Patisserie</span>
+                <span class="tag-badge">Vegetarian</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div style="text-align: center; margin-top: 3.5rem;" class="reveal">
+          <a href="menu.html" class="btn btn-outline">Explore Full Categorized Menu</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dining Environments Preview -->
+    <section class="section-spacing" style="background: var(--bg-primary);">
+      <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 2rem; margin-bottom: 3.5rem;" class="reveal">
+          <div>
+            <span class="eyebrow">Atmospheric Spaces</span>
+            <h2 class="heading-display heading-display-md" style="margin-top: 1rem;">Three Distinct Experiences</h2>
+          </div>
+          <p class="text-secondary" style="max-width: 440px;">
+            Whether observing the intense ballet of the chef's counter or entertaining in secluded intimacy, every corner is acoustically calibrated.
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem;">
+          <div class="luxury-card reveal reveal-delay-1">
+            <div class="card-img-wrapper" style="aspect-ratio: 16 / 11;">
+              <img src="images/interior-bar-area.jpg" alt="Sculptural marble cocktail lounge with back-lit brass shelving">
+            </div>
+            <div class="card-body">
+              <span class="eyebrow no-after" style="margin-bottom: 0.5rem; font-size: 0.6875rem;">The Lounge & Bar</span>
+              <h3 class="card-title" style="margin-bottom: 0.5rem;">The Alchemist's Salon</h3>
+              <p class="card-desc">Clarified botanical libations, rare Japanese whiskies, and grower champagnes served over hand-chiseled crystal ice.</p>
+              <a href="menu.html#cocktails" class="link-editorial">View Cellar & Cocktails &rarr;</a>
+            </div>
+          </div>
+
+          <div class="luxury-card reveal reveal-delay-2">
+            <div class="card-img-wrapper" style="aspect-ratio: 16 / 11;">
+              <img src="images/interior-private-dining.jpg" alt="The Obsidian Room private dining suite with custom acoustic panelling">
+            </div>
+            <div class="card-body">
+              <span class="eyebrow no-after" style="margin-bottom: 0.5rem; font-size: 0.6875rem;">Private Dining</span>
+              <h3 class="card-title" style="margin-bottom: 0.5rem;">The Obsidian Chamber</h3>
+              <p class="card-desc">An intimate salon accommodating up to sixteen guests with dedicated sommelier service and bespoke custom tasting menus.</p>
+              <a href="reservations.html" class="link-editorial">Inquire For Private Salon &rarr;</a>
+            </div>
+          </div>
+
+          <div class="luxury-card reveal reveal-delay-3">
+            <div class="card-img-wrapper" style="aspect-ratio: 16 / 11;">
+              <img src="images/interior-patio.jpg" alt="Covered rooftop greenhouse terrace with illuminated olive trees">
+            </div>
+            <div class="card-body">
+              <span class="eyebrow no-after" style="margin-bottom: 0.5rem; font-size: 0.6875rem;">Open Air</span>
+              <h3 class="card-title" style="margin-bottom: 0.5rem;">The Greenhouse Terrace</h3>
+              <p class="card-desc">Climate-controlled enclosed rooftop pavilion ringed with century-old olive trees and panoramic cityscape silhouettes.</p>
+              <a href="gallery.html" class="link-editorial">Explore Spatial Gallery &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reservation CTA Band (Parallax) -->
+    <section class="section-spacing" style="position: relative; overflow: hidden; background: var(--bg-tertiary); border-top: 1px solid var(--border-subtle);">
+      <div style="position: absolute; inset: 0; opacity: 0.22; z-index: 0;">
+        <img src="images/wine-cellar.jpg" alt="Urban Fork vintage reserve wine cellar" style="width: 100%; height: 130%; object-fit: cover;" data-parallax="0.2">
+      </div>
+      <div style="position: absolute; inset: 0; background: radial-gradient(circle at center, transparent 0%, rgba(13, 13, 13, 0.8) 80%); z-index: 1;"></div>
+
+      <div class="container container-narrow" style="position: relative; z-index: 2; text-align: center;">
+        <div class="reveal">
+          <span class="eyebrow">Join Our Table</span>
+          <h2 class="heading-display heading-display-lg" style="margin: 1.25rem 0 1.5rem;">
+            An Invitation to Indulgence
+          </h2>
+          <p class="text-secondary" style="font-size: 1.15rem; max-width: 620px; margin: 0 auto 2.5rem; line-height: 1.7;">
+            Reservations are released thirty days in advance on the first of each month. We welcome walk-ins at the Alchemist's Salon on a first-come, first-served basis.
+          </p>
+          <div style="display: flex; gap: 1.25rem; justify-content: center; flex-wrap: wrap;">
+            <a href="reservations.html" class="btn btn-gold">Make A Reservation</a>
+            <a href="contact.html" class="btn btn-outline">Private Events & Concierge</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Universal Luxury Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="nav-logo-text">Urban <span style="color: var(--accent-gold); font-style: italic;">Fork</span></div>
+          <p>
+            An architectural study in contemporary gastronomy. Guided by seasonal provenance, heritage techniques, and quiet luxury hospitality.
+          </p>
+          <div class="footer-socials">
+            <a href="#instagram" class="social-link" aria-label="Instagram" title="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="#facebook" class="social-link" aria-label="Facebook" title="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+            <a href="#michelin" class="social-link" aria-label="Michelin Guide" title="Michelin Guide Recognition">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Seasonal Menu</a></li>
+            <li><a href="about.html">About & Team</a></li>
+            <li><a href="gallery.html">Visual Gallery</a></li>
+            <li><a href="reservations.html">Book A Table</a></li>
+            <li><a href="contact.html">Contact & Directions</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Hours of Service</h4>
+          <div class="footer-hours-list">
+            <p><strong>Main Dining:</strong><br>Tue &ndash; Sun: 5:00 PM &ndash; 11:30 PM</p>
+            <p style="margin-top: 0.6rem;"><strong>The Alchemist's Salon:</strong><br>Tue &ndash; Sun: 4:30 PM &ndash; 1:00 AM</p>
+            <p style="margin-top: 0.6rem;"><strong>Monday:</strong><br><span style="color: var(--accent-gold);">Private Events Only</span></p>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Private Registry</h4>
+          <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 1rem;">
+            Receive unlisted invitations for cellar releases, seasonal menu previews, and guest chef residency dinners.
+          </p>
+          <form class="newsletter-form" aria-label="Newsletter Subscription">
+            <input type="email" class="newsletter-input" placeholder="Your email address" required aria-label="Email address for private registry">
+            <button type="submit" class="newsletter-btn">Join</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Urban Fork Restaurant Group. All rights reserved.</div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="contact.html" style="color: var(--text-muted);">Press Room</a>
+          <a href="contact.html" style="color: var(--text-muted);">Privacy Charter</a>
+          <a href="reservations.html" style="color: var(--text-muted);">Cancellation Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Discreet Gold-Accented 'Back to Top' Button -->
+  <button type="button" class="back-to-top" id="back-to-top" aria-label="Back to top" title="Back to top">
+    <svg class="back-to-top-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M12 19V5M5 12l7-7 7 7"/>
+    </svg>
+  </button>
+
+</body>
+</html>
