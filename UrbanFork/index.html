@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Urban Fork — Contemporary Gastronomy &amp; Architectural Fine Dining</title>
+  <meta name="description" content="Urban Fork is a Two-Michelin-Star fine-dining sanctuary in Chicago blending contemporary architectural form with sensory gastronomy, hyper-seasonal terroir, and quiet luxury.">
+  <link rel="preload" as="image" href="images/hero-dining-room.jpg">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍽️</text></svg>">
+</head>
+<body>
+
+  <!-- Professional Fixed Site Header -->
+  <header class="site-header" id="main-header">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand-logo" aria-label="Urban Fork Home">
+        <span class="logo-main">Urban Fork</span>
+      </a>
+
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="menu.html" class="nav-link">Menu</a>
+        <a href="about.html" class="nav-link">Our Story</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="reservations.html" class="nav-link">Reservations</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button type="button" class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle theme">
+          <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+
+        <a href="reservations.html" class="header-reserve-btn" id="header-reserve-btn">Reserve</a>
+
+        <button type="button" class="nav-toggle-btn" id="mobile-menu-toggle" aria-label="Open navigation menu" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Nav Drawer -->
+  <div class="mobile-nav-overlay" id="mobile-nav-overlay">
+    <div class="mobile-nav-drawer" role="dialog" aria-modal="true">
+      <div>
+        <div class="brand-logo" style="margin-bottom: 36px;">
+          <span class="logo-main">Urban Fork</span>
+        </div>
+        <div class="mobile-menu-links">
+          <a href="index.html" class="mobile-nav-link active">Home</a>
+          <a href="menu.html" class="mobile-nav-link">Menu</a>
+          <a href="about.html" class="mobile-nav-link">Our Story</a>
+          <a href="gallery.html" class="mobile-nav-link">Gallery</a>
+          <a href="reservations.html" class="mobile-nav-link">Reservations</a>
+          <a href="contact.html" class="mobile-nav-link">Contact</a>
+        </div>
+      </div>
+
+      <div class="mobile-nav-footer">
+        <p class="mobile-contact-item">442 N. Michigan Avenue, Chicago, IL</p>
+        <p class="mobile-contact-item">(312) 555-0198</p>
+        <a href="reservations.html" class="btn btn-gold" style="width: 100%; margin-top: 16px;">Reserve a Table</a>
+      </div>
+    </div>
+  </div>
+
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="hero-wrapper" id="home-hero">
+      <div class="hero-bg-container">
+        <img src="images/hero-dining-room.jpg" alt="Urban Fork dining room with ambient lighting and architectural columns" class="hero-bg-img" fetchpriority="high">
+      </div>
+      <div class="hero-overlay"></div>
+
+      <div class="container hero-content">
+        <div class="hero-badge reveal">
+          Two Michelin Stars &bull; Chicago, Illinois
+        </div>
+        <h1 class="hero-title reveal delay-1">
+          Architectural Elegance.<br>
+          <span class="title-accent">Sensory Gastronomy.</span>
+        </h1>
+        <p class="hero-subtitle reveal delay-2">
+          A restored 1922 Michigan Avenue landmark, reimagined as a seasonal tasting-menu restaurant.
+        </p>
+        <div class="hero-actions reveal delay-3">
+          <a href="reservations.html" class="btn btn-gold" id="hero-reserve-cta">Reserve a Table </a>
+          <a href="menu.html" class="btn btn-outline-gold" id="hero-menu-cta">Explore  Menu</a>
+        </div>
+      </div>
+
+      <div class="hero-scroll-discover reveal delay-3">
+        <a href="#welcome-section" class="discover-link" aria-label="Explore Urban Fork philosophy">
+          <span>Explore</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- Editorial Numbered Feature Strip (Replaces standard template ribbon) -->
+    <section class="curation-strip" aria-label="Architectural and culinary pillars">
+      <div class="container">
+        <div class="numbered-grid">
+          <div class="numbered-item reveal">
+            <span class="numbered-num">01</span>
+            <div class="numbered-content">
+              <span class="numbered-tag">Gastronomy</span>
+              <h3 class="numbered-heading">Seasonal Tasting Menus</h3>
+              <p class="numbered-text">Multi-course menus built around what's growing and available this week, sourced from regional farms and coastal waters.</p>
+            </div>
+          </div>
+          <div class="numbered-item reveal delay-1">
+            <span class="numbered-num">02</span>
+            <div class="numbered-content">
+              <span class="numbered-tag">Architecture</span>
+              <h3 class="numbered-heading">The 1922 Vault</h3>
+              <p class="numbered-text">Original brutalist concrete columns, restored with warm onyx lighting, inside a landmark Michigan Avenue building.</p>
+            </div>
+          </div>
+          <div class="numbered-item reveal delay-2">
+            <span class="numbered-num">03</span>
+            <div class="numbered-content">
+              <span class="numbered-tag">The Cellar</span>
+              <h3 class="numbered-heading">Curated Reserve</h3>
+              <p class="numbered-text">Four hundred bottles, including rare Grand Cru and biodynamic vintages, held in a climate-controlled vault.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Redesigned Minimalist Ethos Section -->
+    <section class="section-padding" id="welcome-section" style="background: var(--bg-primary);">
+      <div class="container">
+        <!-- Ethos Section Header & Lead Philosophy -->
+        <div class="ethos-header reveal">
+          <span class="section-eyebrow">The Urban Fork Ethos</span>
+          <h2 class="section-title">Quiet Luxury, Precise Cooking</h2>
+          <blockquote class="ethos-quote">
+            &ldquo;We'd rather serve a 48-hour consommé than anything ornate. The pause between courses matters as much as the food.&rdquo;
+          </blockquote>
+        </div>
+
+        <!-- 2-Column Balanced Editorial Layout -->
+        <div class="ethos-grid">
+          <!-- Left: Architectural Visual Frame -->
+          <div class="ethos-visual reveal delay-1">
+            <div class="ethos-img-wrap">
+              <img src="images/interior-bar-area.jpg" alt="Atmospheric cocktail lounge and custom warm brass bar at Urban Fork" class="ethos-img" loading="lazy" decoding="async">
+            </div>
+            <div class="ethos-caption">
+              <span>The Historic 1922 Vault</span> &bull; <span>442 N. Michigan Avenue</span>
+            </div>
+          </div>
+
+          <!-- Right: 3 Structured Philosophy Pillars + Chef Signature -->
+          <div class="ethos-pillars reveal delay-2">
+            <div class="ethos-pillar-item">
+              <div class="pillar-number">01</div>
+              <div class="pillar-body">
+                <h3 class="pillar-title">Seasonal Sourcing</h3>
+                <p class="pillar-desc">
+                  We work directly with regional farms and foragers, so the menu changes with what's actually in season.
+                </p>
+              </div>
+            </div>
+
+            <div class="ethos-pillar-item">
+              <div class="pillar-number">02</div>
+              <div class="pillar-body">
+                <h3 class="pillar-title">A Restored Space</h3>
+                <p class="pillar-desc">
+                  The dining room sits inside a 1922 building, keeping its original concrete structure and adding warm, low lighting for an intimate room.
+                </p>
+              </div>
+            </div>
+
+            <div class="ethos-pillar-item">
+              <div class="pillar-number">03</div>
+              <div class="pillar-body">
+                <h3 class="pillar-title">Classic Technique, Light Hand</h3>
+                <p class="pillar-desc">
+                  French technique meets Japanese precision - the goal is depth of flavor without excess on the plate.
+                </p>
+              </div>
+            </div>
+
+            <!-- Signature & Link -->
+            <div class="ethos-footer-row">
+              <div class="chef-signature">
+                <div>
+                  <div class="signature-name">Marcus Dupont</div>
+                  <div class="signature-role">Executive Chef & Founder</div>
+                  <a href="about.html" style="margin-top: 10px;" class="btn-text">Our Full Story <span class="arrow">&rarr;</span></a>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- High-Impact Signature Dishes Highlight Section -->
+    <section class="section-padding" id="signatures-section" style="background: var(--bg-secondary);">
+      <div class="container">
+        <div class="center-text reveal" style="margin-bottom: 60px;">
+          <span class="section-eyebrow">Curated Highlights</span>
+          <h2 class="section-title">Signatures of the Season</h2>
+          <p class="section-desc">
+            A short list of dishes we're currently building the menu around.
+          </p>
+        </div>
+
+        <div class="dishes-grid">
+          <!-- Dish Card 1 -->
+          <article class="dish-card reveal">
+            <div class="dish-img-wrap">
+              <img src="images/dish-seared-scallops.jpg" alt="Pan-seared Hokkaido scallops with saffron emulsion and sea herbs" class="dish-img" loading="lazy" decoding="async">
+            </div>
+            <div class="dish-content">
+              <div class="dish-header">
+                <h3 class="dish-title">Pan-Seared Hokkaido Scallops</h3>
+                <span class="dish-price">$48</span>
+              </div>
+              <p class="dish-desc">
+                Golden caramelized diver scallops, saffron-citrus reduction, wild coastal dill oil, sea foam, and edible calendula flowers.
+              </p>
+              <div class="dish-pairing">
+                <span class="pairing-label">Cellar Pairing:</span> <span class="pairing-name">2021 Chassagne-Montrachet Premier Cru</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Dish Card 2 -->
+          <article class="dish-card reveal delay-1">
+            <div class="dish-img-wrap">
+              <img src="images/dish-wagyu-ribeye.jpg" alt="A5 Miyazaki Wagyu ribeye cap with black garlic demi-glace" class="dish-img" loading="lazy" decoding="async">
+            </div>
+            <div class="dish-content">
+              <div class="dish-header">
+                <h3 class="dish-title">A5 Miyazaki Wagyu Cap</h3>
+                <span class="dish-price">$88</span>
+              </div>
+              <p class="dish-desc">
+                Charred robata-grilled ribeye cap, 60-day fermented black garlic jus, braised spring leeks, and smooth maitake mushroom silk.
+              </p>
+              <div class="dish-pairing">
+                <span class="pairing-label">Cellar Pairing:</span> <span class="pairing-name">2018 Barolo Monprivato, Mascarello</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Dish Card 3 -->
+          <article class="dish-card reveal delay-2">
+            <div class="dish-img-wrap">
+              <img src="images/dish-truffle-pasta.jpg" alt="Artisanal hand-rolled agnolotti with black truffles" class="dish-img" loading="lazy" decoding="async">
+            </div>
+            <div class="dish-content">
+              <div class="dish-header">
+                <h3 class="dish-title">Winter Truffle Agnolotti</h3>
+                <span class="dish-price">$44</span>
+              </div>
+              <p class="dish-desc">
+                Hand-folded egg pasta pillows, roasted hazelnut brown butter, shaved Umbrian black truffles, and aged Parmigiano Reggiano cloud.
+              </p>
+              <div class="dish-pairing">
+                <span class="pairing-label">Cellar Pairing:</span> <span class="pairing-name">2019 Brunello di Montalcino, Biondi-Santi</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Dish Card 4 -->
+          <article class="dish-card reveal delay-3">
+            <div class="dish-img-wrap">
+              <img src="images/dish-chocolate-dessert.jpg" alt="Valrhona dark chocolate ganache quenelle" class="dish-img" loading="lazy" decoding="async">
+            </div>
+            <div class="dish-content">
+              <div class="dish-header">
+                <h3 class="dish-title">Smoked Valrhona Ganache</h3>
+                <span class="dish-price">$26</span>
+              </div>
+              <p class="dish-desc">
+                Single-origin 70% dark chocolate mousse quenelle, smoked sea salt crystals, blood orange glaze droplets, and 24k edible gold leaf.
+              </p>
+              <div class="dish-pairing">
+                <span class="pairing-label">Cellar Pairing:</span> <span class="pairing-name">Ramos Pinto 20-Year Tawny Port</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="center-text" style="margin-top: 60px;">
+          <a href="menu.html" class="btn btn-outline-gold" id="view-full-menu-btn">View Complete Tasting &amp; Drinks Menu <span class="btn-arrow">&rarr;</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Controlled Asymmetry: Designed for Immersion Spaces -->
+    <section class="section-padding" id="spaces-section" style="background: var(--bg-primary);">
+      <div class="container">
+        <div class="center-text reveal" style="margin-bottom: 60px;">
+          <span class="section-eyebrow">Architectural Environments</span>
+          <h2 class="section-title">Designed for Immersion</h2>
+          <p class="section-desc">
+            Three distinct architectural sanctuaries tailored to elevated multi-course dining, botanical mixology rituals, and private cellar tastings.
+          </p>
+        </div>
+
+        <div class="spaces-grid">
+          <!-- Space 1: The Sanctum -->
+          <article class="space-card reveal">
+            <div class="space-img-wrap">
+              <img src="images/hero-dining-room.jpg" alt="The Sanctum main dining hall with dramatic acoustic ceilings and brass chandeliers" class="space-img" loading="lazy" decoding="async">
+            </div>
+            <div class="space-content">
+              <span class="space-tag">Main Dining Room</span>
+              <h3 class="space-title">The Sanctum</h3>
+              <p class="space-desc">
+                Our main dining room. 22-foot concrete ceilings, chandeliers, and Belgian linen tables.              </p>
+              <div class="space-cta-row">
+                <a href="reservations.html" class="btn-text">Reserve The Sanctum <span class="arrow">&rarr;</span></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Space 2: The Onyx Lounge -->
+          <article class="space-card reveal delay-1">
+            <div class="space-img-wrap">
+              <img src="images/dish-cocktail-signature.jpg" alt="Botanical cocktails and backlit honey-onyx bar" class="space-img" loading="lazy" decoding="async">
+            </div>
+            <div class="space-content">
+              <span class="space-tag">Cocktail Salon</span>
+              <h3 class="space-title">The Onyx Lounge</h3>
+              <p class="space-desc">
+                A backlit onyx bar serving botanical cocktails and Japanese whiskies. Walk-ins welcome.              </p>
+              <div class="space-cta-row">
+                <a href="menu.html" class="btn-text">Explore Cocktails <span class="arrow">&rarr;</span></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Space 3: The Sommelier Vault -->
+          <article class="space-card reveal delay-2">
+            <div class="space-img-wrap">
+              <img src="images/interior-wine-cellar.jpg" alt="Glass-enclosed Sommelier Vault housing rare Old World vintages" class="space-img" loading="lazy" decoding="async">
+            </div>
+            <div class="space-content">
+              <span class="space-tag">Subterranean Cellar</span>
+              <h3 class="space-title">The Sommelier Vault</h3>
+              <p class="space-desc">
+                Our underground cellar, available for private tastings led by Head Sommelier Mercier.
+              </p>
+              <div class="space-cta-row">
+                <a href="about.html" class="btn-text">Discover Cellar <span class="arrow">&rarr;</span></a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Atmospheric Full-Width Reservation CTA Band -->
+    <section class="cta-band" id="home-cta-band">
+      <div class="cta-bg">
+        <img src="images/interior-wine-cellar.jpg" alt="Atmospheric background of Urban Fork cellar" loading="lazy" decoding="async">
+      </div>
+      <div class="container cta-content reveal">
+        <span class="section-eyebrow">Join Us</span>
+        <h2 class="section-title">Reserve Your Table</h2>
+        <p class="section-desc" style="margin: 0 auto 36px;">
+          Reservations open 30 days in advance at 10:00 AM CST, for both the Main Dining Room and the Sommelier Vault.
+        </p>
+        <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+          <a href="reservations.html" class="btn btn-gold">Make a Reservation <span class="btn-arrow">&rarr;</span></a>
+          <a href="contact.html" class="btn btn-outline-gold">Private Buyout Inquiries</a>
+        </div>
+        <div class="cta-reassurance-row">
+          <span class="cta-reassurance-item">&#10003; Direct Table Confirmation</span>
+          <span class="cta-reassurance-item">&#10003; Sommelier Wine Pairings</span>
+          <span class="cta-reassurance-item">&#10003; Bespoke Dietary Accommodations</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- World-Class 4-Column Editorial Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo" aria-label="Urban Fork Home">
+            <span class="logo-main">Urban Fork</span>
+          </a>
+          <p>
+            A restored 1922 landmark on Michigan Avenue, home to an evolving two-Michelin-star seasonal tasting experience.
+          </p>
+          <div class="footer-michelin-badge">
+            Two Michelin Stars &bull; Chicago
+          </div>
+        </div>
+
+        <div>
+          <h3 class="footer-heading">The Experience</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Seasonal Tasting Menu</a></li>
+            <li><a href="about.html">Our Story</a></li>
+            <!-- <li><a href="gallery.html">Gallery</a></li> -->
+            <li><a href="reservations.html">Reserve a Table</a></li>
+            <li><a href="contact.html">Private Buyouts</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="footer-heading">Operating Hours</h3>
+          <div class="footer-hours-text">
+            <div class="hours-item">
+              <strong>Dinner Tasting</strong>
+              Tue – Sun: 5:00 PM – 11:30 PM
+            </div>
+            <div class="hours-item">
+              <strong>Onyx Lounge</strong>
+              Tue – Sun: 4:30 PM – 1:00 AM
+            </div>
+            <div class="hours-item">
+              <strong>Monday</strong>
+              Private Buyouts Only
+            </div>
+            <div class="footer-address">
+              442 N. Michigan Ave, Chicago
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="footer-heading">The Chronicle</h3>
+          <p class="footer-newsletter-text">
+            Get seasonal menu previews and cellar release announcements.
+          </p>
+          <form class="newsletter-form" id="footer-newsletter-form">
+            <input type="email" class="newsletter-input" placeholder="Your email address" required aria-label="Email address for newsletter">
+            <button type="submit" class="newsletter-btn" aria-label="Subscribe to newsletter">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Urban Fork Restaurant Group. All rights reserved. Michelin Guide Honoree.
+        </div>
+        <div class="social-links">
+          <a href="#" class="social-icon" aria-label="Instagram">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="Facebook">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="Twitter">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curated Menu — Urban Fork Contemporary Gastronomy</title>
+  <meta name="description" content="Explore our seasonal tasting menu, signature mains, starters, desserts, and sommelier-curated wine pairing program at Urban Fork.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍽️</text></svg>">
+</head>
+<body>
+
+  <!-- Sticky Header -->
+  <header class="site-header" id="main-header">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand-logo" aria-label="Urban Fork Home">
+        <span class="logo-main">Urban Fork</span>
+      </a>
+
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="menu.html" class="nav-link active">Menu</a>
+        <a href="about.html" class="nav-link">Our Story</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="reservations.html" class="nav-link">Reservations</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button type="button" class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle theme">
+          <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+
+        <a href="reservations.html" class="header-reserve-btn" id="header-reserve-btn">Reserve</a>
+
+        <button type="button" class="nav-toggle-btn" id="mobile-menu-toggle" aria-label="Open navigation menu" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Nav Drawer -->
+  <div class="mobile-nav-overlay" id="mobile-nav-overlay">
+    <div class="mobile-nav-drawer" role="dialog" aria-modal="true">
+      <div>
+        <div class="brand-logo" style="margin-bottom: 36px;">
+          <span class="logo-main">Urban Fork</span>
+        </div>
+        <div class="mobile-menu-links">
+          <a href="index.html" class="mobile-nav-link">Home</a>
+          <a href="menu.html" class="mobile-nav-link active">Menu</a>
+          <a href="about.html" class="mobile-nav-link">Our Story</a>
+          <a href="gallery.html" class="mobile-nav-link">Gallery</a>
+          <a href="reservations.html" class="mobile-nav-link">Reservations</a>
+          <a href="contact.html" class="mobile-nav-link">Contact</a>
+        </div>
+      </div>
+
+      <div class="mobile-nav-footer">
+        <p class="mobile-contact-item">442 N. Michigan Avenue, Chicago, IL</p>
+        <p class="mobile-contact-item">(312) 555-0198</p>
+        <a href="reservations.html" class="btn btn-gold" style="width: 100%; margin-top: 16px;">Reserve a Table</a>
+      </div>
+    </div>
+  </div>
+
+  <main id="main-content">
+    <!-- Page Hero Banner -->
+    <section class="hero-wrapper hero-page" id="menu-hero">
+      <div class="hero-bg-container">
+        <img src="images/hero-dining-room.jpg" alt="Urban Fork dining ambience" class="hero-bg-img">
+      </div>
+      <div class="hero-overlay"></div>
+
+      <div class="container hero-content">
+        <span class="section-eyebrow reveal">Seasonal Gastronomy</span>
+        <h1 class="hero-title reveal delay-1">
+          Spring / Summer <span class="title-accent">Tasting Collection</span>
+        </h1>
+        <p class="hero-subtitle reveal delay-2">
+          An evolving narrative of regional terroir, hyper-local biodynamic agriculture, and time-honored artisanal fermentation.
+        </p>
+      </div>
+    </section>
+
+    <!-- Tasting Menu Spotlight Feature -->
+    <section class="section-padding tasting-section" style="padding-bottom: 2rem;">
+      <div class="container">
+        <div class="tasting-spotlight reveal">
+          <div class="tasting-header">
+            <div class="tasting-header-info">
+              <span class="section-eyebrow no-after">Grand Experience</span>
+              <h2 class="tasting-title">The Chef's Seven-Course Odyssey</h2>
+            </div>
+            <div class="tasting-header-price">
+              <span class="tasting-price-amount">$185</span>
+              <span class="tasting-price-sub">Per Guest &bull; Wine Pairing +$125</span>
+            </div>
+          </div>
+
+          <div class="tasting-courses">
+            <div class="course-item">
+              <span class="course-num">I</span>
+              <div class="course-info">
+                <h4>Osetra Caviar Tartlet</h4>
+                <p>Smoked crème fraîche, cured Meyer lemon, crispy buckwheat shell, borage flower.</p>
+              </div>
+            </div>
+
+            <div class="course-item">
+              <span class="course-num">II</span>
+              <div class="course-info">
+                <h4>Chilled White Asparagus Velouté</h4>
+                <p>Poached hazelnut oil, green strawberry pickles, brioche crouton crisp.</p>
+              </div>
+            </div>
+
+            <div class="course-item">
+              <span class="course-num">III</span>
+              <div class="course-info">
+                <h4>Pan-Seared Hokkaido Scallops</h4>
+                <p>Saffron reduction, sea foam, micro garden herbs, coastal sea purslane.</p>
+              </div>
+            </div>
+
+            <div class="course-item">
+              <span class="course-num">IV</span>
+              <div class="course-info">
+                <h4>Winter Truffle Agnolotti</h4>
+                <p>House-pinched egg pasta, 36-month Reggiano emulsion, shaved black truffles.</p>
+              </div>
+            </div>
+
+            <div class="course-item">
+              <span class="course-num">V</span>
+              <div class="course-info">
+                <h4>A5 Miyazaki Wagyu Ribeye Cap</h4>
+                <p>Charred spring leek hearts, fermented black garlic demi-glace, maitake silk.</p>
+              </div>
+            </div>
+
+            <div class="course-item">
+              <span class="course-num">VI</span>
+              <div class="course-info">
+                <h4>Yuzu &amp; Shiso Palate Cleanser</h4>
+                <p>Shiso granita, sparkling champagne gelee, crystalline candied zest.</p>
+              </div>
+            </div>
+
+            <div class="course-item course-item-finale">
+              <span class="course-num">VII</span>
+              <div class="course-info">
+                <h4>Smoked Valrhona Dark Ganache</h4>
+                <p>Single-origin cocoa quenelle, blood orange glaze, hazelnut tuile, 24k gold leaf.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Filterable Menu Section -->
+    <section class="section-padding" style="padding-top: 2rem;">
+      <div class="container">
+        
+        <!-- Filter Controls -->
+        <div class="filter-wrapper reveal">
+          <div class="filter-categories" role="tablist" aria-label="Menu Category Filter">
+            <button class="filter-btn active" data-category="all" role="tab" aria-selected="true">All Offerings</button>
+            <button class="filter-btn" data-category="starters" role="tab" aria-selected="false">Starters</button>
+            <button class="filter-btn" data-category="mains" role="tab" aria-selected="false">Mains</button>
+            <button class="filter-btn" data-category="desserts" role="tab" aria-selected="false">Desserts</button>
+            <button class="filter-btn" data-category="drinks" role="tab" aria-selected="false">Cocktails &amp; Wine</button>
+          </div>
+
+          <div class="dietary-tags-filter" aria-label="Dietary Preferences Filter">
+            <button class="dietary-pill" data-dietary="vegetarian">Vegetarian</button>
+            <button class="dietary-pill" data-dietary="gluten-free">Gluten-Free</button>
+            <button class="dietary-pill" data-dietary="chef-pick">Chef's Selection</button>
+          </div>
+        </div>
+
+        <!-- Menu Cards Grid -->
+        <div class="dishes-grid" id="menu-items-grid">
+          
+          <!-- STARTER 1 -->
+          <article class="dish-card" data-category="starters" data-dietary="gluten-free chef-pick">
+            <div class="dish-img-wrap">
+              <div class="dish-tags">
+                <span class="dish-tag">Gluten-Free</span>
+                <span class="dish-tag">Chef's Pick</span>
+              </div>
+              <img src="images/dish-seared-scallops.jpg" alt="Pan-seared Hokkaido Scallops" class="dish-img">
+            </div>
+            <div class="dish-content">
+              <div class="dish-header">
+                <h3 class="dish-title">Hokkaido Diver Scallops</h3>
+                <span class="dish-price">$48</span>
+              </div>
+              <p class="dish-desc">
+                Pan-seared golden scallops, saffron-citrus reduction, wild coastal dill oil, sea foam, and edible micro flora.
+              </p>
+              <div class="dish-pairing">
+                <span>Pairing:</span> <strong>2021 Chassagne-Montrachet 1er Cru</strong>
+              </div>
+            </div>
+          </article>
+
+          <!-- STARTER 2 -->
+          <article class="dish-card" data-category="starters" data-dietary="vegetarian gluten-free">
+            <div class="dish-img-wrap">
+              <div class="dish-tags">
+                <span class="dish-tag">Vegetarian</span>
+                <span class="dish-tag">Gluten-Free</span>
+              </div>
+              <img src="images/gallery-craft-plating.jpg" alt="Heirloom Beetroot Carpaccio" class="dish-img">
+            </div>
+            <div class="dish-content">
+              <div class="dish-header">
+                <h3 class="dish-title">Heirloom Beet Carpaccio</h3>
+                <span class="dish-price">$32</span>
+              </div>
+              <p class="dish-desc">
+                Salt-baked Chioggia beets, whipped goat curd, smoked pistachio brittle, compressed green apple, pickled mustard seeds.
+              </p>
+              <div class="dish-pairing">
+                <span>Pairing:</span> <strong>2022 Sancerre, Domaine Vacheron</strong>
+              </div>
+            </div>
+          </article>
+
+          <!-- STARTER 3 -->
+          <article class="dish-card" data-category="starters" data-dietary="chef-pick">
+            <div class="dish-img-wrap">
+              <div class="dish-tags">
+                <span class="dish-tag">Chef's Pick</span>
+              </div>
+              <img src="images/dish-seared-scallops.jpg" alt="Hudson Valley Foie Gras Torchon" class="dish-img">
+            </div>
+            <div class="dish-content">
+              <div class="dish-header">
+                <h3 class="dish-title">Foie Gras Torchon</h3>
+                <span class="dish-price">$42</span>
+              </div>
+              <p class="dish-desc">
+                Armagnac-poached Hudson Valley foie gras, spiced Mission fig compote, Maldon flakes, toasted house milk brioche.
+              </p>
+              <div class="dish-pairing">
+                <span>Pairing:</span> <strong>2017 Château Guiraud Sauternes</strong>
+              </div>
+            </div>
+          </article>
+
+          <!-- MAIN 1 -->
+          <article class="dish-card" data-category="mains" data-dietary="chef-pick">
+            <div class="dish-img-wrap">
+              <div class="dish-tags">
+                <span class="dish-tag">Signature</span>
+                <span class="dish-tag">Chef's Pick</span>
+              </div>
+              <img src="images/dish-wagyu-ribeye.jpg" alt="A5 Miyazaki Wagyu Ribeye Cap" class="dish-img">
+            </div>
+            <div class="dish-content">
+              <div class="dish-header">
+                <h3 class="dish-title">A5 Miyazaki Wagyu Cap</h3>
+                <span class="dish-price">$88</span>
+              </div>
+              <p class="dish-desc">
+                Robata-grilled Japanese A5 Wagyu ribeye, 60-day fermented black garlic jus, braised baby leek, maitake silk.
+              </p>
+              <div class="dish-pairing">
+                <span>Pairing:</span> <strong>2018 Barolo Monprivato, Mascarello</strong>
+              </div>
+            </div>
+          </article>
+
+          <!-- MAIN 2 -->
+          <article class="dish-card" data-category="mains" data-dietary="vegetarian">
+            <div class="dish-img-wrap">
+              <div class="dish-tags">
+                <span class="dish-tag">Vegetarian</span>
+                <span class="dish-tag">Handmade</span>
+              </div>
+              <img src="images/dish-truffle-pasta.jpg" alt="Black Truffle Agnolotti" class="dish-img">
+            </div>
+            <div class="dish-content">
+              <div class="dish-header">
+                <h3 class="dish-title">Black Truffle Agnolotti</h3>
+                <span class="dish-price">$44</span>
+              </div>
+              <p class="dish-desc">
+                Hand-folded egg pasta pillows, roasted hazelnut brown butter, shaved Umbrian black truffles, 36-month Reggiano cloud.
+              </p>
+              <div class="dish-pairing">
+                <span>Pairing:</span> <strong>2019 Brunello di Montalcino, Biondi-Santi</strong>
+              </div>
+            </div>
+          </article>
+
+          <!-- MAIN 3 -->
+          <article class="dish-card" data-category="mains" data-dietary="gluten-free">
+            <div class="dish-img-wrap">
+              <div class="dish-tags">
+                <span class="dish-tag">Gluten-Free</span>
+              </div>
+              <img src="images/dish-seared-scallops.jpg" alt="Wild Chilean Sea Bass" class="dish-img">
+            </div>
+            <div class="dish-content">
+              <div class="dish-header">
+                <h3 class="dish-title">Miso-Glazed Chilean Sea Bass</h3>
+                <span class="dish-price">$62</span>
+              </div>
+              <p class="dish-desc">
+                Line-caught sea bass, white miso reduction, charred baby bok choy, dashi-infused parsnip puree, ginger pearls.
+              </p>
+              <div class="dish-pairing">
+                <span>Pairing:</span> <strong>2020 Meursault, Domaine des Comtes Lafon</strong>
+              </div>
+            </div>
+          </article>
+
+          <!-- DESSERT 1 -->
+          <article class="dish-card" data-category="desserts" data-dietary="vegetarian chef-pick">
+            <div class="dish-img-wrap">
+              <div class="dish-tags">
+                <span class="dish-tag">Vegetarian</span>
+                <span class="dish-tag">Chef's Pick</span>
+              </div>
+              <img src="images/dish-chocolate-dessert.jpg" alt="Smoked Valrhona Ganache" class="dish-img">
+            </div>
+            <div class="dish-content">
+              <div class="dish-header">
+                <h3 class="dish-title">Smoked Valrhona Ganache</h3>
+                <span class="dish-price">$26</span>
+              </div>
+              <p class="dish-desc">
+                Single-origin 70% dark chocolate mousse quenelle, smoked sea salt crystals, blood orange reduction, 24k gold leaf.
+              </p>
+              <div class="dish-pairing">
+                <span>Pairing:</span> <strong>Ramos Pinto 20-Year Tawny Port</strong>
+              </div>
+            </div>
+          </article>
+
+          <!-- DESSERT 2 -->
+          <article class="dish-card" data-category="desserts" data-dietary="vegetarian gluten-free">
+            <div class="dish-img-wrap">
+              <div class="dish-tags">
+                <span class="dish-tag">Vegetarian</span>
+                <span class="dish-tag">Gluten-Free</span>
+              </div>
+              <img src="images/gallery-craft-plating.jpg" alt="Deconstructed Meyer Lemon Meringue" class="dish-img">
+            </div>
+            <div class="dish-content">
+              <div class="dish-header">
+                <h3 class="dish-title">Meyer Lemon &amp; Yuzu Tart</h3>
+                <span class="dish-price">$22</span>
+              </div>
+              <p class="dish-desc">
+                Crisp almond sable, torched Italian meringue peaks, basil-infused olive oil snow, blackberry compote droplets.
+              </p>
+              <div class="dish-pairing">
+                <span>Pairing:</span> <strong>2021 Moscato d'Asti, Vietti</strong>
+              </div>
+            </div>
+          </article>
+
+          <!-- DRINKS 1 -->
+          <article class="dish-card" data-category="drinks" data-dietary="chef-pick">
+            <div class="dish-img-wrap">
+              <div class="dish-tags">
+                <span class="dish-tag">Bespoke Cocktail</span>
+                <span class="dish-tag">Chef's Pick</span>
+              </div>
+              <img src="images/dish-cocktail-signature.jpg" alt="Smoked Reserve Old Fashioned" class="dish-img">
+            </div>
+            <div class="dish-content">
+              <div class="dish-header">
+                <h3 class="dish-title">Smoked Reserve Old Fashioned</h3>
+                <span class="dish-price">$28</span>
+              </div>
+              <p class="dish-desc">
+                Weller 12-Year Bourbon, raw demerara syrup, smoked applewood mist, charred orange twist, artisanal clear ice sphere.
+              </p>
+              <div class="dish-pairing">
+                <span>Profile:</span> <strong>Rich, aromatic, gently peated finish</strong>
+              </div>
+            </div>
+          </article>
+
+          <!-- DRINKS 2 -->
+          <article class="dish-card" data-category="drinks" data-dietary="vegetarian gluten-free">
+            <div class="dish-img-wrap">
+              <div class="dish-tags">
+                <span class="dish-tag">Grand Cru</span>
+              </div>
+              <img src="images/interior-wine-cellar.jpg" alt="Sommelier Wine Selection" class="dish-img">
+            </div>
+            <div class="dish-content">
+              <div class="dish-header">
+                <h3 class="dish-title">Sommelier's Flight</h3>
+                <span class="dish-price">$125</span>
+              </div>
+              <p class="dish-desc">
+                Four pours traversing Burgundy, Piedmont, and Napa Valley, cellar-aged and poured tableside in Gabriel-Glas crystal.
+              </p>
+              <div class="dish-pairing">
+                <span>Service:</span> <strong>Tableside sommelier presentation</strong>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Dietary Philosophy Callout -->
+    <section class="section-padding" style="background: var(--bg-secondary); border-top: 1px solid var(--border-gold);">
+      <div class="container container-narrow center-text reveal">
+        <span class="section-eyebrow">Dietary Accommodations</span>
+        <h2 class="section-title">Mindful Hospitality</h2>
+        <p class="section-desc" style="margin-bottom: 32px;">
+          We take immense pride in crafting bespoke multi-course experiences for vegetarian, pescatarian, celiac, and dairy-free diners with 48 hours advance notice. Please specify dietary preferences upon booking.
+        </p>
+        <a href="reservations.html" class="btn btn-gold">Reserve Your Experience</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo" aria-label="Urban Fork Home">
+            <span class="logo-main">Urban Fork</span>
+          </a>
+          <p>
+            A restored 1922 landmark on Michigan Avenue, home to an evolving two-Michelin-star seasonal tasting experience.
+          </p>
+          <div class="footer-michelin-badge">
+            Two Michelin Stars &bull; Chicago
+          </div>
+        </div>
+
+        <div>
+          <h3 class="footer-heading">The Experience</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Seasonal Tasting Menu</a></li>
+            <li><a href="about.html">Our Story</a></li>
+            <!-- <li><a href="gallery.html">Gallery</a></li> -->
+            <li><a href="reservations.html">Reserve a Table</a></li>
+            <li><a href="contact.html">Private Buyouts</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="footer-heading">Operating Hours</h3>
+          <div class="footer-hours-text">
+            <div class="hours-item">
+              <strong>Dinner Tasting</strong>
+              Tue – Sun: 5:00 PM – 11:30 PM
+            </div>
+            <div class="hours-item">
+              <strong>Onyx Lounge</strong>
+              Tue – Sun: 4:30 PM – 1:00 AM
+            </div>
+            <div class="hours-item">
+              <strong>Monday</strong>
+              Private Buyouts Only
+            </div>
+            <div class="footer-address">
+              442 N. Michigan Ave, Chicago
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="footer-heading">The Chronicle</h3>
+          <p class="footer-newsletter-text">
+            Get seasonal menu previews and cellar release announcements.
+          </p>
+          <form class="newsletter-form" id="footer-newsletter-form">
+            <input type="email" class="newsletter-input" placeholder="Your email address" required aria-label="Email address for newsletter">
+            <button type="submit" class="newsletter-btn" aria-label="Subscribe to newsletter">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Urban Fork Restaurant Group. All rights reserved. Michelin Guide Honoree.
+        </div>
+        <div class="social-links">
+          <a href="#" class="social-icon" aria-label="Instagram">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="Facebook">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="Twitter">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
